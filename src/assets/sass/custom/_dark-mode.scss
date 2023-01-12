@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "uniform" as *;
+@use "../config/colors" as *;
+
+:root[color-scheme="light"] {
+  @each $color, $color-value in $light-colors {
+    --#{'' + $color}: #{hex2rgb($color-value)};
+  }
+}
+
+:root[color-scheme="dark"] {
+  @each $color, $color-value in $dark-colors {
+    --#{'' + $color}: #{hex2rgb($color-value)};
+  }
+}

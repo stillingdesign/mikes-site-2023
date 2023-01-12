@@ -1,0 +1,41 @@
+{% import "components/_icons.njk" as icons %}
+
+<header class="fixed top:0 left:0 z:10 w:100p flex flex:col align-items:center justify-content:center sm:px:48">
+    <div class="container flex align-items:center justify-content:between border-b:1 border:edge py:4">
+        <div data-header-bg class="absolute top:0 left:0 w:100p h:100p z:n1 bg:sheet-3 sm:bg:fade-up-header"></div>
+
+        <a href="/" title="Go back to Homepage" class="flex leading:100 align-items:center gap:4 tracking:tighter py:8 px:12 ml:n12 radius:md">
+            {{ icons.logoIcon('w:16')}}
+            <p>
+                Mike Stilling
+            </p>
+        </a>
+
+        <div class="flex align-items:center gap:24">
+            <nav>
+                <ul class="flex align-items:center gap:16 font:sm">
+                    <li>
+                        <a href="/journal">
+                            Journal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contact">
+                            Résumé 
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Mode Toggle -->
+            <div class="relative w:36 h:20 radius:full group">
+                <input name="color-theme" type="checkbox" aria-label="Toggle color theme" checked data-toggle-scheme class="relative z:1 opacity:0 w:100p h:100p cursor:pointer">
+                {{ icons.moon('absolute w:12 top:4 right:4 opacity:50')}}
+                {{ icons.sun('absolute w:12 top:4 left:4 opacity:50')}}
+                <div class="absolute top:0 right:0 bottom:0 left:0 radius:full border:1 border:edge checked-sibling:focus bg:sheet-2 z:n1 transition:300"></div>
+                <div class="absolute top:2 left:2 w:16 h:16 radius:full bg:ink-1 checked-sibling:switch transition:300 cubic-out group-hover:bg:link-hv transition:100"></div>
+            </div>
+        </div>
+
+    </div>
+</header>

@@ -1,0 +1,43 @@
+$light-colors: (
+
+    // constant between modes
+    white: #F4F9F0,
+    black: #060D00,
+    primary-rg:#00C14D,
+    primary-hv:#66FFA3,
+
+    // changes between modes
+    link-rg:   #02683f,
+    link-hv:   #005b37,
+    ink-1:     #464E49,
+    ink-2:     #2E3832,
+    ink-3:     #0D2617,
+    ink-hl:    #686A68,
+    ink-sh:    #0D2617,
+    sheet-0:   #F7F8F7, // Highlight
+    sheet-1:   #E6EAE8, // Foreground
+    sheet-2:   #DCE0DD, // Middleground
+    sheet-3:   #CFD3D1, // Background
+    sheet-4:   #C3C6C3, // Shadow
+    edge:      #BDC2BD,
+    error:     #a40000,
+);
+
+$dark-colors: (
+
+    // changes between modes
+    link-rg:   #00C14D,
+    link-hv:   #66FFA3,
+    ink-1:     #9CABA2,
+    ink-2:     #CCD7D0,
+    ink-3:     #FFFFFF,
+    ink-hl:    #FFFFFF,
+    ink-sh:    #7C9285,
+    sheet-0:   #1F2321, // Highlight
+    sheet-1:   #1A1E1C, // Foreground
+    sheet-2:   #151917, // Middleground
+    sheet-3:   #101312, // Background
+    sheet-4:   #0B0E0C, // Shadow
+    edge:      #252C29,
+    error:     #F44444,
+);

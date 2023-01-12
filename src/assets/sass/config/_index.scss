@@ -1,0 +1,42 @@
+@use "colors" as *;
+@use "fonts" as *;
+@use "gradients" as *;
+@use "ratio" as *;
+@use "shadows" as *;
+@use "utilities" as *;
+
+
+$output-mode: "css" !default;
+
+@use "uniform" as * with (
+    $config: (
+
+        // Build settings - https://uniformcss.com/docs/build-settings/
+        delimiter: "\\:",
+        pseudo-delimiter: ":",
+        screen-delimiter: ":",
+        output: $output-mode,
+
+        // Exclusion settings - https://uniformcss.com/docs/excludes-settings/
+        excludes: (
+            ratio,
+        ),
+
+        // Theme settings - https://uniformcss.com/docs/theme-settings/
+        colors: null,
+        font-families: null,
+        gradients: null,
+        shadows: null,
+
+        // Theme Extensions
+        extend: (
+            colors: $light-colors,
+            font-families: $font-families,
+            gradients: $gradients,
+            shadows: $shadows,
+        ),
+
+        // Utility settings - https://uniformcss.com/docs/utilities-settings/
+        utilities: $utilities,
+    )
+);

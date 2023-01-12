@@ -1,0 +1,27 @@
+@use "uniform" as *;
+
+// Checked-sibling
+// For when a sibling element is in a checked state
+:focus-visible ~.checked-sibling\:focus {
+    @include apply("border:link-rg bg:link-rg bg-opacity:20")
+}
+
+:checked ~.checked-sibling\:switch {
+    @include apply("bg:ink-1 opacity:100 transform translate-x:16 transition:500 cubic-out")
+}
+
+:checked ~.checked-sibling\:text-unchecked {
+    @include apply("opacity:50")
+}
+
+:checked ~.checked-sibling\:text-checked {
+    @include apply("color:link-rg opacity:100")
+}
+
+:checked ~.checked-sibling\:offer{
+    @include apply("opacity:100")
+}
+
+:focus-visible ~.checked-sibling\:switch {
+    @include apply("bg:link-rg")
+}

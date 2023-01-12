@@ -1,0 +1,137 @@
+@use "ratio" as *;
+
+$utilities: (
+    background-color: (
+        pseudos: (hover, group-hover, focus, group-focus),
+        responsive: true,
+        variants: (
+            transparent: transparent,
+        ),
+    ),
+    background: (
+        pseudos: (hover, group-hover, focus, group-focus),
+        responsive: true,
+        variants: (
+            transparent: transparent,
+        ),
+    ),
+    border: (
+        pseudos: (hover, group-hover, focus, group-focus),
+        responsive: true,
+    ),
+    bottom: (
+        variants: (
+            unset: unset,
+            n448: -28rem,
+            n512: -32rem,
+            n576: -36rem,
+            n640: -40rem,
+        ),
+    ),
+    color: (
+        pseudos: (hover, group-hover, focus, group-focus),
+        responsive: true,
+    ),
+    filter: (
+        responsive: true,
+    ),
+    filter-blur: (
+        responsive: true,
+    ),
+    font-size: (
+        variants: (
+            13xl: 7rem,
+            14xl: 8rem,
+            15xl: 9rem,
+            16xl: 10rem,
+            48rem: 48rem,
+        ),
+    ),
+    height: (
+        variants: (
+            100p: 100%,
+        ),
+    ),
+    left: (
+        variants: (
+            unset: unset,
+            n352: -22rem,
+            n448: -28rem,
+            n512: -32rem,
+            n576: -36rem,
+            n640: -40rem,
+        ),
+    ),
+    margin-bottom: (
+        variants: (
+            n1: -0.0625rem,
+        ),
+    ),
+    margin-left: (
+        variants: (
+            n1: -0.0625rem,
+        ),
+    ),
+    max-width: (
+        variants: (
+            none: none,
+            352: 22rem,
+        ),
+    ),
+    right: (
+        variants: (
+            unset: unset,
+            n352: -22rem,
+            n448: -28rem,
+            n512: -32rem,
+            n576: -36rem,
+            n640: -40rem,
+        ),
+    ),
+    scale: (
+        pseudos: (hover, group-hover, focus, group-focus),
+        variants: (
+            103: 1.03,
+        ),
+    ),
+    text-decoration: (
+        pseudos: (hover, group-hover, focus, group-focus),
+    ),
+    top: (
+        variants: (
+            unset: unset,
+            n448: -28rem,
+            n512: -32rem,
+            n576: -36rem,
+            n640: -40rem,
+        ),
+    ),
+    transition-timing-function: (
+        variants: (
+            ease-out: ease-out,
+            cubic-in: cubic-bezier(0.66, 0, 1, 0.33),
+            cubic-out: cubic-bezier(0, 0.66, 0.33, 1),
+            cubic-in-out: cubic-bezier(0.66, 0, 0.33, 1),
+            quint-in: cubic-bezier(0.78, 0, 1, 0.22),
+            quint-out: cubic-bezier(0, 0.78, 0.22, 1),
+            quint-in-out: cubic-bezier(0.78, 0, 0.22, 1),
+        ),
+    ),
+    translate-x: (
+        pseudos: (hover, group-hover, focus, group-focus),
+    ),
+    width: (
+        pseudos: (hover, group-hover, focus, group-focus),
+        variants: (
+            auto: auto,
+            0: 0,
+        ),
+    ),
+    z-index: (
+        responsive: true,
+        variants: (
+            n1: -1,
+        ),
+    ),
+    native-ratio: $ratio,
+);

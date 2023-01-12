@@ -1,0 +1,35 @@
+{
+  "name": "mikes-site-2023",
+  "version": "1.0.0",
+  "description": "Mike Stilling's personal website",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "watch:sass": "sass --load-path=./node_modules/uniformcss --watch src/assets/sass:dist/assets/css",
+    "build:sass": "sass --load-path=./node_modules/uniformcss src/assets/sass/:dist/assets/css/",
+    "watch:webpack": "webpack --mode=development --watch",
+    "build:webpack": "webpack --mode=production",
+    "watch:eleventy": "eleventy --serve",
+    "build:eleventy": "eleventy",
+    "start": "npm-run-all clean build:sass --parallel watch:*",
+    "prebuild": "rm -rf ./dist",
+    "build": "run-s clean build:*",
+    "postbuild": "postcss --config postcss.config.js dist/assets/css/main.css --no-map --replace"
+  },
+  "author": "Mike Stilling",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "autoprefixer": "^10.4.13",
+    "dotenv": "^16.0.3",
+    "gsap": "file:gsap-bonus.tgz",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.20",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.57.1",
+    "uniformcss": "^1.5.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}

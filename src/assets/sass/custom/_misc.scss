@@ -1,0 +1,83 @@
+@use "sass:map";
+@use "uniform" as *;
+
+body {
+    font-kerning:normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+.blur-fix { transform: translate3d(0, 0, 0); }
+
+// Video Placeholder Cirles
+.video-circ { transform-origin: center; }
+.video-circ-r { animation: circ-r 8000ms cubic-bezier(0.66, 0, 0.33, 1) infinite; }
+.video-circ-l { animation: circ-l 8000ms cubic-bezier(0.66, 0, 0.33, 1) infinite; }
+.video-circ-t { animation: circ-t 4000ms cubic-bezier(0.66, 0, 0.33, 1) infinite; }
+.video-circ-b { animation: circ-b 4000ms cubic-bezier(0.66, 0, 0.33, 1) infinite; }
+
+@keyframes circ-r {
+    0%    { opacity:0; transform: translateX(0); }
+    50%   { opacity:0.5; }
+    100%  { opacity:0; transform: translateX(100%); }
+}
+
+@keyframes circ-l {
+    0%    { opacity:0; transform: translateX(0); }
+    50%   { opacity:0.5; }
+    100%  { opacity:0; transform: translateX(-100%); }
+}
+
+@keyframes circ-t {
+    0%    { opacity:0; transform: translateY(0); }
+    50%   { opacity:0.5; }
+    100%  { opacity:0; transform: translateY(-100%); }
+}
+
+@keyframes circ-b {
+    0%    { opacity:0; transform: translateY(0); }
+    50%   { opacity:0.5; }
+    100%  { opacity:0; transform: translateY(100%); }
+}
+
+// Video Progress Bar
+.video-progress { @include apply('w:100p h:2 bg:white bg-opacity:20 radius:full') }
+.video-progress::-webkit-progress-bar { @include apply('bg:white bg-opacity:20 w:100p radius:full') }
+.video-progress::-moz-progress-bar { background-color: rgba(var(--primary-hv), 1); }
+.video-progress::-webkit-progress-value { background: rgba(var(--primary-hv), 1) !important; }
+
+// Video Seek
+.video-seek {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 0.75rem;
+        width:  0.75rem;
+        border: 0px solid rgba(var(--white), 1);
+        border-radius: 999px;
+        background: rgba(var(--white), 1);
+        cursor: pointer;
+        margin-top: 0.25rem;
+        box-shadow: 0 0 6px 0 rgba(0,0,0,0.15);
+    }
+
+    &::-moz-range-thumb {
+        height: 0.75rem;
+        width: 0.75rem;
+        border: 1px solid rgba(var(--white), 1);
+        border-radius: 999px;
+        background: rgba(var(--white), 1);
+        cursor: pointer;
+        //margin-top: -0.3125rem;
+    }
+}

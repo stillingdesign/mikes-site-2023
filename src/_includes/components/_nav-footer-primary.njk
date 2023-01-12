@@ -1,0 +1,114 @@
+{% import "components/_icons.njk" as icons %}
+
+<footer class="section bg:sheet-2 sm:bg:transparent">
+    <div class="container flex flex:col py:48 sm:py:72 sm:grid:normal grid-cols:6 gap:48 font:sm border-t:1 border:edge">
+
+        {% set footerListTitle = 'relative flex flex:col gap:16' %}
+        {% set footerList = 'relative flex flex:col gap:4' %}
+    
+        {% macro footerLink(link, label, soon) %}
+            <li class="flex align-items:center justify-content:start gap:4">
+                {% if soon %}
+                    <div class="color:ink-1 block py:8 leading:100 pointer-events:none">
+                        {{ label }}
+                    </div>
+                    <p class="block bg:sheet-1 font:2xs uppercase border:1 border:edge leading:100 py:4 px:8 radius:full pointer-events:none">
+                        Soon
+                    <p>
+                {% else %}
+                    <a href="{{ link }}" class="color:ink-1 block py:8 link leading:100">
+                        {{ label }}
+                    </a>
+                {% endif %}
+            </li>
+        {% endmacro %}
+
+        <!-- Thank you + Social -->
+        <div class="{{ footerList }} justify-content:between col:2 ">
+            <div class="flex flex:col gap:16 sm:mt:n6">
+                <p class="font:4xl tracking:tight sm:tracking:normal sm:font:xl">
+                    Thanks for visiting 👏
+                </p>
+                <p class="font:lg sm:font:sm color:ink-1 max-w:320 sm:max-w:192 md:max-w:256 sm:pr:12 md:pr:0">
+                    Let's keep this going! Send me a link to your site and I'll happily return the favor.
+                </p>
+            </div>
+            <ul class="relative flex align-items:center gap:8 ml:n4 mb:n4 mt:20 sm:mt:0">
+                {% set footerSocial = 'flex align-items:center justify-content:center p:4 color:ink-1 hover:color:link-hv focus:color:link-hv outline:none' %}
+                <li>
+                    <a href="{{ base.twitterLink }}" class="{{ footerSocial }}" title="Mike's Twitter Profile">
+                        {{ icons.socialTwitter('w:20 sm:w:16') }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ base.linkedinLink }}" class="{{ footerSocial }}" title="Mike's LinkedIn Profile">
+                        {{ icons.socialLinkedin('w:20 sm:w:16') }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ base.githubLink }}" class="{{ footerSocial }}" title="Mike's GitHub profile">
+                        {{ icons.socialGithub('w:20 sm:w:16') }}
+                    </a>
+                </li>
+                <li class="relative flex align-items:center justify-content:center">
+                    <a href="mailto:mike@mikestilling.com" target="_blank" title="Send Mike an email" data-copy-click data-copy-value="mike@mikestilling.com" data-copy-title="Copy Mike's email address" data-copy-note="Email copied" class="{{ footerSocial }}">
+                        {{ icons.paperplane('w:20 sm:w:16') }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="w:100p h:1 bg:edge sm:hidden"></div>
+
+        <!-- Navigation -->
+        <nav class="col:4 w:100p relative">
+            <ul class="relative w:100p grid grid-cols:3 sm:grid:normal sm:grid-cols:4 gap:16 sm:gap:24 align-items:start font:md sm:font:sm">
+                <li class="{{ footerListTitle }}">
+                    <p>Main</p>
+                    <ul class="{{ footerList }}">
+                        {{ footerLink('/', 'Homepage')}}
+                        {{ footerLink('/journal/', 'Journal')}}
+                        {{ footerLink('/resume/', 'Résumé')}}
+                        {{ footerLink('', 'Feed', 'true')}}
+                    </ul>
+                </li>
+                <li class="{{ footerListTitle }}">
+                    <p>Experience</p>
+                    <ul class="{{ footerList }}">
+                        {{ footerLink('/experience/firehydrant/', 'FireHydrant')}}
+                        {{ footerLink('/experience/rewatch/', 'Rewatch')}}
+                        {{ footerLink('/experience/abstract/', 'Abstract')}}
+                        {{ footerLink('/experience/baunfire/', 'Baunfire')}}
+                    </ul>
+                </li>
+                <li class="{{ footerListTitle }} sm:col:2">
+                    <p>Tools used</p>
+                    <ul class="flex flex:col gap:8 sm:gap:24 sm:grid:normal grid-cols:2 sm:align-items:end">
+                        <div class="{{ footerList }}">
+                            {{ footerLink('https://www.11ty.dev/', 'Eleventy')}}
+                            {{ footerLink('https://uniformcss.com/', 'UniformCSS')}}
+                            {{ footerLink('https://www.netlify.com/', 'Netlify')}}
+                            {{ footerLink('https://greensock.com/', 'Greensock')}}
+                        </div>
+                        <div class="{{ footerList }}">
+                            {{ footerLink('https://www.figma.com/', 'Figma')}}
+                            {{ footerLink('https://www.adobe.com/creativecloud/', 'Adobe CC')}}
+                            {{ footerLink('https://klim.co.nz/collections/soehne/', 'Söhne')}}
+                            {{ footerLink('https://obsproject.com/', 'OBS')}}
+                        </div>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+    <div class="container:no-pad flex flex:col sm:flex:row sm:align-items:end sm:justify-content:between sm:pb:48 border-t:1 border:edge font:xs color:ink-1 leading:100">
+        <p class="w:100p text:center sm:text:left py:16 sm:py:0">
+            Using Google Analytics for curiousity
+        </p>
+        <div class="sm:block relative h:1 w:100p sm:h:36 sm:w:1 bg:edge flex-shrink:0"></div>
+        <p class="w:100p text:center sm:text:right py:16 sm:py:0">
+            Not using the data for shady stuff
+        </p>
+    </div>
+</footer>

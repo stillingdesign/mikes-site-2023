@@ -1,0 +1,660 @@
+---
+layout: "main.njk"
+title: "From America's Dairyland"
+headline: "Mike Stilling: Grow your top-of-funnel via Design"
+description: "The dude to call when you need a nice interface, website, or brand, fast."
+thumbnailAlt: "Some bullshit abstract stuff solely used for decoration"
+changefreq: weekly
+eleventyComputed:
+    thumbnail: "{{- base.url -}}/assets/images/og/default-og.jpg"
+---
+{% import "components/_icons.njk" as icons %}
+
+<main class="overflow:hidden">
+
+    {% set bigLetter = 'hidden md:block z:n1 leading:100 font:48rem pointer-events:none absolute' %}
+    
+    <!-- Headline -->
+    <section data-first-section class="section section:hero section:pb">
+        <div class="absolute top:0 left:0 w:100p h:100p bg:down-lit z:n1"></div>
+        <div class="container flex flex:col align-items:center md:align-items:stretch text:center md:text:left md:grid:normal grid-cols:12">
+            <div aria-hidden="true" class="{{ bigLetter }} z:n1 color:sheet-2 text:fade-down bottom:n448 left:n192 lg:left:n352">20</div>
+
+            <h1 class="col-start:1 col-end:8 font:9xl sm:font:11xl leading:110 tracking:tighter highlight:text pb:24 max-w:352 sm:max-w:640 md:max-w:640 lg:max-w:none ml:n12 mr:n12 sm:ml:0 sm:mr:0">
+                Design and build quality interfaces, <span class="hidden sm:inline space:nowrap">with efficiency</span> <span class="sm:hidden">efficiently</span>
+            </h1>
+
+            <div class="col-start:8 lg:col-start:9 col-end:13 flex flex:col md:flex:col-reverse align-items:center md:pb:32">
+                <p class="font:lg color:ink-1 mb:32 md:mb:0 max-w:352 sm:max-w:512 md:max-w:352 lg:max-w:none text:center">
+                    Meet the dude who can reliably take your brand and product from looking terrible <span class="space:nowrap">to trustworthy,</span> in the <span class="space:nowrap">matter of  weeks.</span>
+                </p>
+                <div data-animate-emoji-float class="relative z:1 flex-grow:1 flex align-items:center justify-content:center">
+                    <div aria-hidden="true" class="absolute font:lg pointer-events:none hidden" data-animate-emoji-floating data-float-x="-72" data-float-y="-72" >👋</div>
+                    <div aria-hidden="true" class="absolute font:lg pointer-events:none hidden" data-animate-emoji-floating data-float-x="64" data-float-y="-48"  >✌️</div>
+                    <div aria-hidden="true" class="absolute font:lg pointer-events:none hidden" data-animate-emoji-floating data-float-x="16" data-float-y="-56"  >🧀</div>
+                    <div aria-hidden="true" class="absolute font:lg pointer-events:none hidden" data-animate-emoji-floating data-float-x="-24" data-float-y="48"  >👋</div>
+                    <div aria-hidden="true" class="absolute font:lg pointer-events:none hidden" data-animate-emoji-floating data-float-x="-72" data-float-y="64"  >✌️</div>
+                    <div aria-hidden="true" class="absolute font:lg pointer-events:none hidden" data-animate-emoji-floating data-float-x="-128" data-float-y="-12">🧀</div>
+                    <div aria-hidden="true" class="absolute font:lg pointer-events:none hidden" data-animate-emoji-floating data-float-x="128" data-float-y="16"  >👋</div>
+                    <a href="#intro" data-anchor data-anchor-offset="72" data-hero-video-link class="z:1 btn btn:md btn:hover btn:fancy">
+                        <p>
+                            Get acquainted
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Hero -->
+    <section id="intro" class="section z:1">
+        <div class="container">
+            <div aria-hidden="true" class="{{ bigLetter }} z:n1 color:sheet-2 text:fade-down bottom:n448 right:n192 lg:right:n352">23</div>
+            <div data-video class="relative z:3 flex align-items:center justify-content:center w:100p ratio:1-1 sm:ratio:4-3 md:ratio:16-9 radius:2xl bg:sheet-2 border:1 border:edge overflow:hidden shadow:2xl">
+                <!-- Video -->
+                <div class="relative w:100p h:100p overflow:hidden flex align-items:center justify-content:center">
+                    <div class="relative flex align-items:center justify-content:center ratio:16-9 h:100p flex-shrink:0">
+                        <video data-video-el class="w:100p" playsinline preload="metadata">
+                            <source src="/assets/images/videos/meet-mike-stilling.mp4" type="video/mp4">
+                        </video>
+                        <!-- Controls -->
+                        <div class="hidden sm:flex absolute bottom:20 md:bottom:28 px:28 align-items:center justify-content:center gap:16 w:100p max-w:512 md:max-w:none">
+                            <!-- Duration -->
+                            <div class="md:absolute md:left:28 flex align-items:center justify-content:end md:justify-content:start gap:4 w:96 font:2xs color:ink-1 flex-shrink:0">
+                                <time data-video-time-current class="w:28 text:center">00:00</time>
+                                <span>/</span>
+                                <time data-video-time-duration class="w:28 text:center">2:00</time>
+                            </div>
+                            <!-- Progress-->
+                            <div class="relative w:100p flex align-items:center w:100p md:max-w:320">
+                                <progress data-video-progress value="0" min="0" class="w:100p video-progress"></progress>
+                                <input data-video-seek value="0" min="0" type="range" step="1" hidden class="video-seek absolute top:n8 mt:n1 left:0">
+                            </div>
+                            <!-- Mute -->
+                            <button data-video-audio class="md:absolute md:right:28 flex align-items:center justify-content:start md:justify-content:end gap:4 w:96 font:2xs color:ink-1 uppercase flex-shrink:0 leading:100 py:8 space:nowrap">
+                                <div data-video-unmute hidden class="flex-shrink:0">
+                                    {{ icons.soundOn('w:12') }}
+                                </div>
+                                <div data-video-mute class="flex-shrink:0">
+                                    {{ icons.soundOff('w:12') }}
+                                </div>
+                                <div data-video-audio-label>
+                                    Mute video
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Overlay -->
+                <div data-video-overlay class="absolute top:n1 left:n1 w:100p h:100p overflow:hidden flex align-items:center justify-content:center" style="width: calc(100% + .125rem); height: calc(100% + .125rem);">
+                    <div class="relative flex align-items:center justify-content:center ratio:16-9 h:100p flex-shrink:0">
+                        <svg viewBox="0 0 1104 648" fill="none" class="relative w:100p" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="rgba(var(--sheet-2), 1)" d="M0 0h1104v648H0z"/>
+                            <path stroke="rgba(var(--edge), 1)" d="M48 12v624M96 12v624M240 12v624m48-624v624M432 12v624m48-624v624M624 12v624m48-624v624M816 12v624m48-624v624M144 12v624m48-624v624M336 12v624m48-624v624M528 12v624m48-624v624M720 12v624m48-624v624M912 12v624m48-624v624M1008 12v624m48-624v624M0 60h1104m0 48H0M0 252h1104m0 48H0M0 444h1104m0 48H0M0 156h1104m0 48H0M0 348h1104m0 48H0M0 540h1104m0 48H0"/>
+                            <!-- X Circs -->
+                            <circle class="video-circ video-circ-r opacity:0" style="animation-delay: 7500ms" fill="rgba(var(--ink-3), 1)" cy="588" r="2"/>
+                            <circle class="video-circ video-circ-l opacity:0" style="animation-delay: 500ms" fill="rgba(var(--ink-3), 1)" cy="492" r="2"/>
+                            <circle class="video-circ video-circ-r opacity:0" style="animation-delay: 6500ms" fill="rgba(var(--ink-3), 1)" cy="396" r="2"/>
+                            <circle class="video-circ video-circ-l opacity:0" style="animation-delay: 500ms" fill="rgba(var(--ink-3), 1)" cy="300" r="2"/>
+                            <circle class="video-circ video-circ-r opacity:0" style="animation-delay: 4000ms" fill="rgba(var(--ink-3), 1)" cy="204" r="2"/>
+                            <circle class="video-circ video-circ-l opacity:0" style="animation-delay: 3000ms" fill="rgba(var(--ink-3), 1)" cy="108" r="2"/>
+                            <circle class="video-circ video-circ-r opacity:0" style="animation-delay: 2000ms" fill="rgba(var(--ink-3), 1)" cx="1104" cy="540" r="2"/>
+                            <circle class="video-circ video-circ-l opacity:0" style="animation-delay: 5000ms" fill="rgba(var(--ink-3), 1)" cx="1104" cy="444" r="2"/>
+                            <circle class="video-circ video-circ-r opacity:0" style="animation-delay: 7000ms" fill="rgba(var(--ink-3), 1)" cx="1104" cy="348" r="2"/>
+                            <circle class="video-circ video-circ-l opacity:0" style="animation-delay: 1000ms" fill="rgba(var(--ink-3), 1)" cx="1104" cy="252" r="2"/>
+                            <circle class="video-circ video-circ-r opacity:0" style="animation-delay: 0ms" fill="rgba(var(--ink-3), 1)" cx="1104" cy="156" r="2"/>
+                            <circle class="video-circ video-circ-l opacity:0" style="animation-delay: 8000ms" fill="rgba(var(--ink-3), 1)" cx="1104" cy="60" r="2"/>
+                            <!-- Y Circs -->
+                            <circle class="video-circ video-circ-t" style="animation-delay: 1000ms" fill="rgba(var(--ink-3), 1)" cx="1056" cy="648" r="2"/>
+                            <circle class="video-circ video-circ-b" style="animation-delay: 2000ms" fill="rgba(var(--ink-3), 1)" cx="960"  cy="648" r="2"/>
+                            <circle class="video-circ video-circ-t" style="animation-delay: 1500ms" fill="rgba(var(--ink-3), 1)" cx="864"  cy="648" r="2"/>
+                            <circle class="video-circ video-circ-b" style="animation-delay: 4100ms" fill="rgba(var(--ink-3), 1)" cx="768"  cy="648" r="2"/>
+                            <circle class="video-circ video-circ-t" style="animation-delay: 500ms" fill="rgba(var(--ink-3), 1)" cx="672"  cy="648" r="2"/>
+                            <circle class="video-circ video-circ-b" style="animation-delay: 0ms" fill="rgba(var(--ink-3), 1)" cx="576"  cy="648" r="2"/>
+                            <circle class="video-circ video-circ-t" style="animation-delay: 3000ms" fill="rgba(var(--ink-3), 1)" cx="480"  cy="648" r="2"/>
+                            <circle class="video-circ video-circ-b" style="animation-delay: 100ms" fill="rgba(var(--ink-3), 1)" cx="384"  cy="648" r="2"/>
+                            <circle class="video-circ video-circ-t" style="animation-delay: 2500ms" fill="rgba(var(--ink-3), 1)" cx="288"  cy="648" r="2"/>
+                            <circle class="video-circ video-circ-b" style="animation-delay: 700ms" fill="rgba(var(--ink-3), 1)" cx="192"  cy="648" r="2"/>
+                            <circle class="video-circ video-circ-t" style="animation-delay: 1750ms" fill="rgba(var(--ink-3), 1)" cx="96"   cy="648" r="2"/>
+                            <circle class="video-circ video-circ-b" style="animation-delay: 4000ms" fill="rgba(var(--ink-3), 1)" cx="1008" r="2"/>
+                            <circle class="video-circ video-circ-t" style="animation-delay: 1000ms" fill="rgba(var(--ink-3), 1)" cx="912"  r="2"/>
+                            <circle class="video-circ video-circ-b" style="animation-delay: 3000ms" fill="rgba(var(--ink-3), 1)" cx="816"  r="2"/>
+                            <circle class="video-circ video-circ-t" style="animation-delay: 5000ms" fill="rgba(var(--ink-3), 1)" cx="720"  r="2"/>
+                            <circle class="video-circ video-circ-b" style="animation-delay: 100ms" fill="rgba(var(--ink-3), 1)" cx="624"  r="2"/>
+                            <circle class="video-circ video-circ-t" style="animation-delay: 3500ms" fill="rgba(var(--ink-3), 1)" cx="528"  r="2"/>
+                            <circle class="video-circ video-circ-b" style="animation-delay: 3000ms" fill="rgba(var(--ink-3), 1)" cx="432"  r="2"/>
+                            <circle class="video-circ video-circ-t" style="animation-delay: 1200ms" fill="rgba(var(--ink-3), 1)" cx="336"  r="2"/>
+                            <circle class="video-circ video-circ-b" style="animation-delay: 2400ms" fill="rgba(var(--ink-3), 1)" cx="240"  r="2"/>
+                            <circle class="video-circ video-circ-t" style="animation-delay: 4500ms" fill="rgba(var(--ink-3), 1)" cx="144"  r="2"/>
+                            <circle class="video-circ video-circ-b" style="animation-delay: 3700ms" fill="rgba(var(--ink-3), 1)" cx="48"   r="2"/>
+                            <path fill="rgba(var(--sheet-2), 1)" d="M672.5 11.5v191h47v-191h-47ZM479.5 108.5h-191v47h191v-47ZM623.5 540.5h-191v47h191v-47ZM335.5 300.5v191h-47v-191h47ZM384.5 204.5h95v95h-95v-95ZM1007.5 108.5h-95v95h95v-95ZM720.5 396.5h95v95h-95v-95ZM143.5 300.5h-95v95h95v-95Z"/>
+                            <g opacity=".5" fill="#464E49">
+                                <path d="M699.928 23.258c1.358-.686 2.226-2.352 2.226-4.088 0-1.988-1.19-3.654-3.066-3.654-2.052 0-2.451 1.706-2.828 3.322l-.042.178c-.336 1.414-.56 2.352-1.624 2.352-.966 0-1.638-.882-1.638-2.1 0-1.302.658-2.1 1.624-2.618l-.812-1.022c-1.134.602-1.974 1.862-1.974 3.612 0 1.904 1.148 3.43 2.912 3.43 1.89 0 2.324-1.568 2.702-3.15l.02-.085.034-.143c.334-1.412.581-2.46 1.738-2.46 1.148 0 1.792 1.008 1.792 2.31s-.7 2.436-1.904 3.066l.84 1.05ZM702 30.185h-10.052V23.62h1.176v5.236h3.094v-4.438h1.176v4.438h3.43V23.62H702v6.566Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M697.786 35.694v1.946H702v1.344h-10.052v-3.836c0-2.128.994-3.486 2.912-3.486 1.61 0 2.59.98 2.856 2.576L702 31.452v1.54l-4.214 2.702Zm-4.676 1.946h3.514v-2.422c0-1.428-.63-2.226-1.764-2.226s-1.75.798-1.75 2.226v2.422Z"/>
+                                <path d="M698.024 40.737c2.772 0 4.116 1.68 4.116 3.962 0 2.268-1.344 3.948-4.116 3.948h-6.076v-1.344h6.034c2.058 0 2.954-1.092 2.954-2.604 0-1.526-.896-2.618-2.954-2.618h-6.034v-1.344h6.076ZM691.948 49.532h1.176v3.402H702v1.344h-8.876v3.402h-1.176v-8.148ZM692.984 61.69c0 1.862 1.61 3.178 3.99 3.178s3.99-1.316 3.99-3.178c0-1.302-.756-2.24-2.03-2.604l.42-1.274c1.736.588 2.8 1.96 2.8 3.878 0 2.604-2.114 4.522-5.18 4.522s-5.18-1.918-5.18-4.522c0-1.918 1.064-3.29 2.8-3.878l.42 1.274c-1.274.364-2.03 1.302-2.03 2.604ZM691.948 68.899v-1.344H702v1.344h-10.052Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M697.786 73.492v2.492H702v1.344h-10.052v-3.836c0-2.128.994-3.486 2.912-3.486 1.89 0 2.926 1.358 2.926 3.486Zm-4.676 2.492h3.514v-2.422c0-1.428-.63-2.226-1.764-2.226s-1.75.798-1.75 2.226v2.422Z"/>
+                                <path d="M702 81.761v1.232h-1.498c.924.406 1.652 1.484 1.652 2.926 0 2.562-2.1 4.466-5.152 4.466-3.066 0-5.208-1.918-5.208-4.55 0-1.932 1.05-3.304 2.786-3.906l.42 1.288c-1.274.364-2.016 1.288-2.016 2.604 0 1.904 1.624 3.22 4.004 3.22 2.366 0 4.004-1.316 4.004-3.234 0-1.624-1.246-2.716-3.038-2.744v2.884h-1.176v-4.186H702Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M702.154 95.74c0 2.632-2.114 4.564-5.18 4.564s-5.18-1.932-5.18-4.564 2.114-4.55 5.18-4.55 5.18 1.918 5.18 4.55Zm-1.19 0c0-1.89-1.61-3.22-3.99-3.22s-3.99 1.33-3.99 3.22c0 1.89 1.61 3.22 3.99 3.22s3.99-1.33 3.99-3.22ZM702 106.102v3.192h-10.052v-3.192c0-3.052 1.96-4.984 5.026-4.984S702 103.05 702 106.102Zm-8.89 1.876h7.728v-1.876c0-2.282-1.526-3.668-3.864-3.668-2.352 0-3.864 1.386-3.864 3.682v1.862Z"/>
+                                <path d="M691.948 120.013v-6.566h1.176v5.236h3.094v-4.438h1.176v4.438h3.43v-5.236H702v6.566h-10.052ZM691.948 121.08h1.176v3.402H702v1.344h-8.876v3.402h-1.176v-8.148ZM698.024 130.114c2.772 0 4.116 1.68 4.116 3.962 0 2.268-1.344 3.948-4.116 3.948h-6.076v-1.344h6.034c2.058 0 2.954-1.092 2.954-2.604 0-1.526-.896-2.618-2.954-2.618h-6.034v-1.344h6.076ZM692.984 142.856c0 1.862 1.61 3.178 3.99 3.178s3.99-1.316 3.99-3.178c0-1.302-.756-2.24-2.03-2.604l.42-1.274c1.736.588 2.8 1.96 2.8 3.878 0 2.604-2.114 4.522-5.18 4.522s-5.18-1.918-5.18-4.522c0-1.918 1.064-3.29 2.8-3.878l.42 1.274c-1.274.364-2.03 1.302-2.03 2.604ZM691.948 157.527l4.606-2.87-4.606-2.87v-1.428l5.824 3.64H702v1.344h-4.228l-5.824 3.64v-1.456ZM691.948 161.175v-1.302H702v1.162l-8.092 5.488H702v1.288h-10.052v-1.414l7.77-5.222h-7.77Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M691.948 174.229v-1.484L702 168.867v1.358l-2.646 1.022v4.508l2.646 1.008v1.344l-10.052-3.878Zm6.23-2.534-4.718 1.82 4.718 1.792v-3.612Z"/>
+                                <path d="m702 183.49-8.274-3.08H702v-1.246h-10.052v1.778l8.26 3.066-8.26 3.052v1.834H702v-1.26h-8.274l8.274-3.066v-1.078Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M369.339 138.154c-2.632 0-4.564-2.114-4.564-5.18s1.932-5.18 4.564-5.18 4.55 2.114 4.55 5.18-1.918 5.18-4.55 5.18Zm0-1.19c1.89 0 3.22-1.61 3.22-3.99s-1.33-3.99-3.22-3.99c-1.89 0-3.22 1.61-3.22 3.99s1.33 3.99 3.22 3.99Z"/>
+                                <path d="M335.106 127.948h1.344V138h-1.344v-10.052ZM346.319 127.948h-1.302v7.77l-5.222-7.77h-1.414V138h1.288v-8.092l5.488 8.092h1.162v-10.052ZM355.525 129.124v-1.176h-8.148v1.176h3.402V138h1.344v-8.876h3.402Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M357.936 133.786h1.946l2.702 4.214h1.54l-2.786-4.284c1.596-.266 2.576-1.246 2.576-2.856 0-1.918-1.358-2.912-3.486-2.912h-3.836V138h1.344v-4.214Zm0-1.162v-3.514h2.422c1.428 0 2.226.616 2.226 1.75s-.798 1.764-2.226 1.764h-2.422ZM378.433 138h-3.192v-10.052h3.192c3.052 0 4.984 1.96 4.984 5.026S381.485 138 378.433 138Zm-1.876-8.89v7.728h1.876c2.282 0 3.668-1.526 3.668-3.864 0-2.352-1.386-3.864-3.682-3.864h-1.862Z"/>
+                                <path d="M392.505 134.024c0 2.772-1.679 4.116-3.962 4.116-2.268 0-3.948-1.344-3.948-4.116v-6.076h1.344v6.034c0 2.058 1.092 2.954 2.604 2.954 1.526 0 2.618-.896 2.618-2.954v-6.034h1.344v6.076ZM398.193 128.984c-1.862 0-3.178 1.61-3.178 3.99s1.316 3.99 3.178 3.99c1.302 0 2.24-.756 2.604-2.03l1.274.42c-.588 1.736-1.96 2.8-3.878 2.8-2.604 0-4.522-2.114-4.522-5.18s1.918-5.18 4.522-5.18c1.918 0 3.29 1.064 3.878 2.8l-1.274.42c-.364-1.274-1.302-2.03-2.604-2.03ZM410.351 127.948v1.176h-3.402V138h-1.344v-8.876h-3.402v-1.176h8.148ZM411.418 127.948h1.344V138h-1.344v-10.052Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M418.669 138.154c-2.632 0-4.564-2.114-4.564-5.18s1.932-5.18 4.564-5.18 4.55 2.114 4.55 5.18-1.918 5.18-4.55 5.18Zm0-1.19c1.89 0 3.22-1.61 3.22-3.99s-1.33-3.99-3.22-3.99c-1.89 0-3.22 1.61-3.22 3.99s1.33 3.99 3.22 3.99Z"/>
+                                <path d="M431.207 127.948h1.302V138h-1.162l-5.488-8.092V138h-1.288v-10.052h1.414l5.222 7.77v-7.77ZM474.142 570h-1.232v-1.498c-.406.924-1.484 1.652-2.926 1.652-2.562 0-4.466-2.1-4.466-5.152 0-3.066 1.918-5.208 4.55-5.208 1.932 0 3.304 1.05 3.906 2.786l-1.288.42c-.364-1.274-1.288-2.016-2.604-2.016-1.904 0-3.22 1.624-3.22 4.004 0 2.366 1.316 4.004 3.234 4.004 1.624 0 2.716-1.246 2.744-3.038h-2.884v-1.176h4.186V570ZM475.902 559.948V570h6.566v-1.176h-5.236v-3.43h4.438v-1.176h-4.438v-3.094h5.236v-1.176h-6.566ZM491.228 561.124v-1.176h-8.148v1.176h3.402V570h1.344v-8.876h3.402ZM502.248 561.124v-1.176H494.1v1.176h3.402V570h1.344v-8.876h3.402Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M502.003 564.974c0 3.066 1.932 5.18 4.564 5.18s4.55-2.114 4.55-5.18-1.918-5.18-4.55-5.18c-2.632 0-4.564 2.114-4.564 5.18Zm7.784 0c0 2.38-1.33 3.99-3.22 3.99-1.89 0-3.22-1.61-3.22-3.99s1.33-3.99 3.22-3.99c1.89 0 3.22 1.61 3.22 3.99Z"/>
+                                <path d="M516.486 559.948h-1.344V570h1.344v-3.29l1.316-1.414 3.584 4.704h1.582l-4.27-5.67 4.074-4.382h-1.61l-4.676 5.082v-5.082ZM531.796 559.948h-1.302v7.77l-5.222-7.77h-1.414V570h1.288v-8.092l5.488 8.092h1.162v-10.052Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M533.135 564.974c0 3.066 1.932 5.18 4.564 5.18s4.55-2.114 4.55-5.18-1.918-5.18-4.55-5.18c-2.632 0-4.564 2.114-4.564 5.18Zm7.784 0c0 2.38-1.33 3.99-3.22 3.99-1.89 0-3.22-1.61-3.22-3.99s1.33-3.99 3.22-3.99c1.89 0 3.22 1.61 3.22 3.99Z"/>
+                                <path d="m548.06 559.948-2.114 8.05-2.142-8.05h-1.386L545.19 570h1.316l2.128-7.826 2.142 7.826h1.316l2.758-10.052h-1.33l-2.142 8.05-2.128-8.05h-1.19ZM563.99 570l3.08-8.274V570h1.246v-10.052h-1.778l-3.066 8.26-3.052-8.26h-1.834V570h1.26v-8.274l3.066 8.274h1.078ZM571.599 559.948h-1.344V570h1.344v-10.052ZM574.874 559.948h-1.344V570h1.344v-3.29l1.316-1.414 3.584 4.704h1.582l-4.27-5.67 4.074-4.382h-1.61l-4.676 5.082v-5.082ZM582.246 570h6.566v-1.176h-5.236v-3.43h4.438v-1.176h-4.438v-3.094h5.236v-1.176h-6.566V570ZM314.876 322.386h1.176v-8.148h-1.176v3.402H306v1.344h8.876v3.402Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="m306 321.505 10.052 3.878v1.484L306 330.745v-1.358l2.646-1.022v-4.508L306 322.849v-1.344Zm3.822 6.412 4.718-1.82-4.718-1.792v3.612Z"/>
+                                <path d="M306 338.156V331.8h10.052v1.344h-8.876v5.012H306ZM306 339.217h10.052v6.566h-1.176v-5.236h-3.094v4.438h-1.176v-4.438h-3.43v5.236H306v-6.566ZM305.846 350.233c0-1.736.868-3.402 2.226-4.088l.84 1.05c-1.204.63-1.904 1.764-1.904 3.066 0 1.302.644 2.31 1.792 2.31 1.157 0 1.404-1.048 1.738-2.46a39.7 39.7 0 0 0 .054-.228c.378-1.582.812-3.15 2.702-3.15 1.764 0 2.912 1.526 2.912 3.43 0 1.75-.84 3.01-1.974 3.612l-.812-1.022c.966-.518 1.624-1.316 1.624-2.618 0-1.218-.672-2.1-1.638-2.1-1.064 0-1.288.938-1.624 2.352l-.042.178c-.377 1.616-.776 3.322-2.828 3.322-1.876 0-3.066-1.666-3.066-3.654Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M305.846 361.781c0-2.632 2.114-4.564 5.18-4.564s5.18 1.932 5.18 4.564-2.114 4.55-5.18 4.55-5.18-1.918-5.18-4.55Zm1.19 0c0 1.89 1.61 3.22 3.99 3.22s3.99-1.33 3.99-3.22c0-1.89-1.61-3.22-3.99-3.22s-3.99 1.33-3.99 3.22Z"/>
+                                <path d="M310.466 369.013H306v-1.33h10.052v6.496h-1.176v-5.166h-3.234v4.368h-1.176v-4.368ZM310.466 379.541H306v-1.33h10.052v6.496h-1.176v-5.166h-3.234v4.368h-1.176v-4.368Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M306 385.243v-1.344l10.052 3.878v1.484L306 393.139v-1.358l2.646-1.022v-4.508L306 385.243Zm3.822 5.068 4.718-1.82-4.718-1.792v3.612Z"/>
+                                <path d="M316.052 394.194v1.344H306v-1.344h10.052ZM306 403.825v-6.356h10.052v1.344h-8.876v5.012H306ZM306 411.452v-6.566h10.052v6.566h-1.176v-5.236h-3.094v4.438h-1.176v-4.438h-3.43v5.236H306Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M306 416.124v-3.192h10.052v3.192c0 3.052-1.96 4.984-5.026 4.984S306 419.176 306 416.124Zm1.162-1.876v1.876c0 2.282 1.526 3.668 3.864 3.668 2.352 0 3.864-1.386 3.864-3.682v-1.862h-7.728Z"/>
+                                <path d="M310.466 426.472H306v-1.33h10.052v6.496h-1.176v-5.166h-3.234v4.368h-1.176v-4.368ZM316.052 432.996v1.344H306v-1.344h10.052ZM305.846 439.309c0-1.736.868-3.402 2.226-4.088l.84 1.05c-1.204.63-1.904 1.764-1.904 3.066 0 1.302.644 2.31 1.792 2.31 1.157 0 1.404-1.048 1.738-2.46l.031-.131.023-.097c.378-1.582.812-3.15 2.702-3.15 1.764 0 2.912 1.526 2.912 3.43 0 1.75-.84 3.01-1.974 3.612l-.812-1.022c.966-.518 1.624-1.316 1.624-2.618 0-1.218-.672-2.1-1.638-2.1-1.064 0-1.288.938-1.624 2.352l-.042.178c-.377 1.616-.776 3.322-2.828 3.322-1.876 0-3.066-1.666-3.066-3.654ZM311.782 450.942h4.27v1.344H306v-1.344h4.606v-5.39H306v-1.344h10.052v1.344h-4.27v5.39ZM316.052 454.223v1.344H306v-1.344h10.052ZM316.052 464.133v1.302H306v-1.162l8.092-5.488H306v-1.288h10.052v1.414l-7.77 5.222h7.77ZM306 475.398v-1.232h1.498c-.924-.406-1.652-1.484-1.652-2.926 0-2.562 2.1-4.466 5.152-4.466 3.066 0 5.208 1.918 5.208 4.55 0 1.932-1.05 3.304-2.786 3.906l-.42-1.288c1.274-.364 2.016-1.288 2.016-2.604 0-1.904-1.624-3.22-4.004-3.22-2.366 0-4.004 1.316-4.004 3.234 0 1.624 1.246 2.716 3.038 2.744v-2.884h1.176v4.186H306Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M507 76v5h5l-3 3 3 3h-5v5l-3-3-3 3v-5h-5l3-3-3-3h5v-5l3 3 3-3Zm-5 10v-4h4v4h-4ZM171 220v5h5l-3 3 3 3h-5v5l-3-3-3 3v-5h-5l3-3-3-3h5v-5l3 3 3-3Zm-5 10v-4h4v4h-4ZM843 273v-5l-3 3-3-3v5h-5l3 3-3 3h5v5l3-3 3 3v-5h5l-3-3 3-3h-5Zm-5 1v4h4v-4h-4ZM267 556v5h5l-3 3 3 3h-5v5l-3-3-3 3v-5h-5l3-3-3-3h5v-5l3 3 3-3Zm-5 10v-4h4v4h-4ZM1035 417v-5l-3 3-3-3v5h-5l3 3-3 3h5v5l3-3 3 3v-5h5l-3-3 3-3h-5Zm-5 1v4h4v-4h-4ZM957.552 160.176h-10.008v21.672h-6.912v-51.696h19.728c10.944 0 17.928 5.112 17.928 14.976 0 8.28-5.04 13.32-13.248 14.688l14.328 22.032h-7.92l-13.896-21.672Zm-10.008-24.048V154.2H960c7.344 0 11.448-3.24 11.448-9.072 0-5.832-4.104-9-11.448-9h-12.456Z"/>
+                                <path d="m450.612 235.296-15.84 42.552h-5.544l-15.768-42.552v42.552h-6.48v-51.696h9.432l15.696 42.48 15.768-42.48h9.144v51.696h-6.408v-42.552ZM769.116 470.64c-8.928 0-17.496-4.464-21.024-11.448l5.4-4.32c3.24 6.192 9.072 9.792 15.768 9.792 6.696 0 11.88-3.312 11.88-9.216 0-5.949-5.389-7.222-12.654-8.939l-.51-.12-.66-.157c-8.136-1.944-16.2-4.176-16.2-13.896 0-9.072 7.848-14.976 17.64-14.976 9 0 15.48 4.32 18.576 10.152l-5.256 4.176c-2.664-4.968-6.768-8.352-13.464-8.352-6.264 0-10.8 3.456-10.8 8.424 0 5.472 4.824 6.624 12.096 8.352l.899.21.017.004c8.31 1.941 17.084 3.991 17.084 14.546 0 9.648-8.568 15.768-18.792 15.768ZM118.176 373.848h-6.336v-7.704c-2.088 4.752-7.632 8.496-15.048 8.496-13.176 0-22.968-10.8-22.968-26.496 0-15.768 9.864-26.784 23.4-26.784 9.936 0 16.992 5.4 20.088 14.328l-6.624 2.16c-1.872-6.552-6.624-10.368-13.392-10.368-9.792 0-16.56 8.352-16.56 20.592 0 12.168 6.768 20.592 16.632 20.592 8.352 0 13.968-6.408 14.112-15.624H96.648v-6.048h21.528v26.856Z"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <!-- Play Button -->
+                <div class="absolute flex align-items:center justify-content:center px:48 py:48 pointer-events:none">
+                    <div data-video-btn-shadow class="absolute top:0 left:0 w:100p h:100p radius:full bg:sheet-2 filter filter-blur:xl blur-fix"></div>
+                    <button data-video-btn class="relative z:3 btn btn:md btn:hover pointer-events:auto">
+                        {{ icons.play('transform translate-y:1 w:18 sm:w:16')}}
+                        <p>
+                            Play video
+                        </p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logos -->
+    <section class="section pt:72 sm:pt:96 section:pb z:2">
+        <div class="container flex flex:col align-items:center justify-content:center gap:32 md:gap:64">
+
+            <!-- Logos Title -->
+            <div class="flex flex:col sm:flex:row align-items:center w:100p gap:4 sm:gap:48">
+                <p class="flex-shrink:0 font:xs uppercase color:ink-1 tracking:loosest">
+                    From Series A to Fortune 500
+                </p>
+                <div class="hidden sm:block w:100p h:1 bg:edge"></div>
+                <p class="flex-shrink:0 font:xs uppercase color:ink-1 tracking:loosest">
+                    From Consumer to Enterprise
+                </p>
+            </div>
+
+            <!-- Logos -->
+            <div class="w:100p max-w:352 sm:max-w:none flex align-items:center justify-content:between color:ink-1 gap:24 sm:gap:48 flex:wrap sm:flex:nowrap">
+                {{ icons.logoAbstract('w:96 sm:w:128') }}
+                {{ icons.logoATT(     'w:64 sm:w:80 ') }}
+                {{ icons.logoRewatch( 'w:96 sm:w:128') }}
+                {{ icons.logoLite(    'w:56 sm:w:56 ') }}
+                {{ icons.logoNissan(  'w:128') }}
+                {{ icons.logoCulvers( 'w:56 sm:w:80 ') }}
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- Sliding title -->
+    {% macro slideTitle(direction, label)%}
+    <div aria-hidden="true" class="section mb:n24 md:mb:n32">
+        <div data-slide-title="{{ direction }}" class="container flex align-items:center {% if direction == 'left' %}justify-content:start{% else %}justify-content:end{% endif %} flex:nowrap uppercase tracking:tighter leading:100 font:13xl sm:font:14xl md:font:15xl lg:font:16xl color:sheet-2 overflow:hidden">
+            <div data-slide-title-animate class="flex align-items:center flex-shrink:0 flex:nowrap">
+                <div data-slide-title-measure class="pr:48 watermark:sheet-2 flex-shrink:0">
+                    {{ label }}
+                </div>
+                <div class="pr:48 watermark:sheet-2 flex-shrink:0">
+                    {{ label }}
+                </div>
+                <div class="pr:48 watermark:sheet-2 flex-shrink:0">
+                    {{ label }}
+                </div>
+                <div class="pr:48 watermark:sheet-2 flex-shrink:0">
+                    {{ label }}
+                </div>
+                <div class="pr:48 watermark:sheet-2 flex-shrink:0">
+                    {{ label }}
+                </div>
+            </div>
+            <div class="absolute  left:0 top:0 w:48 sm:w:128 h:100p bg:fade-left"></div>
+            <div class="absolute right:0 top:0 w:48 sm:w:128 h:100p bg:fade-right"></div>
+        </div>
+    </div>
+    {% endmacro %}
+
+    {{ slideTitle('left', 'skills')}}
+
+    <!-- Skills -->
+    <section class="section section:py sm:gap:72 md:gap:96">
+        <div class="container flex flex:col align-items:center md:align-items:end md:grid:normal grid-cols:2 text:center md:text:left">
+            <h2 class="w:100p font:7xl sm:font:9xl md:font:9xl lg:font:10xl leading:110 tracking:tighter highlight:text pb:24 max-w:352 sm:max-w:448 lg:max-w:none">
+                More progress, less pondering
+            </h2>
+            <p class="font:lg md:font:xl lg:font:2xl color:ink-1 mb:28 max-w:320 sm:max-w:448 lg:max-w:none ml:n12 mr:n12 sm:ml:0 sm:mr:0">
+                Most of what we’re doing has been done before. Mike prioritizes results, velocity, and craft above visual ingenuity <span class="space:nowrap">or personal preference.</span>
+            </p>
+        </div>
+        <ul class="container flex flex:col gap:24 sm:grid:normal grid-cols:12">
+            {% set skillsCard = 'flex flex:col align-items:start justify-content:end bg:fade-1-2 radius:2xl border:1 border:edge min-h:384 overflow:hidden' %}
+            {% set skillsCardContent = 'flex-shrink:0 w:100p flex flex:col align-items:start gap:8 md:gap:12 px:24 md:px:28 pb:20 md:pb:24 py:16' %}
+            {% set skillsCardTitle = 'font:4xl tracking:tight leading:110' %}
+            {% set skillsCardCopy =  'sm:font:sm md:font:md color:ink-1' %}
+            <li class="{{ skillsCard }} col-start:1 col-end:6">
+                <div class="w:100p h:100p"></div>
+                <div class="{{ skillsCardContent }}">
+                    <h3 class="{{ skillsCardTitle }}">
+                        Goal Driven
+                    </h3>
+                    <p class="{{ skillsCardCopy }} max-w:256 sm:max-w:224 md:max-w:320 lg:max-w:none">
+                        Mike structures, prioritizes, and executes projects <span class="space:nowrap">in tandem</span> with business goals <span class="space:nowrap">to increase impact.</span>
+                    </p>
+                </div>
+            </li>
+            <li class="{{ skillsCard }} col-start:6 col-end:13">
+                <div class="w:100p h:100p"></div>
+                <div class="{{ skillsCardContent }}">
+                    <h3 class="{{ skillsCardTitle }}">
+                        Knows-how
+                    </h3>
+                    <p class="{{ skillsCardCopy }} max-w:320 sm:max-w:352 md:max-w:448 lg:max-w:none">
+                        Mike can code, build 3D, animate, design, and almost anything in-between. <span class="space:nowrap">He’s focused</span> on fundamentals but <span class="space:nowrap">can execute</span> marketer’s <span class="space:nowrap">wildest dreams.</span>
+                    </p>
+                </div>
+            </li>
+            <li class="{{ skillsCard }} col-start:1 col-end:8">
+                <div class="w:100p h:100p"></div>
+                <div class="{{ skillsCardContent }}">
+                    <h3 class="{{ skillsCardTitle }}">
+                        Fast AF
+                    </h3>
+                    <p class="{{ skillsCardCopy }} max-w:320 sm:max-w:352 md:max-w:448 lg:max-w:none">
+                        Speed results from technical competency and efficient information dissemination. Mike knows <span class="space:nowrap">his stuff</span>, works fast, and shares early/often <span class="space:nowrap">via meaningful channels.</span>
+                    </p>
+                </div>
+            </li>
+            <li class="{{ skillsCard }} col-start:8 col-end:13">
+                <div class="w:100p h:100p"></div>
+                <div class="{{ skillsCardContent }}">
+                    <h3 class="{{ skillsCardTitle }}">
+                        Premium
+                    </h3>
+                    <p class="{{ skillsCardCopy }} max-w:256 sm:max-w:224 md:max-w:288 lg:max-w:none">
+                        Mike’s technical skillset prevents him from having <span class="space:nowrap">to sacrifice</span> nice form for functionality <span class="space:nowrap">and speed.</span>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    {{ slideTitle('right', 'work')}}
+
+    <!-- Experience -->
+    <section class="section section:py sm:gap:72 md:gap:96">
+        <div class="container flex flex:col align-items:center md:align-items:end md:grid:normal grid-cols:2 text:center md:text:left">
+            <h2 class="w:100p font:7xl sm:font:9xl md:font:9xl lg:font:10xl leading:110 tracking:tighter highlight:text pb:24 max-w:352 sm:max-w:448 lg:max-w:none">
+                Meaningful experience
+            </h2>
+            <p class="font:lg md:font:xl lg:font:2xl color:ink-1 mb:28 max-w:352 sm:max-w:448 md:max-w:384 lg:max-w:none ml:n12 mr:n12 sm:ml:0 sm:mr:0">
+                The case studies below include a video overview with Mike personally walking you through his past work, responsibilities, processes, <span class="space:nowrap">and outcomes.</span>
+            </p>
+        </div>
+        <ul class="container flex flex:col gap:8 sm:gap:24 sm:grid:normal grid-cols:2 md:grid-cols:4">
+            {% macro caseStudyCard(icon, mdpt, link, number, company, role) %}
+                <li class="relative z:1 md:pt:{{ mdpt }}">
+                    <div aria-hidden="true" class="hidden md:block absolute z:n1 {% if mdpt > 1 %}top:n28 text:fade-down{% else %}bottom:n18 text:fade-up{% endif %} left:0 font:8xl sm:font:14xl color:sheet-0 leading:100 ml:n8 w:64 sm:w:auto">
+                        {{ number }}
+                    </div>
+                    <a href="{{ link }}" class="relative flex justify-content:between sm:justify-content:start px:24 md:px:28 pt:16 pb:20 md:pt:24 md:pb:24 bg:fade-1-2 radius:2xl border:1 border:edge md:ratio:1-1 overflow:hidden">
+                        <div class="flex sm:flex:col align-items:center sm:align-items:start sm:justify-content:end gap:16 sm:gap:0">
+                            <p aria-hidden="true" class="hidden sm:block md:hidden font:8xl sm:font:11xl color:sheet-0 leading:100 ml:n8 w:64 sm:w:auto watermark:sheet-0">
+                                {{ number }}
+                            </p>
+                            <div class="color:ink-1 block w:32 sm:w:24 sm:opacity:30 sm:absolute sm:top:24 sm:right:28">
+                                {{ icon | safe }}
+                            </div>
+                            <div class="flex flex:col mt:2 sm:mt:0">
+                                <h3 class="font:2xl sm:font:4xl md:font:3xl lg:font:4xl tracking:tight leading:110 space:nowrap">
+                                    {{ company }}
+                                </h3>
+                                <p class="color:ink-1 font:sm sm:font:md md:font:sm lg:font:md space:nowrap">
+                                    {{ role }}
+                                </p>
+                            </div>
+                        </div>
+                        {{ icons.chevRight('w:20 sm:hidden ') }}
+                    </a>
+                </li>
+            {% endmacro %}
+
+            {{ caseStudyCard(
+                mdpt='0',
+                link='#',
+                number='01',
+                company='FireHydrant',
+                role='Brand & Web Design + Dev',
+                icon=icons.iconFirehydrant('w:100p')
+            )}}
+            {{ caseStudyCard(
+                mdpt='96',
+                link='#',
+                number='02',
+                company='Rewatch',
+                role='Brand & Web Design + Dev',
+                icon=icons.iconRewatch('w:100p')
+            )}}
+            {{ caseStudyCard(
+                mdpt='0',
+                link='#',
+                number='03',
+                company='Abstract',
+                role='Web Design + Dev',
+                icon=icons.iconAbstract('w:100p')
+            )}}
+            {{ caseStudyCard(
+                mdpt='96',
+                link='#',
+                number='04',
+                company='Baunfire',
+                role='Web Design + Dev',
+                icon=icons.iconBaunfire('w:100p')
+            )}}
+        </ul>
+    </section>
+
+    {{ slideTitle('left', 'about')}}
+
+    <!-- About -->
+    <section class="section section:py gap:96 sm:gap:144 md:gap:192">
+
+        <!-- Home -->
+        <div class="container flex flex:col align-items:center md:align-items:start md:grid:normal grid-cols:12">
+            <div aria-hidden="true" class="{{ bigLetter }} color:sheet-2 fade:text bottom:n384 right:n192 lg:right:n352">5</div>
+            <div class="relative col-start:3 col-end:11 md:col-start:1 md:col-end:7 w:100p flex ratio:4-3 mb:24 md:mb:0 w:100p max-w:640">
+                <img class="absolute top:0 left:0 w:100p z:n1 radius:2xl opacity:30 filter filter-blur:xl sm:filter-blur:2xl blur-fix" src="/assets/images/photos/mike-stilling-family.webp" alt="" aria-hidden="true">
+                <img class="relative z:1 radius:2xl overflow:hidde shadow:xl" src="/assets/images/photos/mike-stilling-family.webp" alt="Mike's partner Kerry snaps a picture of herself, Mike, Gus (an orange collie), and Smokes (a blue heeler) while Mike drives a car with a tan interior.">
+            </div>
+            <div class="relative z:3 col-start:3 col-end:11 md:col-start:8 md:col-end:13 w:100p flex flex:col align-items:start justify-content:start w:100p max-w:640">
+                <h2 class="font:5xl leading:110 tracking:tighter highlight:text pb:16">
+                    Home
+                </h2>
+                <p class="color:ink-1 leading:170 md:max-w:384 lg:max-w:none">
+                    Mike, his partner, and their three dogs live in rural, Western Wisconsin among lush forests, lakes, and rivers. As a life long Wisconsinite, Mike enjoys large quantities of dairy products, bovine watching, and the <span class="space:nowrap">Green Bay Packers.</span>
+                </p>
+                <div class="w:100p grid grid-cols:2 gap:16 sm:gap:24 md:gap:48 font:sm mt:24">
+                    <ul class="flex flex:col gap:8">
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.check('w:14 color:link-rg mt:2 flex-shrink:0') }}
+                            Drives well in snow
+                        </li>
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.check('w:14 color:link-rg mt:2 flex-shrink:0') }}
+                            Will say "Ope" often
+                        </li>
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.check('w:14 color:link-rg mt:2 flex-shrink:0') }}
+                            Dog hair everywhere
+                        </li>
+                    </ul>
+                    <ul class="flex flex:col gap:8">
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.close('w:14 color:ink-1 mt:2 flex-shrink:0') }}
+                            Temps above 90°
+                        </li>
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.close('w:14 color:ink-1 mt:2 flex-shrink:0') }}
+                            Standing in lines
+                        </li>
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.close('w:14 color:ink-1 mt:2 flex-shrink:0') }}
+                            Blue cheese
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recreation-->
+        <div class="container flex flex:col-reverse align-items:center md:align-items:start md:grid:normal grid-cols:12">
+            <div aria-hidden="true" class="{{ bigLetter }} color:sheet-2 fade:text bottom:n384 left:n192 lg:left:n352">6</div>
+            <div class="relative z:3 col-start:3 col-end:11 md:col-start:1 md:col-end:6 w:100p flex flex:col align-items:start justify-content:start w:100p max-w:640">
+                <h2 class="font:5xl leading:110 tracking:tighter highlight:text pb:16">
+                    Recreation
+                </h2>
+                <p class="color:ink-1 leading:170 md:max-w:384 lg:max-w:none">
+                    Mike is a washed up snowboarder that still tries doing cool stuff, but generally just injures himself. Without much success, he can also be found trying to catch fish. Aside from that, he kayaks, walks, and eats lots of amazing food that his partner <span class="space:nowrap">cooks up.</span>
+                </p>
+                <div class="w:100p grid grid-cols:2 gap:16 sm:gap:24 md:gap:48 font:sm mt:24">
+                    <ul class="flex flex:col gap:8">
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.check('w:14 color:link-rg mt:2 flex-shrink:0') }}
+                            Snowboard tricks
+                        </li>
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.check('w:14 color:link-rg mt:2 flex-shrink:0') }}
+                            Fishing lure junkie
+                        </li>
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.check('w:14 color:link-rg mt:2 flex-shrink:0') }}
+                            Seasonings on food
+                        </li>
+                    </ul>
+                    <ul class="flex flex:col gap:8">
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.close('w:14 color:ink-1 mt:2 flex-shrink:0') }}
+                            Sturdy lower back
+                        </li>
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.close('w:14 color:ink-1 mt:2 flex-shrink:0') }}
+                            Reliable fishing tips
+                        </li>
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.close('w:14 color:ink-1 mt:2 flex-shrink:0') }}
+                            Personal chef skills
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="relative col-start:3 col-end:11 md:col-start:7 md:col-end:13 w:100p flex ratio:4-3 mb:24 md:mb:0 w:100p max-w:640">
+                <img class="absolute top:0 left:0 w:100p z:n1 radius:2xl opacity:30 filter filter-blur:xl sm:filter-blur:2xl blur-fix" src="/assets/images/photos/mike-stilling-fishing.webp" alt="" aria-hidden="true">
+                <img class="relative z:1 radius:2xl overflow:hidde shadow:xl" src="/assets/images/photos/mike-stilling-fishing.webp" alt="Mike standing on a paddleboard trying to catch fish on a river with evergreen trees in the background">
+            </div>
+        </div>
+
+        <!-- Coworking-->
+        <div class="container flex flex:col align-items:center md:align-items:start md:grid:normal grid-cols:12">
+            <div aria-hidden="true" class="{{ bigLetter }} z:2 color:sheet-2 fade:text bottom:n384 right:n192 lg:right:n352">7</div>
+            <div class="relative col-start:3 col-end:11 md:col-start:1 md:col-end:7 w:100p flex ratio:4-3 mb:24 md:mb:0 w:100p max-w:640">
+                <img class="absolute top:0 left:0 w:100p z:n1 radius:2xl opacity:30 filter filter-blur:xl sm:filter-blur:2xl blur-fix" src="/assets/images/photos/mike-stilling-mike-scott.webp" alt="" aria-hidden="true">
+                <img class="relative z:1 radius:2xl overflow:hidde shadow:xl" src="/assets/images/photos/mike-stilling-mike-scott.webp" alt="The cast of the office with Mike Stilling's face photoshopped over Michael Scott's">
+            </div>
+            <div class="relative z:3 col-start:3 col-end:11 md:col-start:8 md:col-end:13 w:100p flex flex:col align-items:start justify-content:start w:100p max-w:640">
+                <h2 class="font:5xl leading:110 tracking:tighter highlight:text pb:16">
+                    Working Together
+                </h2>
+                <p class="color:ink-1 leading:170 md:max-w:384 lg:max-w:none">
+                    Mike is a do'er and likes to work with less hierarchy on small teams opting to create and refine versus overthink. He admires (and aspires to be) a leader with strong IC skills. Pet and new music channels in Slack are his kryptonite.
+                </p>
+                <div class="w:100p grid grid-cols:2 gap:16 sm:gap:24 md:gap:48 font:sm mt:24">
+                    <ul class="flex flex:col gap:8">
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.check('w:14 color:link-rg mt:2 flex-shrink:0') }}
+                            Constructive opinions
+                        </li>
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.check('w:14 color:link-rg mt:2 flex-shrink:0') }}
+                            Owns/leads projects
+                        </li>
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.check('w:14 color:link-rg mt:2 flex-shrink:0') }}
+                            Contributes to culture
+                        </li>
+                    </ul>
+                    <ul class="flex flex:col gap:8">
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.close('w:14 color:ink-1 mt:2 flex-shrink:0') }}
+                            Working in silos
+                        </li>
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.close('w:14 color:ink-1 mt:2 flex-shrink:0') }}
+                            Lots of meetings
+                        </li>
+                        <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                            {{ icons.close('w:14 color:ink-1 mt:2 flex-shrink:0') }}
+                            Hiding pet pics
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    {{ slideTitle('right', 'hire')}}
+
+    <!-- Hiring -->
+    <section class="section section:py">
+        <div class="container flex flex:col align-items:center md:align-items:stretch md:grid:normal grid-cols:12 gap:96 sm:gap:128">
+            
+            <!-- Pricing -->
+            <div class="col-start:1 col-end:7 flex flex:col justify-content:between w:100p max-w:640">
+                <div class="flex flex:col w:100p">
+                    <div class="flex flex:col sm:flex:row sm:align-items:center sm:gap:24 mb:24 sm:mb:0">
+                        <h2 class="font:7xl sm:font:9xl leading:110 tracking:tighter highlight:text pb:10">
+                            Pricing
+                        </h2>
+                        <div class="flex-shrink:0 flex align-items:center gap:8">
+                            <div aria-hidden="true" class="btn btn:xs btn:disabled">
+                                {{ icons.check('w:12 flex-shrink:0 ml:n4') }}
+                                <p>Available</p>
+                            </div>
+                            <div class="btn btn:xs btn:error">
+                                {{ icons.close('w:12 flex-shrink:0 ml:n4') }}
+                                <p>Unavailable</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="font:lg md:font:xl lg:font:2xl color:ink-1 mb:24 sm:max-w:384 md:max-w:448 lg:max-w:none">
+                        Want to work with Mike? Below are some details <span class="space:nowrap">on what</span> he's looking for in his <span class="space:nowrap">next opportunity:</span>
+                    </p>
+                    <div class="w:100p grid grid-cols:2 gap:16 sm:gap:24 md:gap:48 font:sm sm:font:lg mb:40">
+                        <ul class="flex flex:col gap:8">
+                            <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                                {{ icons.check('w:18 color:link-rg mt:2 flex-shrink:0') }}
+                                Health Insurance
+                            </li>
+                            <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                                {{ icons.check('w:18 color:link-rg mt:2 flex-shrink:0') }}
+                                3-5% 401k Matching
+                            </li>
+                        </ul>
+                        <ul class="flex flex:col gap:8">
+                            <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                                {{ icons.check('w:18 color:link-rg mt:2 flex-shrink:0') }}
+                                3+ Weeks PTO
+                            </li>
+                            <li class="flex align-items:center gap:4 sm:gap:8 space:nowrap">
+                                {{ icons.check('w:18 color:link-rg mt:2 flex-shrink:0') }}
+                                Fully Remote
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="relative flex flex:col gap:12">
+                    {% macro pricing(title, price, description, current) %}
+                        <li class="relative flex flex:col gap:12 bg:sheet-2 radius:xl pt:20 pb:24 px:28 border:1 border:edge {% if current == true %}border:dashed{% endif %}">
+                            <div class="flex align-items:center justify-content:between">
+                                <h3 class="font:3xl leading:100 flex align-items:center gap:12">
+                                    {{ title }}
+                                    {% if current == true %}<span class="color:link-rg font:2xs uppercase tracking:loosest mt:2">Current</span> {% endif %}
+                                </h3>
+                                <p class="font:lg leading:100 tracking:loosest flex align-items:center gap:12">
+                                    <span class="font:2xs uppercase tracking:loosest color:ink-1 mt:2">base:</span> {{ price }}
+                                </p>
+                            </div>
+                        </li>
+                    {% endmacro %}
+
+                    {{ pricing(
+                        title="Tempted",
+                        price='$125K'
+                    )}}
+                    {{ pricing(
+                        title="Interested",
+                        price='$175K',
+                        current=true
+                    )}}
+                    {{ pricing(
+                        title="Engaged",
+                        price='$225K'
+                    )}}
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-start:8 col-end:13 flex flex:col w:100p max-w:640">
+                <h2 class="w:100p font:7xl sm:font:9xl leading:110 tracking:tighter highlight:text pb:10 max-w:352 sm:max-w:448 lg:max-w:none">
+                    Contact
+                </h2>
+                <p class="font:lg md:font:xl lg:font:2xl color:ink-1 mb:24 max-w:352 lg:max-w:none">
+                    To get in touch, fill our the form below. <span class="space:nowrap">Mike will</span> get back to you within 24hrs.
+                </p>
+                <div class="bg:sheet-2 radius:2xl border:1 border:edge flex-grow:1 flex flex:col">
+                    <form name="demo" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" class="relative flex-grow:1 flex flex:col align-items:start justify-content:between w:100p gap:24 pt:20 pb:24 px:28">
+
+                        <div class="relative flex flex:col gap:16 w:100p flex-grow:1">
+                            <!-- Hidden Fields -->
+                            <input type="hidden" id="lead-source" name="lead source" value="homepage">
+                            <div class="hidden"><input name="bot-field"></div>
+                            <!-- Field: Name -->
+                            <div class="form:field">
+                                <label for="name" class="form:label" required>
+                                    Name
+                                </label>
+                                <input type="text" id="name" name="name" placeholder="Sam Jones" class="form:input" required>
+                            </div>
+                            <!-- Field: Company -->
+                            <div class="form:field">
+                                <label for="company" class="form:label" required>
+                                    Company
+                                </label>
+                                <input type="text" id="company" name="company" placeholder="Acme" class="form:input" required>
+                            </div>
+                            <!-- Field: Email -->
+                            <div class="form:field">
+                                <label for="email" class="form:label" required>
+                                    Email
+                                </label>
+                                <input type="email" id="email" name="email" placeholder="sam@acme.com" class="form:input" required>
+                            </div>
+                            <!-- Field: Note -->
+                            <div class="form:field">
+                                <label for="email" class="form:label" required>
+                                    Note
+                                </label>
+                                <textarea id="note" name="notes" rows="1" class="form:input" style="overflow-y:auto; word-wrap:break-word" placeholder="Let's set some time to meet" required></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" title="Submit form" class="btn btn:md btn:hover">
+                            <span>Submit</span>
+                            {{ icons.chevRight('mr:n4 w:14') }}
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>

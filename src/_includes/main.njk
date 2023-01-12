@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" color-scheme="">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="color-scheme" content="light dark" />
+    
+        <!-- SEO -->
+        <title>{{ title | title }} | {{ base.name }}</title>
+        <meta name="description" content="{{- description -}}">
+    
+        <!-- OpenGraph -->
+        <meta property="og:site_name" content="{{ base.name }}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="{{- headline -}}" />
+        <meta property="og:description" content="{{- description -}}" />
+        <meta property="og:url" content="{{- base.url -}}{{- page.url -}}" />
+        <meta property="og:image" content="{{- thumbnail -}}" />
+        <meta property="og:image:alt" content="{{- thumbnailAlt -}}" />
+    
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="{{- base.twitterHandle -}}">
+        <meta name="twitter:title" content="{{- headline -}}">
+        <meta name="twitter:description" content="{{- description -}}">
+        <meta name="twitter:image" content="{{- thumbnail -}}">
+        <meta name="twitter:image:alt" content="{{- thumbnailAlt -}}">
+
+        {% if noindex == true %}
+        <!-- Noindex -->
+        <meta name="robots" content="noindex,nofollow">
+        {% endif %}
+    
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}" />
+    
+        <!-- Website Icon -->
+        <link rel="icon" href="{{ '/assets/images/favicon.svg' | url }}">
+        
+    </head>
+
+    <!-- Body -->
+    <body data-barba="wrapper" class="font:sans color:ink-3 leading:150 bg:sheet-3 max-w:100%">
+
+        <div class="relative w:100p">
+
+            <!-- Header -->
+            {% include "components/_nav-header-primary.njk" %}
+            
+            <!-- Nesting for smooth scroll if wanted later on-->
+            <div id="smooth-wrapper">
+                <div id="smooth-content">
+
+                    <!-- Page Content -->
+                    {{ content | safe }}
+
+                    <!-- Footer -->
+                    {% include "components/_nav-footer-primary.njk" %}
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="/assets/javascript/main.js"></script>
+    </body>
+
+</html>
