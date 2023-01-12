@@ -85,16 +85,20 @@
                     <p>Tools used</p>
                     <ul class="flex flex:col gap:8 sm:gap:24 sm:grid:normal grid-cols:2 sm:align-items:end">
                         <li class="{{ footerList }}">
-                            {{ footerLink('https://www.11ty.dev/', 'Eleventy')}}
-                            {{ footerLink('https://uniformcss.com/', 'UniformCSS')}}
-                            {{ footerLink('https://www.netlify.com/', 'Netlify')}}
-                            {{ footerLink('https://greensock.com/', 'Greensock')}}
+                            <ul class="{{ footerList }}">
+                                {{ footerLink('https://www.11ty.dev/', 'Eleventy')}}
+                                {{ footerLink('https://uniformcss.com/', 'UniformCSS')}}
+                                {{ footerLink('https://www.netlify.com/', 'Netlify')}}
+                                {{ footerLink('https://greensock.com/', 'Greensock')}} 
+                            </ul>
                         </li>
                         <li class="{{ footerList }}">
-                            {{ footerLink('https://www.figma.com/', 'Figma')}}
-                            {{ footerLink('https://www.adobe.com/creativecloud/', 'Adobe CC')}}
-                            {{ footerLink('https://klim.co.nz/collections/soehne/', 'Söhne')}}
-                            {{ footerLink('https://obsproject.com/', 'OBS')}}
+                            <ul class="{{ footerList }}">
+                                {{ footerLink('https://www.figma.com/', 'Figma')}}
+                                {{ footerLink('https://www.adobe.com/creativecloud/', 'Adobe CC')}}
+                                {{ footerLink('https://klim.co.nz/collections/soehne/', 'Söhne')}}
+                                {{ footerLink('https://obsproject.com/', 'OBS')}}
+                            </ul>
                         </li>
                     </ul>
                 </li>
