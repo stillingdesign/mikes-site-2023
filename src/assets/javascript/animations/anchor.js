@@ -7,7 +7,6 @@ if(document.querySelectorAll(`[data-anchor]`)) {
         const link = anchor.href;
         const sectionId = link.split("/").pop();
         const offset = anchor.getAttribute(`data-anchor-offset`);
-        console.log(sectionId)
 
         const scrollToSection = (event) => {
             event.preventDefault();
