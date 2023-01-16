@@ -13,6 +13,16 @@ if(document.querySelectorAll(`[data-video]`)) {
         const muteIcon = audioControls.querySelector(`[data-video-mute]`);
         const audioText = audioControls.querySelector(`[data-video-audio-label]`);
 
+        // Video Loading
+        videoEl.addEventListener(`loadeddata`, function() {
+            if(videoEl.readyState >= 3) {
+                console.log(`plenty of data`)
+            } else {
+                console.log(`not enough data`)
+            }
+        })
+
+        // Video Playing
         function formatTime(timeInSeconds) {
             const result = new Date(timeInSeconds * 1000).toISOString().substr(11, 8);
             return {
