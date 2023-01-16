@@ -7,6 +7,7 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addWatchTarget("src/assets/javascript");
 
     // Pass throughs
+    eleventyConfig.addPassthroughCopy('src/manifest.webmanifest');
     eleventyConfig.addPassthroughCopy('src/_redirects');
     eleventyConfig.addPassthroughCopy("src/assets/fonts");
     eleventyConfig.addPassthroughCopy("src/assets/images");

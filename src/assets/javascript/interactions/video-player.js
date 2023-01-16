@@ -103,11 +103,9 @@ if(document.querySelectorAll(`[data-video]`)) {
                 hideBtn();
                 showSeek();
                 videoEl.play();
-                console.log(`video will play`)
             } else {
                 showBtn();
                 videoEl.pause();
-                console.log(`video will pause`)
             }
         })
 
