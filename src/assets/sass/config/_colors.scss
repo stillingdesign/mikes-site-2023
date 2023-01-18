@@ -1,7 +1,7 @@
 $light-colors: (
 
     // constant between modes
-    white: #F4F9F0,
+    white: #f6ffef,
     black: #060D00,
     primary-rg:#00C14D,
     primary-hv:#66FFA3,
@@ -20,7 +20,12 @@ $light-colors: (
     sheet-3:   #CFD3D1, // Background
     sheet-4:   #C3C6C3, // Shadow
     edge:      #BDC2BD,
-    error:     #a40000,
+    aux-yellow:#D36500,
+    aux-red:   #A32900,
+    aux-pink:  #a30051,
+    aux-purple:#7600D1,
+    aux-blue:  #0300C2,
+    aux-teal:  #005F8F,
 );
 
 $dark-colors: (
@@ -39,5 +44,10 @@ $dark-colors: (
     sheet-3:   #101312, // Background
     sheet-4:   #0B0E0C, // Shadow
     edge:      #252C29,
-    error:     #F44444,
+    aux-yellow:#F2B740,
+    aux-red:   #FF6633,
+    aux-pink:  #FF53B0,
+    aux-purple:#bd77ff,
+    aux-blue:  #6188FF,
+    aux-teal:  #0BB4D9,
 );

@@ -245,12 +245,69 @@ eleventyComputed:
             </p>
         </div>
         <ul class="container flex flex:col gap:24 sm:grid:normal grid-cols:12">
-            {% set skillsCard = 'flex flex:col align-items:start justify-content:end bg:fade-1-2 radius:2xl border:1 border:edge min-h:384 overflow:hidden' %}
+            {% set skillsCard = 'flex flex:col align-items:start justify-content:end bg:sheet-2 radius:2xl border:1 border:edge overflow:hidden' %}
             {% set skillsCardContent = 'flex-shrink:0 w:100p flex flex:col align-items:start gap:8 md:gap:12 px:24 md:px:28 pb:20 md:pb:24 py:16' %}
             {% set skillsCardTitle = 'font:4xl tracking:tight leading:110' %}
             {% set skillsCardCopy =  'sm:font:sm md:font:md color:ink-1' %}
+            {% set skillsCardImg = 'relative w:100p h:100p flex h:224 px:28 pt:28 overflow:hidden' %}
             <li class="{{ skillsCard }} col-start:1 col-end:6">
-                <div class="w:100p h:100p"></div>
+                <!-- Graphic -->
+                <div aria-hidden="true" class="{{ skillsCardImg }} flex:col align-items:center justify-content:start gap:16">
+                    {% macro goalTask(label, tag, date, color) %}
+                    <div class="relative z:1 flex align-items:center justify-content:between gap:12 flex-shrink:0 w:100p bg:sheet-1 border-t:1 border:sheet-0 radius:full pl:4 pr:6 md:pr:12 py:4 overflow:hidden">
+                        <div class="flex align-items:center justify-content:start gap:6 flex-shrink:0">
+                            <div class="w:18 h:18 flex align-items:center justify-content:center border:1 border:link-rg border-opacity:30 bg:link-rg bg-opacity:10 radius:full">
+                                {{ icons.check('w:10 color:link-rg')}}
+                            </div>
+                            <div class="font:xs color:ink-1 transform translate-y:n1">
+                                {{ label | safe }}
+                            </div>
+                        </div>
+                        <div class="flex align-items:center justify-content:end gap:6 flex-shrink:0 font:2xs color:ink-1">
+                            <div class=" border:1 border:{{ color }} border-opacity:20 bg:{{ color }} bg-opacity:10 color:{{ color }} flex align-items:center justify-contentcenter px:6 h:16 radius:full">
+                                <div class="transform translate-y:n1">
+                                    {{ tag | safe }}
+                                </div>
+                            </div>
+                            <div class="hidden md:block w:40 text:right">
+                                {{ date | safe }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endmacro %}
+                    {{ goalTask(
+                        label='Increase <span class="hidden lg:inline">sign-up</span> conversions',
+                        tag='marketing',
+                        date='02/16/23',
+                        color='aux-teal'
+                    )}}
+                    {{ goalTask(
+                        label='Improve <span class="hidden md:inline">product</span> onboarding',
+                        tag='web app',
+                        date='02/21/23',
+                        color='aux-pink'
+                    )}}
+                    {{ goalTask(
+                        label='Optimize <span class="hidden md:inline">case study</span> visibility',
+                        tag='marketing',
+                        date='03/10/23',
+                        color='aux-teal'
+                    )}}
+                    {{ goalTask(
+                        label='Integrate <span class="hidden md:inline">enterprise</span> demo form',
+                        tag='sales',
+                        date='03/17/23',
+                        color='aux-purple'
+                    )}}
+                    {{ goalTask(
+                        label='Enhance blog <span class="hidden md:inline">meta</span> thumbnails',
+                        tag='content',
+                        date='03/22/23',
+                        color='aux-blue'
+                    )}}
+                    <div class="absolute top:0 left:0 w:100p h:100p bg:fade-down-2 z:2 pointer-events:none"></div>
+                </div>
+                <!-- Content -->
                 <div class="{{ skillsCardContent }}">
                     <h3 class="{{ skillsCardTitle }}">
                         Goal Driven
@@ -261,7 +318,130 @@ eleventyComputed:
                 </div>
             </li>
             <li class="{{ skillsCard }} col-start:6 col-end:13">
-                <div class="w:100p h:100p"></div>
+                <!-- Graphic -->
+                <div aria-hidden="true" class="{{ skillsCardImg }} flex align-items:center justify-content:center md:gap:4">
+                    <div class="relative flex-shrink:0 z:1 flex flex:col justify-content:start align-items:start w:192 md:w:224 h:224 radius:xl bg:sheet-1 border-t:1 border:sheet-0 shadow:knowHow overflow:hidden mt:128 mr:n144 sm:mr:n128 md:mr:n144">
+                        <div class="absolute top:0 left:0 w:100p h:48 radius:full filter filter-blur:2xl bg:white opacity:10 z:n1"></div>
+                    </div>
+                    <div class="relative flex-shrink:0 z:2 flex flex:col justify-content:start align-items:start w:192 md:w:224 h:224 radius:xl bg:sheet-1 border-t:1 border:sheet-0 shadow:knowHow overflow:hidden mt:72  mr:n144 sm:mr:n112 md:mr:n128">
+                        <div class="absolute top:0 left:0 w:100p h:48 radius:full filter filter-blur:2xl bg:white opacity:10 z:n1"></div>
+                        <!-- Header -->
+                        <div class="w:100p flex align-items:center justify-content:between color:ink-1 px:12 pt:8">
+                            {{ icons.blender('w:12 flex-shrink:0') }}
+                            <div class="flex align-items:center gap:4">
+                                <div class="block w:6 h:6 bg:aux-pink border:aux-pink bg-opacity:50 border:1 radius:full"></div>
+                                <div class="block w:6 h:6 bg:aux-yellow border:aux-yellow bg-opacity:50 border:1 radius:full"></div>
+                                <div class="block w:6 h:6 bg:link-rg border:link-rg bg-opacity:50 border:1 radius:full"></div>
+                            </div>
+                        </div>
+                        <div class="relative w:100p flex align-items:center justify-content:center">
+                            <svg width="224" height="190" viewBox="0 0 224 190" fill="none" xmlns="http://www.w3.org/2000/svg" class="w:100p h:auto">
+                                <path fill="rgba(var(--sheet-4), 1)" d="M55.5 142.5L6.5 172L37.5 207L81 178L55.5 142.5Z"/>
+                                <path fill="rgba(var(--sheet-0), 1)" d="M55.5 142.5L54 124.5L14.5 147.5L6.5 172L55.5 142.5Z"/>
+                                <path fill="rgba(var(--sheet-2), 1)"d="M75.5 155L54 124.5L55.5 142.5L81 178L75.5 155Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" fill="url(#blender-grid)" d="M161.728 21.6141L118.05 12.7549L117.95 13.2449L159.912 21.756L153.411 22.2639L110.054 12.7557L109.946 13.2441L151.69 22.3984L143.576 23.0323L100.558 12.7567L100.442 13.2431L141.954 23.159L134.778 23.7196L94.065 12.7585L93.935 13.2413L133.287 23.8361L125.328 24.4579L86.5722 12.7606L86.4277 13.2392L123.954 24.5652L115.571 25.2202L79.0808 12.7633L78.9192 13.2365L114.311 25.3186L104.96 26.0491L71.0913 12.7672L70.9087 13.2326L103.818 26.1383L93.6972 26.929L63.105 12.773L62.895 13.2268L92.6786 27.0086L82.2949 27.8198L55.6228 12.7821L55.3772 13.2177L81.4008 27.8897L70.032 28.7779L47.6452 12.7964L47.3547 13.2034L69.2563 28.8385L45.2593 30.7132L33.7099 12.8641L33.2901 13.1357L44.6925 30.7575L31.4991 31.7883L26.2408 12.9327L25.7592 13.067L30.9911 31.828L17.5149 32.8808L19.249 13.0216L18.7509 12.9781L17.0095 32.9203L-0.0194839 34.2507L0.0194599 34.7491L16.9654 33.4252L16.7963 35.3618L-0.0205892 36.7507L0.0205653 37.249L16.7522 35.8672L16.5829 37.8053L-0.0216934 39.2508L0.0216694 39.749L16.5388 38.3111L16.3662 40.2876L-0.022245 41.7509L0.022221 42.2489L16.322 40.7936L16.0676 43.7065L-0.0238978 45.251L0.0238738 45.7487L16.0234 44.2131L15.7247 47.634L-0.0255474 49.2512L0.0255234 49.7486L15.6804 48.1412L15.3783 51.6008L-0.0266453 53.2513L0.0266213 53.7485L15.3339 52.1084L14.9493 56.513L-0.0288363 58.2516L0.0288123 58.7482L14.9049 57.0215L14.4314 62.444L-0.0310207 64.2518L0.0309967 64.748L14.3869 62.9535L13.8685 68.8903L-0.0331978 70.7521L0.0331739 71.2477L13.8239 69.4007L13.133 77.3124L-0.0364491 79.2526L0.0364251 79.7472L13.0883 77.8244L12.2211 87.7552L-0.0402183 89.7532L0.0401943 90.2466L12.1762 88.2691L11.0471 101.199L-0.045554 103.254L0.04553 103.746L11.002 101.716L7.36183 143.402L-0.0606459 145.257L0.0606219 145.742L7.31582 143.929L4.08023 180.981L-0.0736084 182.261L0.0735844 182.739L4.03328 181.519L3.25094 190.478L3.74904 190.522L4.54905 181.36L67.301 162.03L75.2592 190.567L75.7408 190.433L67.7791 161.883L119.274 146.021L143.999 184.231L128.907 190.268L129.093 190.732L144.276 184.659L148.79 191.636L149.21 191.364L144.749 184.47L224.093 152.732L223.907 152.268L144.472 184.042L119.771 145.868L199.002 121.462L223.855 139.203L224.145 138.796L199.603 121.276L224.074 113.739L223.926 113.261L199.091 120.911L173.231 102.45L201.231 95.4498L223.877 108.218L224.123 107.782L201.936 95.2735L224.061 89.7424L223.939 89.2574L201.303 94.9164L163.313 73.4975L184.615 69.5508L223.895 87.7268L224.105 87.273L185.466 69.3933L204.925 65.7881L223.909 73.2326L224.091 72.7672L205.855 65.6158L223.032 62.4335L223.919 62.7365L224.081 62.2633L224.035 62.2477L224.046 62.2457L223.954 61.7541L223.069 61.918L207.18 56.4939L221.831 54.1065L223.928 54.7392L224.072 54.2606L222.955 53.9234L224.04 53.7466L223.96 53.2531L221.865 53.5944L207.332 49.2081L220.384 47.2853L223.935 48.2413L224.065 47.7585L221.627 47.1022L224.036 46.7472L223.964 46.2526L220.414 46.7755L207.905 43.4077L219.963 41.7927L223.942 42.7431L224.058 42.2567L221.342 41.6081L224.033 41.2477L223.967 40.7521L219.989 41.2848L208.909 38.6382L219.632 37.2979L223.946 38.2441L224.054 37.7557L221.118 37.112L224.031 36.748L223.969 36.2518L219.655 36.7911L209.114 34.4794L217.718 33.4808L223.95 34.7449L224.05 34.2549L219.318 33.2951L224.029 32.7482L223.971 32.2516L217.739 32.9749L209.504 31.3045L224.027 29.7485L223.973 29.2513L207.881 30.9755L199.472 29.2697L224.026 26.7486L223.974 26.2512L197.827 28.936L190.555 27.4612L224.024 24.2488L223.976 23.751L188.874 27.1202L182.941 25.9168L224.022 22.2489L223.978 21.7509L181.223 25.5683L175.726 24.4533L224.022 20.249L223.978 19.7508L173.994 24.1021L169.715 23.2341L224.021 18.749L223.979 18.2507L167.957 22.8776L163.513 21.9762L224.019 17.2491L223.981 16.7507L161.728 21.6141ZM161.697 22.1181L155.097 22.6337L159.423 23.5824L166.17 23.0252L161.697 22.1181ZM167.927 23.3817L161.085 23.9468L165.26 24.8624L172.234 24.2553L167.927 23.3817ZM173.966 24.6065L166.899 25.2217L172.166 26.3769L179.476 25.7242L173.966 24.6065ZM181.195 26.0728L173.793 26.7337L179.61 28.0094L187.167 27.2841L181.195 26.0728ZM188.848 27.625L181.203 28.3587L188.298 29.9145L196.157 29.1075L188.848 27.625ZM197.802 29.4412L189.859 30.2568L197.975 32.0368L206.235 31.1518L197.802 29.4412ZM207.858 31.4809L199.516 32.3746L207.613 34.1503L216.139 33.1606L207.858 31.4809ZM206.087 34.3275L197.948 32.5426L187.898 33.6194L195.841 35.5167L206.087 34.3275ZM194.393 35.6848L186.413 33.7785L176.203 34.8725L183.791 36.9154L194.393 35.6848ZM185.097 37.2671L195.811 36.0235L206.112 38.484L194.847 39.8921L185.097 37.2671ZM182.447 37.0714L174.827 35.0199L164.123 36.1667L171.377 38.3562L182.447 37.0714ZM172.582 38.7198L183.753 37.4231L193.533 40.0563L181.849 41.5168L172.582 38.7198ZM170.127 38.5013L162.846 36.3036L151.575 37.5112L158.446 39.8571L170.127 38.5013ZM159.547 40.2327L171.332 38.8648L180.625 41.6698L168.278 43.2132L159.547 40.2327ZM157.292 39.9912L150.397 37.6374L137.919 38.9742L144.345 41.4939L157.292 39.9912ZM145.335 41.8823L158.392 40.3668L167.145 43.3549L153.454 45.0662L145.335 41.8823ZM143.288 41.6166L136.844 39.0895L123.148 40.5569L129.018 43.273L143.288 41.6166ZM129.887 43.6754L144.278 42.005L152.415 45.196L137.266 47.0897L129.887 43.6754ZM128.066 43.3834L122.181 40.6605L107.803 42.201L113.001 45.132L128.066 43.3834ZM113.742 45.5494L128.935 43.7859L136.329 47.2069L120.247 49.2171L113.742 45.5494ZM112.157 45.23L106.947 42.2927L91.3103 43.9681L95.7462 47.1348L112.157 45.23ZM96.3527 47.5678L112.897 45.6474L119.414 49.3213L101.879 51.513L96.3527 47.5678ZM95.006 47.2207L90.562 44.0482L56.2656 47.7229L58.6697 51.4383L95.006 47.2207ZM58.9726 51.9065L95.6125 47.6537L101.147 51.6046L61.9478 56.5045L58.9726 51.9065ZM58.1158 51.5026L55.7086 47.7825L36.5324 49.8371L37.6591 53.8771L58.1158 51.5026ZM37.795 54.3646L58.4187 51.9708L61.3968 56.5733L39.1853 59.3498L37.795 54.3646ZM37.1563 53.9354L36.0284 49.8911L15.8406 52.0541L15.4563 56.4542L37.1563 53.9354ZM15.4119 56.9627L37.2922 54.423L38.6837 59.4125L14.9388 62.3806L15.4119 56.9627ZM14.8943 62.89L14.3763 68.8223L40.3382 65.3452L38.8195 59.8994L14.8943 62.89ZM39.3211 59.8367L40.8386 65.2782L64.9407 62.0502L61.6984 57.0395L39.3211 59.8367ZM62.2494 56.9707L65.4887 61.9768L107.748 56.3171L101.748 52.0334L62.2494 56.9707ZM102.48 51.9418L108.473 56.2201L127.201 53.7118L120.145 49.7337L102.48 51.9418ZM120.978 49.6295L128.024 53.6016L145.182 51.3036L137.186 47.6036L120.978 49.6295ZM138.123 47.4864L146.105 51.18L162.183 49.0267L153.39 45.5781L138.123 47.4864ZM154.428 45.4483L163.204 48.8899L177.68 46.9513L168.225 43.7237L154.428 45.4483ZM169.358 43.5821L178.791 46.8024L191.841 45.0547L181.806 42.0261L169.358 43.5821ZM183.03 41.8731L193.039 44.8942L205.369 43.2428L194.812 40.4004L183.03 41.8731ZM196.125 40.2362L206.654 43.0708L218.61 41.4695L207.496 38.8148L196.125 40.2362ZM206.621 43.5797L194.197 45.2436L206.207 48.8685L219.171 46.9586L206.621 43.5797ZM205.044 49.0398L192.998 45.4041L179.853 47.1647L191.284 51.067L205.044 49.0398ZM190.202 51.2263L178.741 47.3136L164.163 49.266L174.908 53.4795L190.202 51.2263ZM175.845 53.8469L191.237 51.5793L205.128 56.3217L188.899 58.9662L175.845 53.8469ZM173.912 53.6262L163.142 49.4027L146.951 51.5712L156.83 56.1427L173.912 53.6262ZM157.659 56.5261L174.849 53.9936L187.931 59.1239L169.694 62.0955L157.659 56.5261ZM155.927 56.2758L146.027 51.6949L128.747 54.0093L137.565 58.9809L155.927 56.2758ZM138.276 59.3816L156.756 56.6591L168.814 62.239L149.054 65.4587L138.276 59.3816ZM136.758 59.0999L127.924 54.1194L109.068 56.6448L116.655 62.0614L136.758 59.0999ZM117.242 62.4803L137.468 59.5005L148.265 65.5874L126.551 69.1256L117.242 62.4803ZM115.942 62.1665L108.343 56.7419L65.7891 62.4411L69.9917 68.9359L115.942 62.1665ZM70.2902 69.3973L116.529 62.5854L125.85 69.2398L75.4973 77.4446L70.2902 69.3973ZM69.4479 69.016L65.2411 62.5145L40.9742 65.7645L42.9688 72.917L69.4479 69.016ZM43.1042 73.4024L69.7465 69.4774L74.9585 77.5324L45.5904 82.3178L43.1042 73.4024ZM42.4702 72.9904L40.4738 65.8315L14.3317 69.3327L13.6415 77.2375L42.4702 72.9904ZM13.5967 77.7495L42.6056 73.4759L45.0939 82.3987L12.7303 87.6722L13.5967 77.7495ZM12.6854 88.1861L11.5573 101.104L48.4066 94.2775L45.2291 82.8833L12.6854 88.1861ZM45.7256 82.8024L48.9002 94.186L81.7914 88.0923L75.2551 77.9906L45.7256 82.8024ZM75.7938 77.9029L82.3232 87.9938L137.739 77.727L126.428 69.6522L75.7938 77.9029ZM127.129 69.538L138.422 77.6004L161.868 73.2568L148.962 65.9804L127.129 69.538ZM149.751 65.8517L162.634 73.1148L183.831 69.1877L169.624 62.6136L149.751 65.8517ZM170.504 62.4701L184.681 69.0302L204.044 65.4427L188.844 59.4817L170.504 62.4701ZM189.811 59.3241L204.975 65.2704L222.066 62.1039L206.133 56.6646L189.811 59.3241ZM162.546 73.6395L138.988 78.0042L172.696 102.068L200.598 95.0928L162.546 73.6395ZM172.059 102.227L138.305 78.1308L82.617 88.4479L102.746 119.556L172.059 102.227ZM102.233 119.684L82.0852 88.5464L49.035 94.6695L59.0234 130.486L102.233 119.684ZM59.1577 130.968L102.52 120.128L118.992 145.584L67.6447 161.401L59.1577 130.968ZM58.5381 130.608L48.5414 94.761L11.5122 101.621L7.87494 143.273L58.5381 130.608ZM7.82893 143.8L58.6725 131.089L67.1667 161.549L4.596 180.823L7.82893 143.8ZM119.489 145.431L103.033 119.999L172.594 102.609L198.49 121.096L119.489 145.431ZM206.176 56.151L192.318 51.4201L206.169 49.3794L220.741 53.7776L206.176 56.151ZM15.8849 51.5465L35.8923 49.4029L34.9876 46.1587L16.1868 48.0892L15.8849 51.5465ZM16.2311 47.582L34.8513 45.6701L33.9647 42.491L16.5295 44.1645L16.2311 47.582ZM16.5738 43.658L33.8283 42.0018L33.0742 39.2978L16.8278 40.7484L16.5738 43.658ZM16.872 40.2425L32.9376 38.808L32.4137 36.9291L17.0445 38.2671L16.872 40.2425ZM17.0887 37.7613L32.277 36.4391L31.7716 34.6267L17.2577 35.8254L17.0887 37.7613ZM17.3019 35.3201L31.6348 34.1363L31.128 32.3188L17.4708 33.3857L17.3019 35.3201ZM31.636 32.2791L32.1422 34.0944L46.1054 32.9412L45.0014 31.2349L31.636 32.2791ZM45.5682 31.1906L46.6708 32.8945L72.0069 30.802L69.8895 29.2905L45.5682 31.1906ZM70.6652 29.2299L72.7782 30.7383L84.7061 29.7532L82.182 28.3302L70.6652 29.2299ZM83.0762 28.2603L85.5941 29.6799L96.5041 28.7788L93.6058 27.4377L83.0762 28.2603ZM94.6245 27.3581L97.5144 28.6954L108.108 27.8205L104.885 26.5565L94.6245 27.3581ZM106.027 26.4673L109.239 27.7271L119.004 26.9206L115.507 25.7267L106.027 26.4673ZM116.766 25.6283L120.25 26.8177L129.017 26.0936L125.274 24.9636L116.766 25.6283ZM126.648 24.8563L130.376 25.9814L138.701 25.2938L134.731 24.2248L126.648 24.8563ZM136.222 24.1083L140.173 25.1722L147.76 24.5457L143.536 23.5369L136.222 24.1083ZM145.158 23.4102L149.359 24.4136L157.728 23.7224L153.376 22.7681L145.158 23.4102ZM159.39 24.0869L150.92 24.7864L154.983 25.7571L163.589 25.0079L159.39 24.0869ZM165.228 25.3672L156.523 26.1249L161.547 27.325L170.507 26.525L165.228 25.3672ZM172.134 26.8818L163.077 27.6904L168.769 29.05L177.987 28.1652L172.134 26.8818ZM179.58 28.5146L170.269 29.4083L177.171 31.0569L186.708 30.0777L179.58 28.5146ZM188.269 30.42L178.642 31.4085L186.445 33.2722L196.407 32.2048L188.269 30.42ZM184.959 33.4314L177.137 31.563L167.562 32.5462L174.867 34.5128L184.959 33.4314ZM173.491 34.6602L166.17 32.6891L156.045 33.7287L162.893 35.7956L173.491 34.6602ZM161.616 35.9324L154.754 33.8613L144.09 34.9562L150.453 37.1285L161.616 35.9324ZM149.275 37.2547L142.901 35.0784L131.08 36.2921L136.912 38.5793L149.275 37.2547ZM135.837 38.6945L129.995 36.4036L117.046 37.7331L122.266 40.1486L135.837 38.6945ZM121.299 40.2522L116.071 37.8332L102.523 39.2243L107.053 41.7785L121.299 40.2522ZM106.198 41.8701L101.662 39.3127L86.9108 40.8273L90.6978 43.5308L106.198 41.8701ZM89.9496 43.611L86.1584 40.9046L53.9909 44.2075L55.9613 47.2526L89.9496 43.611ZM55.4043 47.3123L53.4325 44.2648L35.4922 46.1069L36.3963 49.3489L55.4043 47.3123ZM35.3559 45.6183L53.1275 43.7935L51.2135 40.8355L34.4703 42.4425L35.3559 45.6183ZM34.3339 41.9533L50.9075 40.3625L49.2821 37.8507L33.5807 39.2526L34.3339 41.9533ZM33.4441 38.7628L48.9751 37.3761L47.8181 35.5881L32.9204 36.885L33.4441 38.7628ZM32.7838 36.395L47.5107 35.113L46.4136 33.4175L32.279 34.5848L32.7838 36.395ZM46.9789 33.3708L48.0745 35.0639L74.7267 32.7437L72.6368 31.2517L46.9789 33.3708ZM73.4081 31.188L75.4938 32.6769L87.966 31.5912L85.4822 30.1908L73.4081 31.188ZM86.3702 30.1175L88.8479 31.5144L100.268 30.5203L97.4241 29.2046L86.3702 30.1175ZM98.4344 29.1211L101.27 30.4331L112.317 29.4713L109.165 28.2349L98.4344 29.1211ZM110.296 28.1415L113.438 29.3738L123.599 28.4892L120.187 27.3246L110.296 28.1415ZM121.433 27.2216L124.832 28.3819L133.965 27.5868L130.323 26.4875L121.433 27.2216ZM131.681 26.3753L135.308 27.4699L143.98 26.715L140.127 25.6777L131.681 26.3753ZM141.599 25.5562L145.433 26.5884L153.406 25.8944L149.32 24.9185L141.599 25.5562ZM154.946 26.2622L146.842 26.9677L151.501 28.222L159.981 27.4649L154.946 26.2622ZM161.511 27.8303L152.901 28.599L158.306 30.0542L167.233 29.1973L161.511 27.8303ZM168.734 29.5556L159.681 30.4245L166.211 32.1823L175.666 31.2115L168.734 29.5556ZM164.818 32.3253L158.264 30.5606L148.616 31.4865L154.802 33.3537L164.818 32.3253ZM153.511 33.4863L147.303 31.6126L137.15 32.5871L142.958 34.5698L153.511 33.4863ZM141.769 34.692L135.942 32.703L124.683 33.7837L130.064 35.8938L141.769 34.692ZM128.979 36.0052L123.583 33.8893L111.289 35.0693L116.157 37.3218L128.979 36.0052ZM115.182 37.4218L110.303 35.1639L97.5005 36.3927L101.769 38.7991L115.182 37.4218ZM100.907 38.8875L96.6306 36.4762L82.6901 37.8143L86.2952 40.3879L100.907 38.8875ZM85.5429 40.4652L81.9315 37.8871L51.7742 40.7816L53.6859 43.7362L85.5429 40.4652ZM51.4682 40.3087L81.3113 37.4443L78.2567 35.2637L49.8452 37.8004L51.4682 40.3087ZM49.5381 37.3259L77.6317 34.8175L75.3534 33.1911L48.3819 35.539L49.5381 37.3259ZM76.1204 33.1243L78.3966 34.7492L91.4933 33.5799L88.7372 32.026L76.1204 33.1243ZM89.6191 31.9492L92.3722 33.5014L104.391 32.4283L101.18 30.9427L89.6191 31.9492ZM102.183 30.8555L105.389 32.3392L116.989 31.3034L113.365 29.882L102.183 30.8555ZM114.485 29.7845L118.105 31.2038L128.763 30.2522L124.77 28.8891L114.485 29.7845ZM126.004 28.7818L129.99 30.1427L139.592 29.2853L135.256 27.9764L126.004 28.7818ZM136.599 27.8594L140.928 29.1661L150.057 28.351L145.389 27.0942L136.599 27.8594ZM151.457 28.728L142.211 29.5534L147.353 31.1054L156.888 30.1903L151.457 28.728ZM146.041 31.2315L140.876 29.6727L131.156 30.5406L136.002 32.195L146.041 31.2315ZM134.794 32.3109L129.929 30.6501L119.147 31.6127L123.654 33.3801L134.794 32.3109ZM122.554 33.4857L118.032 31.7123L106.298 32.76L110.39 34.6533L122.554 33.4857ZM109.404 34.7479L105.3 32.8491L93.1408 33.9347L96.7392 35.9635L109.404 34.7479ZM95.8692 36.047L92.2619 34.0132L79.0216 35.1954L82.0699 37.3715L95.8692 36.047ZM207.524 38.3074L197.259 35.8554L207.587 34.6566L218.168 36.9769L207.524 38.3074Z"/>
+                                <path d="M40.5 13L140 110.576" stroke="url(#blender-x)" stroke-width="0.5"/>
+                                <path d="M224 73.5L91.0512 101.989" stroke="url(#blender-y)" stroke-width="0.5"/>
+                                <path stroke="rgba(var(--aux-red), 1)" d="M221.5 190.5L140 110.576" stroke-width="0.5"/>
+                                <path stroke="rgba(var(--link-rg), 1)" d="M0 121.5L91.0512 101.989" stroke-width="0.5"/>
+                                <path fill="rgba(var(--sheet-0), 1)" d="M139 49.5L79 57.5L100.5 81L177 67.5L139 49.5Z"/>
+                                <path fill="rgba(var(--sheet-0), 1)" d="M32 31.5L41.5 0L7.5 15.5L-5 46.5L32 31.5Z"/>
+                                <path fill="rgba(var(--sheet-2), 1)" d="M177 67.5L100.5 81L105.5 153L170 132.5L177 67.5Z"/>
+                                <path fill="rgba(var(--sheet-2), 1)" d="M69 32.5L41.5 0L32 31.5L64 62.5L69 32.5Z"/>
+                                <path fill="rgba(var(--sheet-4), 1)" d="M100.5 81L79 57.5L85.5 115.5L105.5 153L100.5 81Z"/>
+                                <path fill="rgba(var(--sheet-4), 1)" d="M64 62.5L32 31.5L-5 46.5L30.5 73.5L64 62.5Z"/>
+                                <defs>
+                                    <radialGradient id="blender-grid" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(112 191.5) rotate(-90) scale(179 224.368)">
+                                        <stop stop-color="rgba(var(--ink-1), 1)"/>
+                                        <stop offset="1" stop-color="rgba(var(--ink-1), 1)" stop-opacity="0"/>
+                                    </radialGradient>
+                                    <linearGradient id="blender-x" x1="123" y1="96" x2="68.5" y2="40" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="rgba(var(--aux-red), 1)"/>
+                                        <stop offset="1" stop-color="rgba(var(--aux-red), 1)" stop-opacity="0"/>
+                                    </linearGradient>
+                                    <linearGradient id="blender-y" x1="152.5" y1="88" x2="225" y2="73" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="rgba(var(--link-rg), 1)"/>
+                                        <stop offset="1" stop-color="rgba(var(--link-rg), 1)" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>                                                       
+                        </div>
+                    </div>
+                    <div class="relative flex-shrink:0 z:3 flex flex:col justify-content:start align-items:start w:192 md:w:224 h:224 radius:xl bg:sheet-1 border-t:1 border:sheet-0 shadow:knowHow overflow:hidden mt:28 gap:12">
+                        <div class="absolute top:0 left:0 w:100p h:48 radius:full filter filter-blur:2xl bg:white opacity:10 z:n1"></div>
+                        <!-- Header -->
+                        <div class="w:100p flex align-items:center justify-content:between color:ink-1 px:12 pt:8">
+                            <div class="flex align-items:center gap:4">
+                                <div class="block w:6 h:6 bg:aux-pink border:aux-pink bg-opacity:50 border:1 radius:full"></div>
+                                <div class="block w:6 h:6 bg:aux-yellow border:aux-yellow bg-opacity:50 border:1 radius:full"></div>
+                                <div class="block w:6 h:6 bg:link-rg border:link-rg bg-opacity:50 border:1 radius:full"></div>
+                            </div>
+                            {{ icons.vscode('w:10 flex-shrink:0') }}
+                        </div>
+                        <!-- Code -->
+                        <div class="flex flex:col w:100p overflow:hidden font:mono font:2xs">
+                            {% macro graphicCode(num, code) %}
+                                <div class="flex align-items:center justify-content:start flex-shrink:0 px:12 w:100p gap:8 py:4">
+                                    <div class="w:20 flex-shrink:0 color:ink-1">
+                                        {{ num }}
+                                    </div>
+                                    <div class="flex-shrink:0">
+                                        {{ code | safe }}
+                                    </div>
+                                </div>
+                            {% endmacro %}
+                            {{ graphicCode(
+                                num='100',
+                                code='<span class="color:aux-pink">function</span> <span class="color:link-rg">colorScheme</span>() {'
+                            )}}
+                            {{ graphicCode(
+                                num='101',
+                                code='<span class="color:aux-pink pl:12">const</span> <span class="color:aux-purple">el</span> <span class="color:aux-pink">=</span> <span class="color:aux-purple">document</span><span class="color:link-rg">.querySelector(</span><span class="color:aux-yellow">`[data-scheme]`</span><span class="color:link-rg">)</span>;'
+                            )}}
+                            {{ graphicCode(
+                                num='102',
+                                code='<span class="color:aux-pink pl:12">function</span> <span class="color:link-rg">darken</span>() {'
+                            )}}
+                            {{ graphicCode(
+                                num='103',
+                                code='<span class="color:aux-purple pl:24">root</span>.<span class="color:link-rg">setAttribute</span><span class="color:aux-teal">(</span><span class="color:aux-yellow">`color-scheme`</span>, <span class="color:aux-yellow">`dark`</span><span class="color:aux-teal">)</span>;'
+                            )}}
+                            {{ graphicCode(
+                                num='104',
+                                code='<span class="color:aux-purple pl:24">localStorage</span>.<span class="color:link-rg">removeItem</span><span class="color:aux-teal">(</span><span class="color:aux-yellow">`color-scheme`</span>, <span class="color:aux-yellow">`light`</span><span class="color:aux-teal">)</span>;'
+                            )}}
+                            {{ graphicCode(
+                                num='105',
+                                code='<span class="color:aux-purple pl:24">localStorage</span>.<span class="color:link-rg">setItem</span><span class="color:aux-teal">(</span><span class="color:aux-yellow">`color-scheme`</span>, <span class="color:aux-yellow">`dark`</span><span class="color:aux-teal">)</span>;'
+                            )}}
+                            {{ graphicCode(
+                                num='106',
+                                code='<span class="pl:12">};</span>'
+                            )}}
+                            {{ graphicCode(
+                                num='102',
+                                code='<span class="color:aux-pink pl:12">function</span> <span class="color:link-rg">lighten</span>() {'
+                            )}}
+                        </div>
+                    </div>
+                    <div class="relative flex-shrink:0 z:2 flex flex:col justify-content:start align-items:start w:192 md:w:224 h:224 radius:xl bg:sheet-1 border-t:1 border:sheet-0 shadow:knowHow overflow:hidden mt:72  ml:n144 sm:ml:n112 md:ml:n128">
+                        <div class="absolute top:0 left:0 w:100p h:48 radius:full filter filter-blur:2xl bg:white opacity:10 z:n1"></div>
+                        <!-- Header -->
+                        <div class="w:100p flex align-items:center justify-content:between color:ink-1 px:12 pt:8">
+                            <div class="flex align-items:center gap:4">
+                                <div class="block w:6 h:6 bg:aux-pink border:aux-pink bg-opacity:50 border:1 radius:full"></div>
+                                <div class="block w:6 h:6 bg:aux-yellow border:aux-yellow bg-opacity:50 border:1 radius:full"></div>
+                                <div class="block w:6 h:6 bg:link-rg border:link-rg bg-opacity:50 border:1 radius:full"></div>
+                            </div>
+                            {{ icons.figma('w:10 flex-shrink:0') }}
+                        </div>
+                    </div>
+                    <div class="relative flex-shrink:0 z:1 flex flex:col justify-content:start align-items:start w:192 md:w:224 h:224 radius:xl bg:sheet-1 border-t:1 border:sheet-0 shadow:knowHow overflow:hidden mt:128 ml:n144 sm:ml:n128 md:ml:n144">
+                        <div class="absolute top:0 left:0 w:100p h:48 radius:full filter filter-blur:2xl bg:white opacity:10 z:n1"></div>
+                    </div>
+                    <div class="absolute top:0 left:0 w:100p h:100p bg:fade-down-2 z:4 pointer-events:none"></div>
+                </div>
+                <!-- Content -->
                 <div class="{{ skillsCardContent }}">
                     <h3 class="{{ skillsCardTitle }}">
                         Knows-how
@@ -272,7 +452,7 @@ eleventyComputed:
                 </div>
             </li>
             <li class="{{ skillsCard }} col-start:1 col-end:8">
-                <div class="w:100p h:100p"></div>
+                <div aria-hidden="true" class="{{ skillsCardImg }} flex:col align-items:center justify-content:start gap:16"></div>
                 <div class="{{ skillsCardContent }}">
                     <h3 class="{{ skillsCardTitle }}">
                         Fast AF
@@ -283,7 +463,7 @@ eleventyComputed:
                 </div>
             </li>
             <li class="{{ skillsCard }} col-start:8 col-end:13">
-                <div class="w:100p h:100p"></div>
+                <div aria-hidden="true" class="{{ skillsCardImg }} flex:col align-items:center justify-content:start gap:16"></div>
                 <div class="{{ skillsCardContent }}">
                     <h3 class="{{ skillsCardTitle }}">
                         Premium

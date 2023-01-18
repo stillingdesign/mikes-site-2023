@@ -37,6 +37,6 @@
 }
 
 .btn\:error {
-    @include apply("bg:error bg-opacity:6 radius:full border:1 color:error");
-    border-color: rgba(var(--error), 0.3);
+    @include apply("bg:aux-pink bg-opacity:6 radius:full border:1 color:aux-pink");
+    border-color: rgba(var(--aux-pink), 0.3);
 }
