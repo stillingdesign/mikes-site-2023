@@ -320,14 +320,25 @@ eleventyComputed:
             <li class="{{ skillsCard }} col-start:6 col-end:13">
                 <!-- Graphic -->
                 <div aria-hidden="true" class="{{ skillsCardImg }} flex align-items:center justify-content:center md:gap:4">
+                    <!-- GitHub -->
                     <div class="relative flex-shrink:0 z:1 flex flex:col justify-content:start align-items:start w:192 md:w:224 h:224 radius:xl bg:sheet-1 border-t:1 border:sheet-0 shadow:knowHow overflow:hidden mt:128 mr:n144 sm:mr:n128 md:mr:n144">
-                        <div class="absolute top:0 left:0 w:100p h:48 radius:full filter filter-blur:2xl bg:white opacity:10 z:n1"></div>
-                    </div>
-                    <div class="relative flex-shrink:0 z:2 flex flex:col justify-content:start align-items:start w:192 md:w:224 h:224 radius:xl bg:sheet-1 border-t:1 border:sheet-0 shadow:knowHow overflow:hidden mt:72  mr:n144 sm:mr:n112 md:mr:n128">
-                        <div class="absolute top:0 left:0 w:100p h:48 radius:full filter filter-blur:2xl bg:white opacity:10 z:n1"></div>
+                        <div class="absolute top:0 left:0 w:48 h:48 radius:full filter filter-blur:2xl bg:white opacity:40 z:n1"></div>
                         <!-- Header -->
                         <div class="w:100p flex align-items:center justify-content:between color:ink-1 px:12 pt:8">
-                            {{ icons.blender('w:12 flex-shrink:0') }}
+                            {{ icons.intGithub('w:14 flex-shrink:0') }}
+                            <div class="flex align-items:center gap:4">
+                                <div class="block w:6 h:6 bg:aux-pink border:aux-pink bg-opacity:50 border:1 radius:full"></div>
+                                <div class="block w:6 h:6 bg:aux-yellow border:aux-yellow bg-opacity:50 border:1 radius:full"></div>
+                                <div class="block w:6 h:6 bg:link-rg border:link-rg bg-opacity:50 border:1 radius:full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blender-->
+                    <div class="relative flex-shrink:0 z:2 flex flex:col justify-content:start align-items:start w:192 md:w:224 h:224 radius:xl bg:sheet-1 border-t:1 border:sheet-0 shadow:knowHow overflow:hidden mt:72  mr:n144 sm:mr:n112 md:mr:n128">
+                        <div class="absolute top:0 left:0 w:48 h:48 radius:full filter filter-blur:2xl bg:white opacity:40 z:n1"></div>
+                        <!-- Header -->
+                        <div class="w:100p flex align-items:center justify-content:between color:ink-1 px:12 pt:8">
+                            {{ icons.blender('w:14 flex-shrink:0') }}
                             <div class="flex align-items:center gap:4">
                                 <div class="block w:6 h:6 bg:aux-pink border:aux-pink bg-opacity:50 border:1 radius:full"></div>
                                 <div class="block w:6 h:6 bg:aux-yellow border:aux-yellow bg-opacity:50 border:1 radius:full"></div>
@@ -336,6 +347,7 @@ eleventyComputed:
                         </div>
                         <div class="relative w:100p flex align-items:center justify-content:center">
                             <svg width="224" height="190" viewBox="0 0 224 190" fill="none" xmlns="http://www.w3.org/2000/svg" class="w:100p h:auto">
+                                <title>Faux Blender interface</title>
                                 <path fill="rgba(var(--sheet-4), 1)" d="M55.5 142.5L6.5 172L37.5 207L81 178L55.5 142.5Z"/>
                                 <path fill="rgba(var(--sheet-0), 1)" d="M55.5 142.5L54 124.5L14.5 147.5L6.5 172L55.5 142.5Z"/>
                                 <path fill="rgba(var(--sheet-2), 1)"d="M75.5 155L54 124.5L55.5 142.5L81 178L75.5 155Z"/>
@@ -367,6 +379,7 @@ eleventyComputed:
                             </svg>                                                       
                         </div>
                     </div>
+                    <!-- VScode -->
                     <div class="relative flex-shrink:0 z:3 flex flex:col justify-content:start align-items:start w:192 md:w:224 h:224 radius:xl bg:sheet-1 border-t:1 border:sheet-0 shadow:knowHow overflow:hidden mt:28 gap:12">
                         <div class="absolute top:0 left:0 w:100p h:48 radius:full filter filter-blur:2xl bg:white opacity:10 z:n1"></div>
                         <!-- Header -->
@@ -376,7 +389,7 @@ eleventyComputed:
                                 <div class="block w:6 h:6 bg:aux-yellow border:aux-yellow bg-opacity:50 border:1 radius:full"></div>
                                 <div class="block w:6 h:6 bg:link-rg border:link-rg bg-opacity:50 border:1 radius:full"></div>
                             </div>
-                            {{ icons.vscode('w:10 flex-shrink:0') }}
+                            {{ icons.vscode('w:12 flex-shrink:0') }}
                         </div>
                         <!-- Code -->
                         <div class="flex flex:col w:100p overflow:hidden font:mono font:2xs">
@@ -424,8 +437,9 @@ eleventyComputed:
                             )}}
                         </div>
                     </div>
+                    <!-- Figma -->
                     <div class="relative flex-shrink:0 z:2 flex flex:col justify-content:start align-items:start w:192 md:w:224 h:224 radius:xl bg:sheet-1 border-t:1 border:sheet-0 shadow:knowHow overflow:hidden mt:72  ml:n144 sm:ml:n112 md:ml:n128">
-                        <div class="absolute top:0 left:0 w:100p h:48 radius:full filter filter-blur:2xl bg:white opacity:10 z:n1"></div>
+                        <div class="absolute top:0 right:0 w:48 h:48 radius:full filter filter-blur:2xl bg:white opacity:40 z:n1"></div>
                         <!-- Header -->
                         <div class="w:100p flex align-items:center justify-content:between color:ink-1 px:12 pt:8">
                             <div class="flex align-items:center gap:4">
@@ -433,11 +447,21 @@ eleventyComputed:
                                 <div class="block w:6 h:6 bg:aux-yellow border:aux-yellow bg-opacity:50 border:1 radius:full"></div>
                                 <div class="block w:6 h:6 bg:link-rg border:link-rg bg-opacity:50 border:1 radius:full"></div>
                             </div>
-                            {{ icons.figma('w:10 flex-shrink:0') }}
+                            {{ icons.figma('w:12 flex-shrink:0') }}
                         </div>
                     </div>
+                    <!-- Adobe CC -->
                     <div class="relative flex-shrink:0 z:1 flex flex:col justify-content:start align-items:start w:192 md:w:224 h:224 radius:xl bg:sheet-1 border-t:1 border:sheet-0 shadow:knowHow overflow:hidden mt:128 ml:n144 sm:ml:n128 md:ml:n144">
-                        <div class="absolute top:0 left:0 w:100p h:48 radius:full filter filter-blur:2xl bg:white opacity:10 z:n1"></div>
+                        <div class="absolute top:0 right:0 w:48 h:48 radius:full filter filter-blur:2xl bg:white opacity:40 z:n1"></div>
+                        <!-- Header -->
+                        <div class="w:100p flex align-items:center justify-content:between color:ink-1 px:12 pt:8">
+                            <div class="flex align-items:center gap:4">
+                                <div class="block w:6 h:6 bg:aux-pink border:aux-pink bg-opacity:50 border:1 radius:full"></div>
+                                <div class="block w:6 h:6 bg:aux-yellow border:aux-yellow bg-opacity:50 border:1 radius:full"></div>
+                                <div class="block w:6 h:6 bg:link-rg border:link-rg bg-opacity:50 border:1 radius:full"></div>
+                            </div>
+                            {{ icons.adobecc('w:14 flex-shrink:0') }}
+                        </div>
                     </div>
                     <div class="absolute top:0 left:0 w:100p h:100p bg:fade-down-2 z:4 pointer-events:none"></div>
                 </div>
