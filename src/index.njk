@@ -542,7 +542,126 @@ eleventyComputed:
                 </div>
             </li>
             <li class="{{ skillsCard }} col-start:1 col-end:8">
-                <div aria-hidden="true" class="{{ skillsCardImg }} flex:col align-items:center justify-content:start gap:16"></div>
+                <!-- Graphic -->
+                <div aria-hidden="true" class="{{ skillsCardImg }} flex align-items:center justify-content:center md:gap:24 lg:gap:0">
+                    <!-- Slack -->
+                    <div class="relative flex-shrink:0 flex flex:col overflow:hidden w:192 lg:w:224 h:100p bg:sheet-1 radius:xl shadow:knowHow mr:n144 sm:mr:n80 md:mr:n48 mt:48 z:1">
+                        <div class="absolute top:0 left:0 w:100p h:48 radius:full filter filter-blur:2xl bg:white opacity:10 z:n1"></div>
+                        <!-- Header -->
+                        <div class="w:100p flex align-items:center justify-content:between color:ink-1 px:12 pt:12">
+                            {{ icons.slack('w:12 flex-shrink:0') }}
+                            <div class="flex align-items:center gap:4">
+                                <div class="block w:6 h:6 bg:aux-pink border:aux-pink bg-opacity:50 border:1 radius:full"></div>
+                                <div class="block w:6 h:6 bg:aux-yellow border:aux-yellow bg-opacity:50 border:1 radius:full"></div>
+                                <div class="block w:6 h:6 bg:link-rg border:link-rg bg-opacity:50 border:1 radius:full"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex:col gap:8 px:12 pt:8">
+                            <div class="flex align:items:start gap:4 p:8 border:1 border:ink-1 border-opacity:20 radius:sm">
+                                <div class="relative z:1 overflow:hidden w:16 h:16 bg:aux-blue radius:xs flex flex-shrink:0">
+                                    <img src="/assets/images/photos/headshot-1.webp" width="16" height="16" alt="Headshot of woman wearing tan blazer" class="w:100p h:100p">
+                                </div>
+                                <div class="flex flex:col">
+                                    <div class="font:3xs leading:100 mb:2">
+                                        Growth Marketer
+                                    </div>
+                                    <div class="font:3xs leading:130 color:ink-1">
+                                        <span class="space:nowrap">Hey <span class="color:aux-blue">@mike</span>, we need to optimize the</span> <span class="space:nowrap">homepage for demo request conversion</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex align:items:start gap:4 p:8 border:1 border:ink-1 border-opacity:20 radius:sm">
+                                <img src="/assets/images/photos/mike-stilling-headshot.webp" width="16" height="16" alt="Mike Stilling's headshot" class="relative z:1 w:16 h:16 radius:xs flex-shrink:0 overflow:hidden">
+                                <div class="flex flex:col">
+                                    <div class="font:3xs leading:100 mb:2">
+                                        Mike Stilling
+                                    </div>
+                                    <div class="font:3xs leading:130 color:ink-1">
+                                        <span class="space:nowrap">I just published a preview with updated</span> <span class="space:nowrap">content structure along with an overview.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex align:items:start gap:4 p:8 border:1 border:ink-1 border-opacity:20 radius:sm">
+                                <div class="relative z:1 overflow:hidden w:16 h:16 bg:aux-blue radius:xs flex flex-shrink:0">
+                                    <img src="/assets/images/photos/headshot-2.webp" width="16" height="16" alt="Headshot of man wearing blue blazer" class="w:100p h:100p">
+                                </div>
+                                <div class="flex flex:col">
+                                    <div class="font:3xs leading:100 mb:2">
+                                        Product Marketer
+                                    </div>
+                                    <div class="font:3xs leading:130 color:ink-1">
+                                        <span class="space:nowrap">Thanks for sharing that, can we make sure to</span> <span class="space:nowrap">still include links for self-serve?</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Loom -->
+                    <div class="relative flex-shrink:0 flex flex:col overflow:hidden w:224 sm:w:256 h:100p bg:sheet-1 radius:xl shadow:knowHow z:2">
+                        <div class="absolute top:0 left:0 w:100p h:48 radius:full filter filter-blur:2xl bg:white opacity:10 z:n1"></div>
+                        <!-- Header -->
+                        <div class="w:100p flex align-items:center justify-content:between color:ink-1 px:12 pt:8">
+                            <div class="flex align-items:center gap:4">
+                                <div class="block w:6 h:6 bg:aux-pink border:aux-pink bg-opacity:50 border:1 radius:full"></div>
+                                <div class="block w:6 h:6 bg:aux-yellow border:aux-yellow bg-opacity:50 border:1 radius:full"></div>
+                                <div class="block w:6 h:6 bg:link-rg border:link-rg bg-opacity:50 border:1 radius:full"></div>
+                            </div>
+                            {{ icons.loom('w:12 flex-shrink:0') }}
+                        </div>
+                        <div class="flex flex:col gap:4 px:12 pt:6">
+                            <div class="w:100p color:ink-3 space:nowrap font:xs tracking:tight">
+                                Index Redesign
+                            </div>
+                            <div class="relative w:100p flex align-items:center justify-content:center">
+                                <img class="relative z:1 flex w:100p radius:sm overflow:hidden" src="/assets/images/photos/mike-stilling-sharing-loom.webp" width="224" height="126" alt="Mike on a Loom sharing some design work done on a homepage for FireHydrant">
+                                <div class="absolute z:2 w:24 h:24 bg:white radius:full flex align-items:center justify-content:center">
+                                    {{ icons.play('w:12 ml:2 color:black')}}
+                                </div>
+                            </div>
+                            <div class="w:100p color:ink-1 font:3xs">
+                                Hey everyone, just finished up some work on the homepage. I've got a deploy preview ready to go here.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Notion -->
+                    <div class="relative flex-shrink:0 flex flex:col overflow:hidden w:192 lg:w:224 h:100p bg:sheet-1 radius:xl shadow:knowHow ml:n144 sm:ml:n80 md:ml:n48 mt:48 z:1">
+                        <div class="absolute top:0 left:0 w:100p h:48 radius:full filter filter-blur:2xl bg:white opacity:10 z:n1"></div>
+                        <!-- Header -->
+                        <div class="w:100p flex align-items:center justify-content:between color:ink-1 px:12 pt:12">
+                            <div class="flex align-items:center gap:4">
+                                <div class="block w:6 h:6 bg:aux-pink border:aux-pink bg-opacity:50 border:1 radius:full"></div>
+                                <div class="block w:6 h:6 bg:aux-yellow border:aux-yellow bg-opacity:50 border:1 radius:full"></div>
+                                <div class="block w:6 h:6 bg:link-rg border:link-rg bg-opacity:50 border:1 radius:full"></div>
+                            </div>
+                            {{ icons.notion('w:12 flex-shrink:0') }}
+                        </div>
+                        <div class="flex flex:col align-items:end md:align-items:start px:12 pt:8">
+                            <div class="font:xs space:nowrap">
+                                Index Redesign Project
+                            </div>
+                            <div class="font:2xs color:ink-2 space:nowrap">
+                                Increase demo request signup conversion
+                            </div>
+                            <div class="font:3xs color:ink-2 mt:8">
+                                <span class="space:nowrap">The main goal of this site it to gain top of funnel leads</span>
+                                <span class="space:nowrap">we'll be doing so by offering more enterprise value</span>
+                                <span class="space:nowrap">higher up on the page. We'll follow that with content</span>
+                                <span class="space:nowrap">that promotes the current self-serve flow for smaller</span>
+                                <span class="space:nowrap">teams that want to do it themselves</span>
+                            </div>
+                            <div class="font:2xs color:ink-2 space:nowrap mt:8">
+                                Redesign project timeline
+                            </div>
+                            <div class="font:3xs color:ink-2 mt:8">
+                                <span class="space:nowrap">01/21 Define content architecture and stub out design</span>
+                                <span class="space:nowrap">02/05 Get design review from all stakeholders</span>
+                                <span class="space:nowrap">02/15 Implement analaytics and ship project</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute top:0 left:0 w:100p h:100p bg:fade-down-2 z:4 pointer-events:none"></div>
+                </div>
+                <!-- Content -->
                 <div class="{{ skillsCardContent }}">
                     <h3 class="{{ skillsCardTitle }}">
                         Fast AF
