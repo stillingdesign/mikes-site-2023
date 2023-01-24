@@ -1,0 +1,61 @@
+@use "sass:map";
+@use "uniform" as *;
+
+.btn { @include apply("flex align-items:center flex-shrink:0 space:nowrap bg:sheet-1 radius:full border:1 border:edge-1 transition:100 outline:none"); }
+
+.btn\:xs { @include apply("font:xs gap:4 leading:100 px:12 py:6"); }
+.btn\:xs > p { transform: translateY(-0.03125rem); }
+.btn\:md { @include apply("font:lg sm:font:md gap:4 leading:100 px:28 sm:px:20 pt:16 pb:18 sm:pt:12 sm:pb:14"); }
+
+.btn\:header { @include apply("font:sm px:12 py:6 leading:100 bg:transparent border-opacity:0"); }
+.btn\:header:hover { @include apply("border-opacity:100 bg:sheet-0 border:edge-2"); }
+.btn\:header > p { transform: translateY(-0.03125rem); }
+
+.btn\:hover:hover { @include apply("bg:sheet-0 border:edge-2"); }
+
+.btn\:disabled { @include apply("bg:transparent color:ink-1 opacity:90"); }
+
+.btn\:fancy {
+    @include apply('bg:sheet-1');
+    box-shadow: -8px -8px 24px rgba(var(--sheet-0), 0.75),
+                12px 12px 32px rgba(var(--sheet-4), 0.75);
+}
+
+.btn\:success {
+    @include apply("bg:link-rg bg-opacity:6 radius:full border:1 color:link-rg");
+    border-color: rgba(var(--link-rg), 0.3);
+}
+
+.btn\:error {
+    @include apply("bg:aux-pink bg-opacity:6 radius:full border:1 color:aux-pink");
+    border-color: rgba(var(--aux-pink), 0.3);
+}
+
+.card\:hover {
+    transform-origin: center;
+    transition: all 500ms cubic-bezier(0, 0.78, 0.22, 1) 0ms;
+}
+
+.card\:hover:hover {
+    @include apply('shadow:2xl border:edge-2');
+    transform-origin: center;
+    transform: scale3d(1.03,1.03,1.03);
+    transition: all 500ms cubic-bezier(0, 0.78, 0.22, 1) 0ms;
+}
+
+// Focus State
+.btn\:hover:focus-visible,
+.focus\:normal:focus-visible {
+    outline: none;
+    color: rgba(var(--link-rg), 1);
+    background: rgba(var(--link-rg), 0.1);
+    border: 1px solid rgba(var(--link-rg), 0.5);
+}
+
+// Header Icon
+#header-logo > svg > .logo-shape { @include apply("transform transition:300 cubic-out" )}
+#header-logo:hover > svg > .logo-t { @include apply("transform translate-y:2") }
+#header-logo:hover > svg > .logo-r { @include apply("transform translate-x:n2") }
+#header-logo:hover > svg > .logo-b { @include apply("transform translate-y:n2") }
+#header-logo:hover > svg > .logo-l { @include apply("transform translate-x:2") }
+#header-logo:hover > svg > .logo-shape { @include apply("transition:500 cubic-out" )}

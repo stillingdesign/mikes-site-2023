@@ -36,11 +36,14 @@ eleventyComputed:
                     <div aria-hidden="true" class="absolute font:lg pointer-events:none hidden" data-animate-emoji-floating data-float-x="-72" data-float-y="64"  >✌️</div>
                     <div aria-hidden="true" class="absolute font:lg pointer-events:none hidden" data-animate-emoji-floating data-float-x="-128" data-float-y="-12">🧀</div>
                     <div aria-hidden="true" class="absolute font:lg pointer-events:none hidden" data-animate-emoji-floating data-float-x="128" data-float-y="16"  >👋</div>
-                    <a href="#video-intro" data-anchor data-anchor-offset="72" data-hero-video-link class="z:1 btn btn:md btn:hover btn:fancy">
-                        <p>
-                            Get acquainted
-                        </p>
-                    </a>
+                    <div class="relative z:1">
+                        <div class="absolute top:0 left:0 w:100p h:100p radius:full bg:sheet-0 z:n1"></div>
+                        <a href="#video-intro" data-anchor data-anchor-offset="72" data-hero-video-link class="relative z:2 btn btn:md btn:hover btn:fancy">
+                            <p>
+                                Get acquainted
+                            </p>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -51,7 +54,7 @@ eleventyComputed:
     <section id="video-intro" class="section z:1">
         <div class="container">
             <div aria-hidden="true" class="{{ bigLetter }} z:n1 color:sheet-2 text:fade-down bottom:n448 right:n192 lg:right:n352">23</div>
-            <div data-video class="relative z:3 flex align-items:center justify-content:center w:100p ratio:1-1 sm:ratio:4-3 md:ratio:16-9 radius:2xl bg:sheet-2 border:1 border:edge overflow:hidden shadow:2xl">
+            <div data-video class="relative z:3 flex align-items:center justify-content:center w:100p ratio:1-1 sm:ratio:4-3 md:ratio:16-9 radius:2xl bg:sheet-2 border:1 border:edge-1 overflow:hidden shadow:2xl">
                 <!-- Video -->
                 <div class="relative w:100p h:100p overflow:hidden flex align-items:center justify-content:center">
                     <div class="relative flex align-items:center justify-content:center ratio:16-9 h:100p flex-shrink:0">
@@ -91,7 +94,7 @@ eleventyComputed:
                     <div class="relative flex align-items:center justify-content:center ratio:16-9 h:100p flex-shrink:0">
                         <svg viewBox="0 0 1104 648" fill="none" class="relative w:100p" xmlns="http://www.w3.org/2000/svg">
                             <path fill="rgba(var(--sheet-2), 1)" d="M0 0h1104v648H0z"/>
-                            <path stroke="rgba(var(--edge), 1)" d="M48 12v624M96 12v624M240 12v624m48-624v624M432 12v624m48-624v624M624 12v624m48-624v624M816 12v624m48-624v624M144 12v624m48-624v624M336 12v624m48-624v624M528 12v624m48-624v624M720 12v624m48-624v624M912 12v624m48-624v624M1008 12v624m48-624v624M0 60h1104m0 48H0M0 252h1104m0 48H0M0 444h1104m0 48H0M0 156h1104m0 48H0M0 348h1104m0 48H0M0 540h1104m0 48H0"/>
+                            <path stroke="rgba(var(--edge-1), 1)" d="M48 12v624M96 12v624M240 12v624m48-624v624M432 12v624m48-624v624M624 12v624m48-624v624M816 12v624m48-624v624M144 12v624m48-624v624M336 12v624m48-624v624M528 12v624m48-624v624M720 12v624m48-624v624M912 12v624m48-624v624M1008 12v624m48-624v624M0 60h1104m0 48H0M0 252h1104m0 48H0M0 444h1104m0 48H0M0 156h1104m0 48H0M0 348h1104m0 48H0M0 540h1104m0 48H0"/>
                             <!-- X Circs -->
                             <circle class="video-circ video-circ-r opacity:0" style="animation-delay: 7500ms" fill="rgba(var(--ink-3), 1)" cy="588" r="2"/>
                             <circle class="video-circ video-circ-l opacity:0" style="animation-delay: 500ms" fill="rgba(var(--ink-3), 1)" cy="492" r="2"/>
@@ -186,7 +189,7 @@ eleventyComputed:
                 <p class="flex-shrink:0 font:xs uppercase color:ink-1 tracking:loosest">
                     From Series A to Fortune 500
                 </p>
-                <div class="hidden sm:block w:100p h:1 bg:edge"></div>
+                <div class="hidden sm:block w:100p h:1 bg:edge-1"></div>
                 <p class="flex-shrink:0 font:xs uppercase color:ink-1 tracking:loosest">
                     From Consumer to Enterprise
                 </p>
@@ -245,7 +248,7 @@ eleventyComputed:
             </p>
         </div>
         <ul class="container flex flex:col gap:24 sm:grid:normal grid-cols:12">
-            {% set skillsCard = 'flex flex:col align-items:start justify-content:end bg:sheet-2 radius:2xl border:1 border:edge overflow:hidden' %}
+            {% set skillsCard = 'flex flex:col align-items:start justify-content:end bg:sheet-2 radius:2xl border:1 border:edge-1 overflow:hidden' %}
             {% set skillsCardContent = 'flex-shrink:0 w:100p flex flex:col align-items:start gap:8 md:gap:12 px:24 md:px:28 pb:20 md:pb:24 py:16' %}
             {% set skillsCardTitle = 'font:4xl tracking:tight leading:110' %}
             {% set skillsCardCopy =  'sm:font:sm md:font:md color:ink-1' %}
@@ -703,7 +706,7 @@ eleventyComputed:
                     <div aria-hidden="true" class="hidden md:block absolute z:n1 {% if mdpt > 1 %}top:n28 text:fade-down{% else %}bottom:n18 text:fade-up{% endif %} left:0 font:8xl sm:font:14xl color:sheet-0 leading:100 ml:n8 w:64 sm:w:auto">
                         {{ number }}
                     </div>
-                    <a href="{{ link }}" class="relative flex justify-content:between sm:justify-content:start px:24 md:px:28 pt:16 pb:20 md:pt:24 md:pb:24 bg:fade-1-2 radius:2xl border:1 border:edge md:ratio:1-1 overflow:hidden">
+                    <a href="{{ link }}" class="relative flex justify-content:between sm:justify-content:start px:24 md:px:28 pt:16 pb:20 md:pt:24 md:pb:24 bg:fade-1-2 radius:2xl border:1 border:edge-1 md:ratio:1-1 overflow:hidden card:hover focus:normal">
                         <div class="flex sm:flex:col align-items:center sm:align-items:start sm:justify-content:end gap:16 sm:gap:0">
                             <p aria-hidden="true" class="hidden sm:block md:hidden font:8xl sm:font:11xl color:sheet-0 leading:100 ml:n8 w:64 sm:w:auto watermark:sheet-0">
                                 {{ number }}
@@ -960,7 +963,7 @@ eleventyComputed:
                 </div>
                 <ul class="relative flex flex:col gap:12">
                     {% macro pricing(title, price, description, current) %}
-                        <li class="relative flex flex:col gap:12 bg:sheet-2 radius:xl pt:20 pb:24 px:28 border:1 border:edge {% if current == true %}border:dashed{% endif %}">
+                        <li class="relative flex flex:col gap:12 bg:sheet-2 radius:xl pt:20 pb:24 px:28 border:1 border:edge-1 {% if current == true %}border:dashed{% endif %}">
                             <div class="flex align-items:center justify-content:between">
                                 <h3 class="font:lg sm:font:3xl leading:100 flex align-items:center gap:4 sm:gap:12">
                                     {{ title }}
@@ -997,7 +1000,7 @@ eleventyComputed:
                 <p class="font:lg md:font:xl lg:font:2xl color:ink-1 mb:24 max-w:352 lg:max-w:none">
                     To get in touch, fill our the form below. <span class="space:nowrap">Mike will</span> get back to you within 24hrs.
                 </p>
-                <div class="bg:sheet-2 radius:2xl border:1 border:edge flex-grow:1 flex flex:col">
+                <div class="bg:sheet-2 radius:2xl border:1 border:edge-1 flex-grow:1 flex flex:col">
                     <form name="demo" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" class="relative flex-grow:1 flex flex:col align-items:start justify-content:between w:100p gap:24 pt:20 pb:24 px:28">
 
                         <div class="relative flex flex:col gap:16 w:100p flex-grow:1">

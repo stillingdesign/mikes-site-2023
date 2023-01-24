@@ -73,6 +73,12 @@ $utilities: (
             n1: -0.0625rem,
         ),
     ),
+    max-height: (
+        variants: (
+            none: none,
+            32: 2rem,
+        ),
+    ),
     max-width: (
         variants: (
             none: none,

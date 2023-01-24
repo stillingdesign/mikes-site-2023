@@ -1,7 +1,7 @@
 {% import "components/_icons.njk" as icons %}
 
 <footer class="section bg:sheet-2 sm:bg:transparent">
-    <div class="container flex flex:col py:48 sm:py:72 sm:grid:normal grid-cols:6 gap:48 font:sm border-t:1 border:edge">
+    <div class="container flex flex:col py:48 sm:py:72 sm:grid:normal grid-cols:6 gap:48 font:sm border-t:1 border:edge-1">
 
         {% set footerListTitle = 'relative flex flex:col gap:16' %}
         {% set footerList = 'relative flex flex:col gap:4' %}
@@ -12,7 +12,7 @@
                     <div class="color:ink-1 block py:8 leading:100 pointer-events:none">
                         {{ label }}
                     </div>
-                    <p class="block bg:sheet-1 font:2xs uppercase border:1 border:edge leading:100 py:4 px:8 radius:full pointer-events:none">
+                    <p class="block bg:sheet-1 font:2xs uppercase border:1 border:edge-1 leading:100 py:4 px:8 radius:full pointer-events:none">
                         Soon
                     <p>
                 {% else %}
@@ -58,7 +58,7 @@
             </ul>
         </div>
 
-        <div class="w:100p h:1 bg:edge sm:hidden"></div>
+        <div class="w:100p h:1 bg:edge-1 sm:hidden"></div>
 
         <!-- Navigation -->
         <nav class="col:4 w:100p relative">
@@ -106,11 +106,11 @@
         </nav>
 
     </div>
-    <div class="container:no-pad flex flex:col sm:flex:row sm:align-items:end sm:justify-content:between sm:pb:48 border-t:1 border:edge font:xs color:ink-1 leading:100">
+    <div class="container:no-pad flex flex:col sm:flex:row sm:align-items:end sm:justify-content:between sm:pb:48 border-t:1 border:edge-1 font:xs color:ink-1 leading:100">
         <p class="w:100p text:center sm:text:left py:16 sm:py:0">
             Using basic analytics for curiousity
         </p>
-        <div class="sm:block relative h:1 w:100p sm:h:36 sm:w:1 bg:edge flex-shrink:0"></div>
+        <div class="sm:block relative h:1 w:100p sm:h:36 sm:w:1 bg:edge-1 flex-shrink:0"></div>
         <p class="w:100p text:center sm:text:right py:16 sm:py:0">
             Not using the data for shady stuff
         </p>

@@ -4,7 +4,7 @@
 .form\:field { @include apply('relative flex flex:col w:100p'); }
 .form\:label { @include apply('relative font:xs medium color:ink-1 mb:n20 z:1 pointer-events:none'); }
 
-.form\:input { @include apply('relative w:100p color:ink-3 bg:sheet-2 border-b:1 border:edge pt:20 pb:8 px:0 cursor:pointer radius:none'); }
+.form\:input { @include apply('relative w:100p color:ink-3 bg:sheet-2 border-b:1 border:edge-1 pt:20 pb:8 px:0 cursor:pointer radius:none'); }
 .form\:input::placeholder { @include apply("color:ink-1"); }
 
 // Line Hover
@@ -13,9 +13,15 @@
     content: '';
     transition: width 200ms cubic-bezier(0, 0.5, 0.2, 1) 0ms;
 }
-.form\:field:hover:before,
-.form\:field:focus-within:before {
+.form\:field:hover:before {
     @include apply('w:100p');
+    content: '';
+    transition: width 300ms cubic-bezier(0, 0.5, 0.2, 1) 0ms;
+}
+
+.form\:field:focus-within > .form\:label { @include apply('color:link-rg') }
+.form\:field:focus-within:before {
+    @include apply('w:100p bg:link-rg');
     content: '';
     transition: width 300ms cubic-bezier(0, 0.5, 0.2, 1) 0ms;
 }

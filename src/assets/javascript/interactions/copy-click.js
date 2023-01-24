@@ -8,7 +8,7 @@ if(document.querySelectorAll(`[data-copy-click]`) && hoverableMediaThreshold.mat
         const customTitle  = element.getAttribute(`data-copy-title`);
         const customNote   = element.getAttribute(`data-copy-note`);
         const noteOffset   = element.getAttribute(`data-copy-offset`);
-        const notification = `<div data-copy-notification class="absolute block bg:sheet-1 font:2xs uppercase border:1 border:edge leading:100 py:4 px:8 radius:full space:nowrap" style="opacity:0">${customNote}</div>`
+        const notification = `<div data-copy-notification class="absolute block bg:sheet-1 font:2xs uppercase border:1 border:edge-1 leading:100 py:4 px:8 radius:full space:nowrap" style="opacity:0">${customNote}</div>`
 
         element.setAttribute(`title`, customTitle)
         element.addEventListener(`click`, function(event) {
