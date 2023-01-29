@@ -8,7 +8,11 @@ $gradients: (
     fade-down: linear-gradient(180deg, rgba(var(--sheet-3), 0) 0%, rgba(var(--sheet-3), 1) 100%),
     fade-up:   linear-gradient(0deg,   rgba(var(--sheet-3), 0) 0%, rgba(var(--sheet-3), 1) 100%),
 
-    fade-down-2: linear-gradient(180deg, rgba(var(--sheet-2), 0) 0%, rgba(var(--sheet-2), 1) 100%),
+    fade-down-2:  linear-gradient(180deg, rgba(var(--sheet-2), 0) 0%, rgba(var(--sheet-2), 1) 100%),
+    fade-down-p:  linear-gradient(180deg, rgba(var(--primary-hv), 1) 0%, rgba(var(--primary-rg), 1) 100%),
+    fade-up-p:    linear-gradient(0deg,   rgba(var(--primary-hv), 1) 0%, rgba(var(--primary-rg), 1) 100%),
+    fade-left-p:  linear-gradient(-90deg, rgba(var(--primary-hv), 1) 0%, rgba(var(--primary-rg), 1) 100%),
+    fade-right-p: linear-gradient(90deg,  rgba(var(--primary-hv), 1) 0%, rgba(var(--primary-rg), 1) 100%),
 
     fade-0-1:   linear-gradient(0deg,  rgba(var(--sheet-1), 1) 0%, rgba(var(--sheet-0), 1) 100%),
     fade-1-2:   linear-gradient(0deg,  rgba(var(--sheet-2), 1) 0%, rgba(var(--sheet-1), 1) 100%),

@@ -26,7 +26,7 @@ eleventyComputed:
 
             <div class="col-start:8 lg:col-start:9 col-end:13 flex flex:col md:flex:col-reverse align-items:center md:pb:32">
                 <p class="font:lg color:ink-1 mb:32 md:mb:0 max-w:352 sm:max-w:512 md:max-w:352 lg:max-w:none text:center">
-                    Meet the dude who can reliably take your brand and product from looking terrible <span class="space:nowrap">to trustworthy,</span> in the <span class="space:nowrap">matter of  weeks.</span>
+                    Meet Mike, the dude who can make your brand and product industry leading <span class="space:nowrap">in craft</span> and usability within <span class="space:nowrap">the matter of weeks.</span>
                 </p>
                 <div data-animate-emoji-float class="relative z:1 flex-grow:1 flex align-items:center justify-content:center">
                     <div aria-hidden="true" class="absolute font:lg pointer-events:none hidden" data-animate-emoji-floating data-float-x="-72" data-float-y="-72" >👋</div>
@@ -248,7 +248,7 @@ eleventyComputed:
             </p>
         </div>
         <ul class="container flex flex:col gap:24 sm:grid:normal grid-cols:12">
-            {% set skillsCard = 'flex flex:col align-items:start justify-content:end bg:sheet-2 radius:2xl border:1 border:edge-1 overflow:hidden' %}
+            {% set skillsCard = 'flex flex:col align-items:start justify-content:between bg:sheet-2 radius:2xl border:1 border:edge-1 overflow:hidden' %}
             {% set skillsCardContent = 'flex-shrink:0 w:100p flex flex:col align-items:start gap:8 md:gap:12 px:24 md:px:28 pb:20 md:pb:24 py:16' %}
             {% set skillsCardTitle = 'font:4xl tracking:tight leading:110' %}
             {% set skillsCardCopy =  'sm:font:sm md:font:md color:ink-1' %}
@@ -540,7 +540,7 @@ eleventyComputed:
                         Knows-how
                     </h3>
                     <p class="{{ skillsCardCopy }} max-w:320 sm:max-w:352 md:max-w:448 lg:max-w:none">
-                        Mike can code, build 3D, animate, design, and almost anything in-between. <span class="space:nowrap">He’s focused</span> on fundamentals but <span class="space:nowrap">can execute</span> marketer’s <span class="space:nowrap">wildest dreams.</span>
+                        Mike can code, 3D model, animate, design, and almost anything in-between. <span class="space:nowrap">He’s focused</span> on fundamentals but <span class="space:nowrap">can execute</span> marketer’s <span class="space:nowrap">wildest dreams.</span>
                     </p>
                 </div>
             </li>
@@ -675,13 +675,52 @@ eleventyComputed:
                 </div>
             </li>
             <li class="{{ skillsCard }} col-start:8 col-end:13">
-                <div aria-hidden="true" class="{{ skillsCardImg }} flex:col align-items:center justify-content:start gap:16"></div>
+                <div aria-hidden="true" class="{{ skillsCardImg }} flex align-items:center justify-content:center md:gap:4">
+                    <div class="relative w:100p min-w:384 flex ratio:1-1 bg:sheet-1 radius:full border-x:1 border:link-rg border-opacity:20 shadow:knowHow p:36">
+                        <div class="relative w:100p flex ratio:1-1 bg:sheet-1 radius:full border-x:1 border:link-rg border-opacity:30 shadow:knowHow p:36">
+                            <div class="relative w:100p flex ratio:1-1 bg:sheet-1 radius:full border-x:1 border:link-rg border-opacity:40 shadow:knowHow p:36">
+                                <div class="relative w:100p flex align-items:center justify-content:center ratio:1-1 bg:sheet-1 radius:full border-x:1 border:link-rg border-opacity:50 shadow:knowHow p:36">
+                                    <div class="relative flex-shrink:0 w:72 h:72 bg:fade-down-p color:link-hv radius:md shadow:knowHow p:4">
+                                        <div class="flex w:100p absolute top:n6 left:0 justify-content:around">
+                                            <div class="w:1 h:6 block bg:fade-down-p"></div>
+                                            <div class="w:1 h:6 block bg:fade-down-p"></div>
+                                            <div class="w:1 h:6 block bg:fade-down-p"></div>
+                                            <div class="w:1 h:6 block bg:fade-down-p"></div>
+                                        </div>
+                                        <div class="flex flex:col h:100p absolute top:0 right:n6 justify-content:around">
+                                            <div class="h:1 w:6 block bg:fade-left-p"></div>
+                                            <div class="h:1 w:6 block bg:fade-left-p"></div>
+                                            <div class="h:1 w:6 block bg:fade-left-p"></div>
+                                            <div class="h:1 w:6 block bg:fade-left-p"></div>
+                                        </div>
+                                        <div class="flex flex:col h:100p absolute top:0 left:n6 justify-content:around">
+                                            <div class="h:1 w:6 block bg:fade-right-p"></div>
+                                            <div class="h:1 w:6 block bg:fade-right-p"></div>
+                                            <div class="h:1 w:6 block bg:fade-right-p"></div>
+                                            <div class="h:1 w:6 block bg:fade-right-p"></div>
+                                        </div>
+                                        <div class="flex w:100p absolute bottom:n6 left:0 justify-content:around">
+                                            <div class="w:1 h:6 block bg:fade-up-p"></div>
+                                            <div class="w:1 h:6 block bg:fade-up-p"></div>
+                                            <div class="w:1 h:6 block bg:fade-up-p"></div>
+                                            <div class="w:1 h:6 block bg:fade-up-p"></div>
+                                        </div>
+                                        <div class="relative flex justify-content:center align-items:center w:100p h:100p radius:xs bg:fade-0-1 shadow:md">
+                                            {{ icons.bolt('w:16') }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute top:0 left:0 w:100p h:100p bg:fade-down-2 z:4 pointer-events:none"></div>
+                </div>
                 <div class="{{ skillsCardContent }}">
                     <h3 class="{{ skillsCardTitle }}">
                         Premium
                     </h3>
                     <p class="{{ skillsCardCopy }} max-w:256 sm:max-w:224 md:max-w:288 lg:max-w:none">
-                        Mike’s technical skillset prevents him from having <span class="space:nowrap">to sacrifice</span> nice form for functionality <span class="space:nowrap">and speed.</span>
+                        Mike’s technical skillset prevents him from having <span class="space:nowrap">to sacrifice</span> form for functionality <span class="space:nowrap">and speed.</span>
                     </p>
                 </div>
             </li>
