@@ -1,0 +1,24 @@
+---
+layout: "main.njk"
+title: "Journal"
+headline: "Mike Stilling's Journal"
+description: "A collection of Mike's thoughts, recommendations, and experiences."
+thumbnailAlt: "Some bullshit abstract stuff solely used for decoration"
+changefreq: weekly
+eleventyComputed:
+    thumbnail: "{{- base.url -}}/assets/images/og/default-og.jpg"
+---
+{% import "components/_icons.njk" as icons %}
+
+<!-- Headline -->
+<section data-first-section class="section section:hero section:pb">
+    <div class="absolute top:0 left:0 w:100p h:100p bg:down-lit z:n1"></div>
+    <div class="container flex flex:col align-items:center md:align-items:stretch text:center md:text:left md:grid:normal grid-cols:12">
+        <div aria-hidden="true" class="{{ bigLetter }} z:n1 color:sheet-2 text:fade-down bottom:n448 left:n192 lg:left:n352">20</div>
+
+        <h1 class="col-start:1 col-end:8 font:9xl sm:font:11xl leading:110 tracking:tighter highlight:text pb:24 max-w:352 sm:max-w:640 md:max-w:640 lg:max-w:none ml:n12 mr:n12 sm:ml:0 sm:mr:0">
+            Mike's <span class="font:serif italic serif:pairing tracking:tight">Journal</span>
+        </h1>
+
+    </div>
+</section>

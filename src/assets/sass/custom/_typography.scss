@@ -1,6 +1,8 @@
 @use "sass:map";
 @use "uniform" as *;
 
+.serif\:pairing { font-size: 1.2em; }
+
 .highlight\:text {
     background: var(--text);
     background-clip: text;

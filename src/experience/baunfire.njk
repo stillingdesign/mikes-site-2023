@@ -15,50 +15,45 @@ eleventyComputed:
     <!-- Headline -->
     <section data-first-section class="section section:hero section:pb">
         <div class="absolute top:0 left:0 w:100p h:100p bg:down-lit z:n1"></div>
-        <div class="container flex flex:col sm:grid:normal grid-cols:12">
+        <div class="container flex flex:col sm:grid:normal grid-cols:12 gap:24">
 
-            {{ icons.iconBaunfire('absolute top:n112 right:n320 w:640 color:ink-1 opacity:4 z:n1') }}
+            {{ icons.iconBaunfire('absolute top:128 sm:top:n32 md:top:144 lg:top:n96 right:n128 sm:right:n288 md:right:n224 lg:right:n320 w:320 sm:w:640 color:ink-1 opacity:4 z:n1') }}
 
-            <h1 class="col-start:1 col-end:8 font:9xl sm:font:11xl leading:110 tracking:tighter highlight:text pb:12">
+            <h1 class="col-start:1 col-end:13 lg:col-end:8 font:7xl sm:font:11xl md:font:13xl lg:font:11xl leading:110 tracking:tighter highlight:text pb:12 sm:max-w:640 md:max-w:896 mr:n12">
                 Leading multiple, fast turn projects <span class="space:nowrap">for young</span> startups
             </h1>
 
-            <div class="col-start:9 col-end:13 flex flex:col align-items:start justify-content:end gap:24 pb:24">
-                <div class="flex align-items:end">
-                    <p class="font:2xs leading:100 tracking:loosest uppercase color:ink-1 w:96">
-                        Role:
-                    </p>
-                    <p class="leading:100">
-                        Sr. Designer
-                    </p>
-                </div>
-                <div class="flex align-items:end">
-                    <p class="font:2xs leading:100 tracking:loosest uppercase color:ink-1 w:96">
-                        Duration:
-                    </p>
-                    <p class="leading:100 flex align-items:end gap:4">
-                        Six months
-                    </p>
-                </div>
-                <div class="flex align-items:end">
-                    <p class="font:2xs leading:100 tracking:loosest uppercase color:ink-1 w:96">
-                        Salary:
-                    </p>
-                    <p class="leading:100 flex align-items:end gap:4">
-                        $90,000
-                    </p>
-                </div>
-                <div class="flex align-items:end">
-                    <p class="font:2xs leading:100 tracking:loosest uppercase color:ink-1 w:96">
-                        Manager:
-                    </p>
-                    <p class="leading:100 flex align-items:end gap:4">
-                        Juan Sanchez
-                        <span class="font:2xs leading:100 tracking:loosest uppercase color:ink-1 pb:1">
-                            CEO
-                        </span>
-                    </p>
-                </div>
+            <div class="col-start:1 lg:col-start:9 col-end:13 flex flex:col sm:flex:row lg:flex:col align-items:start lg:justify-content:end gap:16 sm:gap:128 lg:gap:24 lg:pb:24">
+                {% macro heroDetail(label, value) %}
+                    <li class="flex align-items:end leading:100">
+                        <p class="font:2xs tracking:loosest uppercase color:ink-1 w:80 md:w:96">
+                            {{ label | safe }}
+                        </p>
+                        <p class="leading:100 flex align-items:end gap:6">
+                            {{ value | safe }}
+                        </p>
+                    </li>
+                {% endmacro %}
+                <ul class="flex flex:col align-items:start justify-content:end gap:16 sm:gap:24">
+                    {{ heroDetail(
+                        label='Company:',
+                        value='Baunfire'
+                    )}}
+                    {{ heroDetail(
+                        label='Job title:',
+                        value='Sr. Designer'
+                    )}}
+                </ul>
+                <ul class="flex flex:col align-items:start justify-content:end gap:16 sm:gap:24">
+                    {{ heroDetail(
+                        label='Duration:',
+                        value='11/20 - 04/21'
+                    )}}
+                    {{ heroDetail(
+                        label='Manager:',
+                        value='Juan Sanchez <span class="font:2xs leading:100 tracking:loosest uppercase color:ink-1 pb:1">CEO</span>'
+                    )}}
+                </ul>
             </div>
 
         </div>
@@ -191,6 +186,134 @@ eleventyComputed:
                     </button>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="section section:py">
+        <div class="container flex flex:col align-items:center gap:64 sm:gap:72 md:gap:96 font:lg sm:font:xl md:font:2xl leading:170 color:ink-2">
+
+            <div class="z:4 md:absolute top:0 right:0 flex flex:col sm:flex:row md:flex:col align-items:center md:align-items:stretch sm:justify-content:between md:justify-content:start gap:8 w:100p max-w:672 md:w:128 border-b:1 md:border-b:0 md:border-l:1 border:edge-1 font:md md:pl:32">
+                <h2 class="mt:n6">
+                    Contents:
+                </h2>
+                <ul class="w:100p flex flex:col sm:flex:row md:flex:col sm:justify-content:end md:justify-content:start sm:gap:12 md:gap:0 font:sm md:mb:n8 list:decimal list:inside">
+                    {% macro tocLink(link, number, label) %}
+                        <li class="relative w:100p flex-shrink:0">
+                            <a data-anchor="-72" href="{{ link }}" class="inline-block radius:md py:4 px:4 hover:color:link-hv transition:100 focus:normal">
+                                <div class="flex-shrink:0">
+                                    {{ label }}
+                                </div>
+                            </a>
+                        </li>
+                    {% endmacro %}
+                    {{ tocLink('#overview', '1', 'Overview') }}
+                    {{ tocLink('#duties', '2', 'Duties') }}
+                    {{ tocLink('#outputs', '3', 'Outputs') }}
+                    {{ tocLink('#takeaways', '4', 'Takeaways') }}
+                </ul>
+            </div>
+
+            <div id="overview" class="relative w:100p flex flex:col align-items:center gap:24 md:gap:32">
+                <h2 class="md:absolute top:0 left:0 color:ink-1 w:100p max-w:672 md:w:auto">
+                    Overview
+                </h2>
+                <div class="relative flex flex:col w:100p max-w:672">
+                    <p>
+                        Baunfire is a boutique digital agency that builds elevated websites for industry-leading startups. The goal of most web projects at Baunfire was to drive traffic, engagement, and conversion. Mike originally was acquainted with Baunfire <span class="space:nowrap">on Awwwards,</span> where Baunfire's work was regularly featured.
+                    </p>
+                </div>
+            </div>
+
+            <figure class="w:100p max-w:672 flex flex:col gap:12 mb:n16 md:mt:n48 md:mb:n48">
+                <img src="/assets/images/photos/baunfire/mike-stilling-baunfire-character.webp" width="672" height="448" class="w:100p h:auto radius:xl" alt="A 3d rendering of Mike as a simplified, lego-like character wearing a black hat, flannel, and black pants, with the Baunfire A logo behind him on a reddish-orange background.">
+                <figcaption class="text:center font:serif italic font:xs sm:font:md color:ink-1 leading:130">
+                    A 3d character Mike created of himself <span class="space:nowrap">when joining Baunfire</span>
+                </figcaption>
+            </figure>
+
+            <div id="duties" class="relative w:100p flex flex:col align-items:center gap:24 md:gap:32">
+                <h3 class="md:absolute top:0 left:0 color:ink-1 w:100p max-w:672 md:w:auto">
+                    Duties
+                </h3>
+                <div class="relative flex flex:col gap:24 md:gap:32 w:100p max-w:672">
+                    <p>
+                        As a small, nimble agency, Baunfire values detail, craft, and speed. Aside from having to execute high-quality design, while at Baunfire, Mike needed to work fast, communicate effectively, and confidently articulate his work to stakeholders.
+                    </p>
+                    <p>
+                        Mike worked directly with client's marketing, leadership, and product teams to dissect existing pain points. From there, Mike proposed strategies and improvements to address existing issues. Often, the output during this phase of a project was a quick, spreadsheet-style sitemap along with a collection of docs that detailed the suggested content structure.
+                    </p>
+                    <p>
+                        Through all of this, Mike collaborated with <span class="color:ink-1 italic">(and learned a bunch from)</span> Juan Sanchez, Baunfire's Founder and CEO. After dialing in what improvements were going to be made, Mike would dive into design. At Baunfire, Mike worked in Sketch, Blender, VScode, and the Adobe Suite. He was solely responsible for the visual design of his projects from start to finish.
+                    </p>
+                    <p>
+                        Mike lead synchronous design reviews both internally and externally with stakeholders. Once design was approved, <span class="space:nowrap">he would</span> meet up with Baunfire's eng team to kickoff <span class="space:nowrap">a development</span> phase of the website and stay involved throughout the process to offer support and detail.
+                    </p>
+                    <p>
+                        Due to Mike's knowledge of front-end development, he was able <span class="space:nowrap">to technically</span> articulate how to execute any quirky design elements and prevent misalignment between design and dev.
+                    </p>
+                </div>
+            </div>
+
+            <figure class="w:100p flex flex:col gap:12 mb:n16 md:mt:n48 md:mb:n48">
+                <img src="/assets/images/photos/baunfire/mike-stilling-cerebras-concept.webp" width="1104" height="687" class="w:100p h:auto radius:xl border:1 border:edge-1" alt="A website landing page for Cerebras that Mike designed. The design takes a tradition web design approach with the focal element being a Cerebras CS-1 super computer with an aluminum, die-cut housing. The background of the design is light gray.">
+                <figcaption class="text:center font:serif italic font:xs sm:font:md color:ink-1 leading:130">
+                    An outtake from Mike’s work <span class="space:nowrap">for Cerebras</span>
+                </figcaption>
+            </figure>
+
+            <div id="outputs" class="relative w:100p flex flex:col align-items:center gap:24 md:gap:32">
+                <h3 class="md:absolute top:0 left:0 color:link-rg w:100p max-w:672 md:w:auto">
+                    Outputs
+                </h3>
+                <div class="relative flex flex:col gap:32 md:gap:48 w:100p max-w:672">
+                    <p>
+                        During Mike's six month stay at Baunfire, he completed one full brand/site redesign, three partial site redesigns, the design and development of an Awwward winning microsite, and a handful of smaller projects (deck designs, social graphics, etc).
+                    </p>
+                    <ul class="relative flex flex:col gap:32 md:gap:48 w:100p">
+                        <li class="flex flex:col gap:8 w:100p pl:20 sm:pl:32 border-l:1 border:primary-rg">
+                            <h4 class="font:md sm:font:lg color:ink-3 mt:n8">
+                                Full Redesign: Cerebras
+                            </h4>
+                            <p class="font:sm sm:font:md color:ink-1 mb:n4">
+                                The largest project Mike completed at Baunfire was for Cerebras. They have since redesigned and their current site is pretty rough... To be honest, Mike was not satisfied with the outcomes on this project. Though, he was able to learn a lot through the ungodly amount of design iterations, reviews, and back-n-fourth with the client's team. 😅
+                            </p>
+                        </li>
+                        <li class="flex flex:col gap:8 w:100p pl:20 sm:pl:32 border-l:1 border:primary-rg">
+                            <h4 class="font:md sm:font:lg color:ink-3 mt:n8">
+                                Microsite: Norwest
+                            </h4>
+                            <p class="font:sm sm:font:md color:ink-1 mb:n4">
+                                The most well-received project during Mike's time at Baunfire was for Norwest Venture Partners. Mike created a year-in-review microsite for the venture firm that highlighted their portfolio and team's greatest achievements throughout the year. He worked hand-in-hand with Norwest's VP of Marketing to single-handedly ship design and dev on this project in just under 3 weeks.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <figure class="relative w:100p flex flex:col align-items:center gap:12 mb:n16 md:mt:n48 md:mb:n48">
+                <video loop="loop" muted="true" playsinline="playsinline" autoplay="true" poster="/assets/images/photos/baunfire/mike-stilling-nvp-loop.webp" preload="metadata" class="relative z:1 overflow:hidden w:100p max-w:672 h:auto radius:xl border:1 border:edge-1">
+                    <source src="/assets/images/photos/baunfire/mike-stilling-nvp-loop.mp4" type="video/mp4">
+                </video>
+                <figcaption class="text:center font:serif italic font:xs sm:font:md color:ink-1 leading:130">
+                    An small recording of the <span class="space:nowrap">NVP 2020 Year in Review landing page</span>
+                </figcaption>
+            </figure>
+
+            <div id="takeaways" class="relative w:100p flex flex:col align-items:center gap:24 md:gap:32">
+                <h2 class="md:absolute top:0 left:0 color:ink-1 w:100p max-w:672 md:w:auto">
+                    Takeaways
+                </h2>
+                <div class="relative flex flex:col gap:24 md:gap:32 w:100p max-w:672">
+                    <p>
+                        While Mike's time at Baunfire was brief, to some extent, it was <span class="space:nowrap">a turning</span> point in his career. It introduced him to the world of startups and acclimated him with the styles and strategies that contemporary, nimble teams work within. Baunfire also gave Mike the opportunity to strengthen his communication skills through mentorship and first-hand experience.
+                    </p>
+                    <p>
+                        Baunfire was the last agency that Mike worked for prior to joining startups. After experiencing the delight and success of being able to both design and develop a project, he hoped to find a role where he could do both, more often. With that, he was hoping to find a role where he could work on one brand more consistently – over time – adding more polish and refinement, as well as learning from the decisions made.
+                    </p>
+                </div>
+            </div>
+
         </div>
     </section>
 
