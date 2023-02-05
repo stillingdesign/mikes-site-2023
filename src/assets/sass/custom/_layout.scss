@@ -5,11 +5,19 @@
 .section\:py { @include apply("py:72 sm:py:112 md:py:160"); }
 .section\:pt { @include apply("pt:72 sm:pt:112 md:pt:160"); }
 .section\:pb { @include apply("pb:72 sm:pb:112 md:pb:160"); }
-.section\:hero { @include apply("pt:96 sm:pt:160 md:pt:160 pb:72 sm:pb:112 md:pb:144"); }
-
+.section\:hero { @include apply("pt:96 sm:pt:128 md:pt:144 pb:72 sm:pb:96 md:pb:96"); }
 
 .container { @include apply("relative w:100p md:max-w:1152 px:24 sm:px:0"); }
 .container\:no-pad { @include apply("relative w:100p md:max-w:1152"); }
 
 .sm\:grid\:normal { @include apply("sm:grid sm:gap:24 md:gap:48"); }
 .md\:grid\:normal { @include apply("md:grid md:gap:48"); }
+
+// Case Study Specific
+.cs\:wrapper { @include apply('flex flex:col align-items:center gap:64 sm:gap:72 md:gap:96 font:lg sm:font:xl md:font:2xl leading:170 color:ink-2'); }
+.cs\:chunk   { @include apply('relative w:100p flex flex:col align-items:center gap:24 md:gap:32'); }
+.cs\:content { @include apply('relative flex flex:col gap:24 md:gap:32 w:100p max-w:672'); }
+.cs\:figure  { @include apply('relative z:3 w:100p flex flex:col align-items:center gap:12 mb:n16 md:mt:n48 md:mb:n48 pointer-events:none'); }
+.cs\:figure figcaption { @include apply('text:center font:serif italic font:xs sm:font:md color:ink-1 leading:130'); }
+.cs\:figure img,
+.cs\:figure video { @include apply('relative z:1 overflow:hidden w:100p h:auto radius:xl'); }

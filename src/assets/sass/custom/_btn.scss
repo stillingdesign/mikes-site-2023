@@ -5,6 +5,7 @@
 
 .btn\:xs { @include apply("font:xs gap:4 leading:100 px:12 py:6"); }
 .btn\:xs > p { transform: translateY(-0.03125rem); }
+.btn\:sm { @include apply("font:sm gap:4 leading:100 px:16 py:10"); }
 .btn\:md { @include apply("font:lg sm:font:md gap:4 leading:100 px:28 sm:px:20 pt:16 pb:18 sm:pt:12 sm:pb:14"); }
 
 .btn\:header { @include apply("font:sm px:12 py:6 leading:100 bg:transparent border-opacity:0"); }

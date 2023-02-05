@@ -1,8 +1,8 @@
 {% import "components/_icons.njk" as icons %}
 
-<header class="fixed top:0 left:0 z:10 w:100p flex flex:col align-items:center justify-content:center sm:px:48">
+<header class="fixed top:0 left:0 z:10 w:100p flex flex:col align-items:center justify-content:center sm:px:48 md:bg:transparent">
     <div class="container flex align-items:center justify-content:between border-b:1 border:edge-1 py:4">
-        <div data-header-bg class="absolute top:0 left:0 w:100p h:100p z:n1 bg:sheet-3 sm:bg:fade-up-header"></div>
+        <div data-header-bg class="absolute top:0 left:0 w:100p h:100p z:n1 bg:sheet-3 md:bg:fade-up-header"></div>
 
         <a id="header-logo" href="/" title="Go back to Homepage" class="flex leading:100 align-items:center gap:4 tracking:tighter py:8 px:12 ml:n12 max-h:32 radius:full outline:none focus:normal">
             {{ icons.logoIcon('w:16')}}

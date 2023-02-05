@@ -1,0 +1,56 @@
+{% macro slideTitle(direction, label)%}
+    <div aria-hidden="true" class="section mb:n24 md:mb:n32">
+        <div data-slide-title="{{ direction }}" class="container flex align-items:center {% if direction == 'left' %}justify-content:start{% else %}justify-content:end{% endif %} flex:nowrap uppercase tracking:tighter leading:100 font:13xl sm:font:14xl md:font:15xl lg:font:16xl color:sheet-2 overflow:hidden">
+            <div data-slide-title-animate class="flex align-items:center flex-shrink:0 flex:nowrap">
+                <div data-slide-title-measure class="pr:48 watermark:sheet-2 flex-shrink:0">
+                    {{ label }}
+                </div>
+                <div class="pr:48 watermark:sheet-2 flex-shrink:0">
+                    {{ label }}
+                </div>
+                <div class="pr:48 watermark:sheet-2 flex-shrink:0">
+                    {{ label }}
+                </div>
+                <div class="pr:48 watermark:sheet-2 flex-shrink:0">
+                    {{ label }}
+                </div>
+                <div class="pr:48 watermark:sheet-2 flex-shrink:0">
+                    {{ label }}
+                </div>
+            </div>
+            <div class="absolute  left:0 top:0 w:48 sm:w:128 h:100p bg:fade-left"></div>
+            <div class="absolute right:0 top:0 w:48 sm:w:128 h:100p bg:fade-right"></div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro csTOC() %}
+    <div data-toc class="sticky md:absolute z:4 md:z:2 top:40 md:top:0 right:0 md:h:100p w:100p md:w:128 md:mt:14 bg:sheet-3 md:bg:transparent pt:6 md:pb:24">
+        <div class="sticky top:72 left:0 flex flex:row md:flex:col align-items:center md:align-items:stretch justify-content:between md:justify-content:start gap:8 border-b:1 md:border-b:0 md:border-l:1 border:edge-1 font:sm sm:font:sm md:pl:32">
+            <h2 class="hidden sm:block mt:n6 md:mt:n6 color:ink-3">
+                Contents:
+            </h2>
+            <ul class="w:100p flex flex:row md:flex:col justify-content:between sm:justify-content:end md:justify-content:start sm:gap:32 md:gap:0 md:mb:n8 list:decimal list:inside color:ink-1">
+                {% macro tocLink(link, number, label) %}
+                    <li class="relative md:w:100p flex-shrink:0 transform translate-y:n2 md:translate-y:0">
+                        <a data-toc-link data-anchor data-anchor-offset="80" href="{{ link }}" class="inline-block radius:md py:2 sm:px:4 border:1 hover:color:link-hv transition:100 focus:normal">
+                            <div class="flex-shrink:0">
+                                {{ label }}
+                            </div>
+                        </a>
+                    </li>
+                {% endmacro %}
+                {{ tocLink('#overview', '1', 'Overview') }}
+                {{ tocLink('#duties', '2', 'Duties') }}
+                {{ tocLink('#outputs', '3', 'Outputs') }}
+                {{ tocLink('#takeaways', '4', 'Takeaways') }}
+            </ul>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro csTitle(tag, label) %}
+    <{{ tag }} class="md:absolute top:0 left:0 color:ink-1 w:100p max-w:672 md:w:auto">
+        {{ label | safe }}
+    </{{ tag }}>
+{% endmacro %}

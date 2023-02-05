@@ -1,6 +1,7 @@
 // Interactions
 import './interactions/color-mode.js';
 import './interactions/copy-click.js';
+import './interactions/toc.js';
 import './interactions/video-player.js';
 
 // Animations

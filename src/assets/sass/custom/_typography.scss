@@ -58,3 +58,29 @@
 }
 
 .link { @include apply('hover:color:link-hv focus:color:link-hv focus:underline outline:none') }
+
+.link\:highlight {
+    text-decoration: none;
+    background: linear-gradient(180deg, rgba(var(--primary-rg), 1) 0%, rgba(var(--primary-rg), 1) 100%);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+}
+
+a:hover > .link\:highlight,
+.link\:highlight:hover {
+    color: rgba(var(--link-hv), 1);
+    background: linear-gradient(180deg, rgba(var(--link-hv), 1) 0%, rgba(var(--link-hv), 1) 100%);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+}
+
+.link\:highlight:focus-visible {
+    color: rgba(var(--link-hv), 1);
+    background: linear-gradient(180deg, rgba(var(--link-hv), 0.25) 0%, rgba(var(--link-hv), 0.25) 100%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    outline:none;
+}

@@ -8,6 +8,7 @@ changefreq: weekly
 eleventyComputed:
     thumbnail: "{{- base.url -}}/assets/images/og/default-og.jpg"
 ---
+{% import "components/_elements.njk" as elements %}
 {% import "components/_icons.njk" as icons %}
 
 <main class="overflow:hidden">
@@ -207,35 +208,8 @@ eleventyComputed:
 
         </div>
     </section>
-    
-    <!-- Sliding title -->
-    {% macro slideTitle(direction, label)%}
-    <div aria-hidden="true" class="section mb:n24 md:mb:n32">
-        <div data-slide-title="{{ direction }}" class="container flex align-items:center {% if direction == 'left' %}justify-content:start{% else %}justify-content:end{% endif %} flex:nowrap uppercase tracking:tighter leading:100 font:13xl sm:font:14xl md:font:15xl lg:font:16xl color:sheet-2 overflow:hidden">
-            <div data-slide-title-animate class="flex align-items:center flex-shrink:0 flex:nowrap">
-                <div data-slide-title-measure class="pr:48 watermark:sheet-2 flex-shrink:0">
-                    {{ label }}
-                </div>
-                <div class="pr:48 watermark:sheet-2 flex-shrink:0">
-                    {{ label }}
-                </div>
-                <div class="pr:48 watermark:sheet-2 flex-shrink:0">
-                    {{ label }}
-                </div>
-                <div class="pr:48 watermark:sheet-2 flex-shrink:0">
-                    {{ label }}
-                </div>
-                <div class="pr:48 watermark:sheet-2 flex-shrink:0">
-                    {{ label }}
-                </div>
-            </div>
-            <div class="absolute  left:0 top:0 w:48 sm:w:128 h:100p bg:fade-left"></div>
-            <div class="absolute right:0 top:0 w:48 sm:w:128 h:100p bg:fade-right"></div>
-        </div>
-    </div>
-    {% endmacro %}
 
-    {{ slideTitle('left', 'skills')}}
+    {{ elements.slideTitle('left', 'skills')}}
 
     <!-- Skills -->
     <section class="section section:py sm:gap:72 md:gap:96">
@@ -727,7 +701,7 @@ eleventyComputed:
         </ul>
     </section>
 
-    {{ slideTitle('right', 'work')}}
+    {{ elements.slideTitle('right', 'work')}}
 
     <!-- Experience -->
     <section class="section section:py sm:gap:72 md:gap:96">
@@ -802,7 +776,7 @@ eleventyComputed:
         </ul>
     </section>
 
-    {{ slideTitle('left', 'about')}}
+    {{ elements.slideTitle('left', 'about')}}
 
     <!-- About -->
     <section class="section section:py gap:96 sm:gap:144 md:gap:192">
@@ -950,7 +924,7 @@ eleventyComputed:
 
     </section>
 
-    {{ slideTitle('right', 'hire')}}
+    {{ elements.slideTitle('right', 'hire')}}
 
     <!-- Hiring -->
     <section class="section section:py">
@@ -1040,9 +1014,9 @@ eleventyComputed:
                     To get in touch, fill our the form below. <span class="space:nowrap">Mike will</span> get back to you within 24hrs.
                 </p>
                 <div class="bg:sheet-2 radius:2xl border:1 border:edge-1 flex-grow:1 flex flex:col">
-                    <form name="demo" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" class="relative flex-grow:1 flex flex:col align-items:start justify-content:between w:100p gap:24 pt:20 pb:24 px:28">
+                    <form name="demo" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" class="relative flex-grow:1 flex flex:col align-items:start justify-content:between w:100p gap:16 pt:20 pb:24 px:28">
 
-                        <div class="relative flex flex:col gap:16 w:100p flex-grow:1">
+                        <div class="relative flex flex:col gap:8 w:100p flex-grow:1">
                             <!-- Hidden Fields -->
                             <input type="hidden" id="lead-source" name="lead source" value="homepage">
                             <div class="hidden"><input name="bot-field"></div>
@@ -1072,14 +1046,19 @@ eleventyComputed:
                                 <label for="email" class="form:label" required>
                                     Note
                                 </label>
-                                <textarea id="note" name="notes" rows="1" class="form:input" style="overflow-y:auto; word-wrap:break-word" placeholder="Let's set some time to meet" required></textarea>
+                                <textarea id="note" name="notes" rows="3" class="form:input" style="overflow-y:auto; word-wrap:break-word" placeholder="Let's set some time to meet" required></textarea>
                             </div>
                         </div>
 
-                        <button type="submit" title="Submit form" class="btn btn:md btn:hover">
-                            <span>Submit</span>
-                            {{ icons.chevRight('mr:n4 w:14') }}
-                        </button>
+                        <div class="w:100p flex align-items:center justify-content:between">
+                            <button type="submit" title="Submit form" class="btn btn:md btn:hover">
+                                <span>Submit</span>
+                                {{ icons.chevRight('mr:n4 w:14') }}
+                            </button>
+                            <a href="mailto:mike@mikestilling.com" target="_blank" class="flex align-items:center gap:2 font:xs text:right color:ink-1 focus:normal radius:sm">
+                                Or <span class="hidden sm:inline">send Mike</span> <span class="link:highlight"><span class="hidden sm:inline">an</span> email</span> <span class="sm:hidden">Mike</span>
+                            </a>
+                        </div>
 
                     </form>
                 </div>

@@ -2,26 +2,13 @@
 @use "uniform" as *;
 
 .form\:field { @include apply('relative flex flex:col w:100p'); }
-.form\:label { @include apply('relative font:xs medium color:ink-1 mb:n20 z:1 pointer-events:none'); }
+.form\:label { @include apply('relative font:2xs medium color:ink-1 mb:2 z:1 pointer-events:none'); }
 
-.form\:input { @include apply('relative w:100p color:ink-3 bg:sheet-2 border-b:1 border:edge-1 pt:20 pb:8 px:0 cursor:pointer radius:none'); }
-.form\:input::placeholder { @include apply("color:ink-1"); }
+.form\:input { @include apply('relative w:100p color:ink-1 bg:sheet-2 border:1 border:edge-1 pt:6 pb:8 px:12 cursor:pointer radius:md font:sm'); }
+.form\:input::placeholder { @include apply("color:ink-1 opacity:70"); }
 
-// Line Hover
-.form\:field:before {
-    @include apply('z:1 absolute bottom:0 left:0 w:0 h:1 bg:ink-3');
-    content: '';
-    transition: width 200ms cubic-bezier(0, 0.5, 0.2, 1) 0ms;
-}
-.form\:field:hover:before {
-    @include apply('w:100p');
-    content: '';
-    transition: width 300ms cubic-bezier(0, 0.5, 0.2, 1) 0ms;
-}
+// Hover
+.form\:input:hover { @include apply('bg:sheet-1 bg-opacity:50'); }
+.form\:input:focus-visible { @include apply('bg:sheet-1 bg-opacity:100 border:edge-2 color:ink-3'); }
 
 .form\:field:focus-within > .form\:label { @include apply('color:link-rg') }
-.form\:field:focus-within:before {
-    @include apply('w:100p bg:link-rg');
-    content: '';
-    transition: width 300ms cubic-bezier(0, 0.5, 0.2, 1) 0ms;
-}
