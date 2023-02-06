@@ -713,30 +713,29 @@ eleventyComputed:
                 The case studies below include a video overview with Mike personally walking you through his past work, responsibilities, processes, <span class="space:nowrap">and outcomes.</span>
             </p>
         </div>
-        <ul class="container flex flex:col gap:8 sm:gap:24 sm:grid:normal grid-cols:2 md:grid-cols:4">
-            {% macro caseStudyCard(icon, mdpt, link, number, company, role) %}
-                <li class="relative z:1 md:pt:{{ mdpt }}">
-                    <div aria-hidden="true" class="hidden md:block absolute z:n1 {% if mdpt > 1 %}top:n28 text:fade-down{% else %}bottom:n18 text:fade-up{% endif %} left:0 font:8xl sm:font:14xl color:sheet-0 leading:100 ml:n8 w:64 sm:w:auto">
+        <ul class="container flex flex:col gap:24 sm:grid:normal grid-cols:2 md:grid-cols:4">
+            {% macro caseStudyCard(icon, mdpt, link, number, company, role, img, imgAlt) %}
+                <li class="relative z:1 sm:pt:{{ mdpt }}">
+                    <div aria-hidden="true" class="hidden sm:block absolute z:n1 {% if mdpt > 1 %}top:n20 md:top:n28 text:fade-down{% else %}bottom:n10 md:bottom:n18 text:fade-up{% endif %} left:0 font:8xl sm:font:14xl color:sheet-0 leading:100 ml:n8 w:64 sm:w:auto">
                         {{ number }}
                     </div>
-                    <a href="{{ link }}" class="relative flex justify-content:between sm:justify-content:start px:24 md:px:28 pt:16 pb:20 md:pt:24 md:pb:24 bg:fade-1-2 radius:2xl border:1 border:edge-1 md:ratio:1-1 overflow:hidden card:hover focus:normal">
-                        <div class="flex sm:flex:col align-items:center sm:align-items:start sm:justify-content:end gap:16 sm:gap:0">
-                            <p aria-hidden="true" class="hidden sm:block md:hidden font:8xl sm:font:11xl color:sheet-0 leading:100 ml:n8 w:64 sm:w:auto watermark:sheet-0">
-                                {{ number }}
-                            </p>
-                            <div class="color:ink-1 block w:32 sm:w:24 sm:opacity:30 sm:absolute sm:top:24 sm:right:28">
+                    <a href="{{ link }}" class="relative flex flex:col justify-content:start bg:fade-1-2 radius:2xl border:1 border:edge-1 ratio:1-1 md:ratio:3-4 pl:24 md:pl:28 overflow:hidden card:hover focus:normal">
+                        <div class="flex flex:col align-items:start justify-content:end gap:4 pr:24 md:pr:28 pt:16 pb:20 md:pt:24 md:pb:24">
+                            <div class="color:ink-1 block w:16 opacity:30">
                                 {{ icon | safe }}
                             </div>
                             <div class="flex flex:col mt:2 sm:mt:0">
                                 <h3 class="font:2xl sm:font:4xl md:font:3xl lg:font:4xl tracking:tight leading:110 space:nowrap">
                                     {{ company }}
                                 </h3>
-                                <p class="color:ink-1 font:sm sm:font:md md:font:sm lg:font:md space:nowrap">
+                                <p class="color:ink-1 font:sm sm:font:md md:font:xs lg:font:md space:nowrap">
                                     {{ role }}
                                 </p>
                             </div>
                         </div>
-                        {{ icons.chevRight('w:20 sm:hidden ') }}
+                        <div class="relative z:1 w:100p h:100p flex align-items:start justify-content:start overflow:hidden radius-tl:sm border-t:1 border-l:1 border:edge-1 border-opacity:50">
+                            <img src="{{ img }}" alt="{{ imgAlt }}" class="flex object:cover object:left-top w:100p h:auto sm:h:100p sm:w:auto">
+                        </div>
                     </a>
                 </li>
             {% endmacro %}
@@ -746,32 +745,40 @@ eleventyComputed:
                 link='/experience/firehydrant/',
                 number='01',
                 company='FireHydrant',
-                role='Brand & Web Design + Dev',
-                icon=icons.iconFirehydrant('w:100p')
+                role='Brand, Web, Development',
+                icon=icons.iconFirehydrant('w:100p'),
+                img='/assets/images/photos/firehydrant/thumbnail-cta.webp',
+                imgAlt='screenshot of the FireHydrant marketing website homepage in darkmode with headline and purple to pink gradient banner'
             )}}
             {{ caseStudyCard(
                 mdpt='96',
                 link='/experience/rewatch/',
                 number='02',
                 company='Rewatch',
-                role='Brand & Web Design + Dev',
-                icon=icons.iconRewatch('w:100p')
+                role='Brand, Web, Development',
+                icon=icons.iconRewatch('w:100p'),
+                img='/assets/images/photos/rewatch/thumbnail-cta.webp',
+                imgAlt='screenshot of the Abstract marketing website homepage with a large typographic headline and simple vector illustrations'
             )}}
             {{ caseStudyCard(
                 mdpt='0',
                 link='/experience/abstract/',
                 number='03',
                 company='Abstract',
-                role='Web Design + Dev',
-                icon=icons.iconAbstract('w:100p')
+                role='Web, Development',
+                icon=icons.iconAbstract('w:100p'),
+                img='/assets/images/photos/abstract/thumbnail-cta.webp',
+                imgAlt='screenshot of the Abstract marketing website homepage with a large typographic headline and simple vector illustrations'
             )}}
             {{ caseStudyCard(
                 mdpt='96',
                 link='/experience/baunfire/',
                 number='04',
                 company='Baunfire',
-                role='Web Design + Dev',
-                icon=icons.iconBaunfire('w:100p')
+                role='Brand, Web, Development',
+                icon=icons.iconBaunfire('w:100p'),
+                img='/assets/images/photos/baunfire/thumbnail-cta.webp',
+                imgAlt='screenshot of the Abstract marketing website homepage with a large typographic headline and simple vector illustrations'
             )}}
         </ul>
     </section>

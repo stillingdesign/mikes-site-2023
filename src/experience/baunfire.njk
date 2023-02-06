@@ -299,30 +299,7 @@ eleventyComputed:
     <section class="section section:pb">
         <div class="container flex flex:col gap:24 sm:grid:normal grid-cols:12">
             <div class="relative col-start:1 col-end:7 md:col-end:8 flex flex:col gap:24 md:gap:48">
-                {% macro nextExperienceCard(link, label, title, description, img, imgAlt) %}
-                    <a href="{{ link }}" class="relative z:1 overflow:hidden w:100p h:100p flex flex:col md:flex:row justify-content:between gap:28 pl:28 pt:28 bg:sheet-2 border:1 border:edge-1 radius:2xl hover:bg:sheet-1 focus:normal group transition:200">
-                        <div class="relative z:3 w:100p flex flex:col align-items:start gap:8 pr:28 md:pr:0">
-                            <div class="flex align-items:center gap:4 color:ink-1 font:xs">
-                                <p>
-                                    {{ label | safe }}
-                                </p>
-                                {{ icons.chevRight('w:12 transform group-hover:translate-x:4 transition:100 cubic-out')}}
-                            </div>
-                            <h2 class="font:5xl leading:110 tracking:tighter">
-                                {{ title | safe }}
-                            </h2>
-                            <p class="color:ink-1">
-                                {{ description | safe }}
-                            </p>
-                        </div>
-                        <div class="relative z:1 overflow:hidden flex flex:col w:100p ratio:4-3 sm:ratio:unset sm:min-h:192 sm:max-h:none h:100p bg:black bg-opacity:80 border-l:1 border-t:1 radius-tl:md border:edge-1 shadow:2xl">
-                            <div class="relative w:100p h:100p flex align-items:start justify-content:start">
-                                <img src="{{ img }}" alt="{{ imgAlt }}" class="flex object:cover object:left-top w:100p h:auto sm:h:100p sm:w:auto">
-                            </div>
-                        </div>
-                    </a>
-                {% endmacro %}
-                {{ nextExperienceCard(
+                {{ elements.csNextCard(
                     link='/experience/firehydrant/',
                     label='View most recent',
                     title='FireHydrant',
@@ -330,72 +307,21 @@ eleventyComputed:
                     img='/assets/images/photos/firehydrant/thumbnail-cta.webp',
                     imgAlt='screenshot of the FireHydrant marketing website homepage in darkmode with headline and purple to pink gradient banner'
                 )}}
-                {{ nextExperienceCard(
+                {{ elements.csNextCard(
                     link='/experience/abstract/',
                     label='View next up',
                     title='Abstract',
-                    description='How Mike is transforming a brand and leading an internal charge toward better design within <span class="space:nowrap">his first 90 days.</span>',
+                    description='Designing a website that impresses designers while accounting for <span class="space:nowrap">a rapidly</span> changing product, <span class="space:nowrap"> brand, and team.</span>',
                     img='/assets/images/photos/abstract/thumbnail-cta.webp',
                     imgAlt='screenshot of the Abstract marketing website homepage with a large typographic headline and simple vector illustrations'
                 )}}
             </div>
-            <!-- Card 3 -->
-            <div class="col-start:7 md:col-start:8 col-end:13 w:100p h:100p flex flex:col text:center align-items:center gap:8 p:28 bg:sheet-2 border:1 border:edge-1 radius:2xl">
-                <p class="color:link-rg font:xs mb:n2">
-                    Hire Mike
-                </p>
-                <h2 class="font:5xl leading:110 tracking:tighter">
-                    Grow your <span class="hidden lg:inline">sales</span> funnel
-                </h2>
-                <p class="color:ink-1 font:sm sm:font:md sm:max-w:320">
-                    Your website could be creating more <span class="space:nowrap">leads, conversions,</span> <span class="space:nowrap">and dollars.</span>
-                </p>
-                <form name="demo" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" class="relative flex-grow:1 flex flex:col align-items:start justify-content:between w:100p gap:16 text:left">
-                    <div class="relative flex flex:col gap:8 w:100p flex-grow:1">
-                        <!-- Hidden Fields -->
-                        <input type="hidden" id="lead-source" name="lead source" value="homepage">
-                        <div class="hidden"><input name="bot-field"></div>
-                        <!-- Field: Name -->
-                        <div class="form:field">
-                            <label for="name" class="form:label" required>
-                                Name
-                            </label>
-                            <input type="text" id="name" name="name" placeholder="Sam Jones" class="form:input" required>
-                        </div>
-                        <!-- Field: Company -->
-                        <div class="form:field">
-                            <label for="company" class="form:label" required>
-                                Company
-                            </label>
-                            <input type="text" id="company" name="company" placeholder="Acme" class="form:input" required>
-                        </div>
-                        <!-- Field: Email -->
-                        <div class="form:field">
-                            <label for="email" class="form:label" required>
-                                Email
-                            </label>
-                            <input type="email" id="email" name="email" placeholder="sam@acme.com" class="form:input" required>
-                        </div>
-                        <!-- Field: Note -->
-                        <div class="form:field">
-                            <label for="email" class="form:label" required>
-                                Note
-                            </label>
-                            <textarea id="note" name="notes" rows="3" class="form:input" style="overflow-y:auto; word-wrap:break-word" placeholder="Let's set some time to meet" required></textarea>
-                        </div>
-                    </div>
-                    <div class="w:100p flex align-items:center justify-content:between">
-                        <button type="submit" title="Submit form" class="btn btn:md btn:hover">
-                            <span>Submit</span>
-                            {{ icons.chevRight('mr:n4 w:18 sm:w:16') }}
-                        </button>
-                        <a href="mailto:mike@mikestilling.com" target="_blank" class="flex align-items:center gap:2 font:xs text:right color:ink-1 focus:normal radius:sm">
-                            Or <span class="hidden sm:inline">send Mike</span> <span class="link:highlight"><span class="hidden sm:inline">an</span> email</span> <span class="sm:hidden">Mike</span>
-                        </a>
-                    </div>
-                </form>
-            </div>
-
+            <!-- Form -->
+            {{ elements.csForm(
+                eyebrow='Hire Mike',
+                headline='Grow your <span class="hidden lg:inline">sales</span> funnel',
+                description='Your website could be creating more <span class="space:nowrap">leads, conversions,</span> <span class="space:nowrap">and dollars.</span>'
+            )}}
         </div>
     </section>
 
