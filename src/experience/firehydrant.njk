@@ -2,13 +2,353 @@
 layout: "main.njk"
 title: "FireHydrant"
 headline: "FireHydrant x Mike Stilling"
-description: "What Mike has been up to during his time at FireHydrant"
+description: "A recap of Mike's job experience at FireHydrant"
 thumbnailAlt: "Some bullshit abstract stuff solely used for decoration"
 changefreq: monthly
 eleventyComputed:
     thumbnail: "{{- base.url -}}/assets/images/og/default-og.jpg"
 ---
+{% import "components/_elements.njk" as elements %}
+{% import "components/_icons.njk" as icons %}
 
-<main class="overflow:hidden">
+<main>
+
+    <!-- Headline + Hero  -->
+    <div class="relative w:100p block overflow:hidden">
+        <!-- Headline -->
+        <section data-first-section class="section section:hero">
+            <div class="absolute top:0 left:0 w:100p h:100p bg:down-lit z:n1"></div>
+            <div class="container flex flex:col sm:grid:normal grid-cols:12 gap:24">
+    
+                {{ icons.iconFirehydrant('absolute top:128 sm:top:n72 md:top:112 lg:top:n128 right:n48 sm:right:n128 lg:right:n288 w:320 sm:w:640 color:ink-1 opacity:4 z:n1') }}
+    
+                <h1 class="col-start:1 col-end:13 lg:col-end:8 font:7xl sm:font:11xl md:font:13xl lg:font:11xl leading:110 tracking:tighter highlight:text pb:12 sm:max-w:640 md:max-w:896 mr:n12">
+                    Taking a brand from bad to better in less than <span class="space:nowrap">90 days</span>
+                </h1>
+    
+                <div class="col-start:1 lg:col-start:9 col-end:13 flex flex:col sm:flex:row lg:flex:col align-items:start lg:justify-content:end gap:16 sm:gap:128 lg:gap:24 lg:pb:24">
+                    {% macro heroDetail(label, value) %}
+                        <li class="flex align-items:end leading:100">
+                            <p class="font:2xs tracking:loosest uppercase color:ink-1 w:80 md:w:96">
+                                {{ label | safe }}
+                            </p>
+                            <p class="leading:100 flex align-items:end gap:6">
+                                {{ value | safe }}
+                            </p>
+                        </li>
+                    {% endmacro %}
+                    <ul class="flex flex:col align-items:start justify-content:end gap:16 sm:gap:24">
+                        {{ heroDetail(
+                            label='Company:',
+                            value='FireHydrant'
+                        )}}
+                        {{ heroDetail(
+                            label='Job title:',
+                            value='Sr. Web Developer <span class="font:2xs leading:100 tracking:loosest uppercase color:ink-1 pb:1">Founding</span>'
+                        )}}
+                    </ul>
+                    <ul class="flex flex:col align-items:start justify-content:end gap:16 sm:gap:24">
+                        {{ heroDetail(
+                            label='Duration:',
+                            value='11/22 - Current'
+                        )}}
+                        {{ heroDetail(
+                            label='Manager:',
+                            value='Erin Kavanagh <span class="font:2xs leading:100 tracking:loosest uppercase color:ink-1 pb:1">VP Marketing</span>'
+                        )}}
+                    </ul>
+                </div>
+    
+            </div>
+        </section>
+        <!-- Hero Video -->
+        <section id="video-intro" class="section z:1">
+            <div class="container">
+                <div aria-hidden="true" class="{{ bigLetter }} z:n1 color:sheet-2 text:fade-down bottom:n448 right:n192 lg:right:n352">23</div>
+                <div data-video class="relative z:3 flex align-items:center justify-content:center w:100p ratio:1-1 sm:ratio:4-3 md:ratio:16-9 radius:2xl bg:sheet-2 border:1 border:edge-1 overflow:hidden shadow:2xl">
+                    <!-- Video -->
+                    <div class="relative w:100p h:100p overflow:hidden flex align-items:center justify-content:center">
+                        <div class="relative flex align-items:center justify-content:center ratio:16-9 h:100p flex-shrink:0">
+                            <video data-video-el class="w:100p" playsinline preload="metadata">
+                                <source src="/assets/images/videos/meet-mike-stilling.mp4" type="video/mp4">
+                            </video>
+                            <!-- Controls -->
+                            <div class="hidden sm:flex absolute bottom:20 md:bottom:28 px:28 align-items:center justify-content:center gap:16 w:100p max-w:512 md:max-w:none">
+                                <!-- Duration -->
+                                <div class="md:absolute md:left:28 flex align-items:center justify-content:end md:justify-content:start gap:4 w:96 font:2xs color:ink-1 flex-shrink:0">
+                                    <time data-video-time-current class="w:28 text:center">00:00</time>
+                                    <span>/</span>
+                                    <time data-video-time-duration class="w:28 text:center">2:00</time>
+                                </div>
+                                <!-- Progress-->
+                                <div class="relative w:100p flex align-items:center w:100p md:max-w:320">
+                                    <progress data-video-progress value="0" min="0" class="w:100p video-progress"></progress>
+                                    <input data-video-seek value="0" min="0" type="range" step="1" hidden class="video-seek absolute top:n8 mt:n1 left:0">
+                                </div>
+                                <!-- Mute -->
+                                <button data-video-audio class="md:absolute md:right:28 flex align-items:center justify-content:start md:justify-content:end gap:4 w:96 font:2xs color:ink-1 uppercase flex-shrink:0 leading:100 py:8 space:nowrap">
+                                    <div data-video-unmute hidden class="flex-shrink:0">
+                                        {{ icons.soundOn('w:12') }}
+                                    </div>
+                                    <div data-video-mute class="flex-shrink:0">
+                                        {{ icons.soundOff('w:12') }}
+                                    </div>
+                                    <div data-video-audio-label>
+                                        Mute video
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video Overlay -->
+                    <div data-video-overlay class="absolute top:n1 left:n1 w:100p h:100p overflow:hidden flex align-items:center justify-content:center" style="width: calc(100% + .125rem); height: calc(100% + .125rem);">
+                        <div class="relative flex align-items:center justify-content:center ratio:16-9 h:100p flex-shrink:0">
+                            <svg viewBox="0 0 1104 648" fill="none" class="relative w:100p" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="rgba(var(--sheet-2), 1)" d="M0 0h1104v648H0z"/>
+                                <path stroke="rgba(var(--edge-1), 1)" d="M48 12v624M96 12v624M240 12v624m48-624v624M432 12v624m48-624v624M624 12v624m48-624v624M816 12v624m48-624v624M144 12v624m48-624v624M336 12v624m48-624v624M528 12v624m48-624v624M720 12v624m48-624v624M912 12v624m48-624v624M1008 12v624m48-624v624M0 60h1104m0 48H0M0 252h1104m0 48H0M0 444h1104m0 48H0M0 156h1104m0 48H0M0 348h1104m0 48H0M0 540h1104m0 48H0"/>
+                                <!-- X Circs -->
+                                <circle class="video-circ video-circ-r opacity:0" style="animation-delay: 7500ms" fill="rgba(var(--ink-3), 1)" cy="588" r="2"/>
+                                <circle class="video-circ video-circ-l opacity:0" style="animation-delay: 500ms" fill="rgba(var(--ink-3), 1)" cy="492" r="2"/>
+                                <circle class="video-circ video-circ-r opacity:0" style="animation-delay: 6500ms" fill="rgba(var(--ink-3), 1)" cy="396" r="2"/>
+                                <circle class="video-circ video-circ-l opacity:0" style="animation-delay: 500ms" fill="rgba(var(--ink-3), 1)" cy="300" r="2"/>
+                                <circle class="video-circ video-circ-r opacity:0" style="animation-delay: 4000ms" fill="rgba(var(--ink-3), 1)" cy="204" r="2"/>
+                                <circle class="video-circ video-circ-l opacity:0" style="animation-delay: 3000ms" fill="rgba(var(--ink-3), 1)" cy="108" r="2"/>
+                                <circle class="video-circ video-circ-r opacity:0" style="animation-delay: 2000ms" fill="rgba(var(--ink-3), 1)" cx="1104" cy="540" r="2"/>
+                                <circle class="video-circ video-circ-l opacity:0" style="animation-delay: 5000ms" fill="rgba(var(--ink-3), 1)" cx="1104" cy="444" r="2"/>
+                                <circle class="video-circ video-circ-r opacity:0" style="animation-delay: 7000ms" fill="rgba(var(--ink-3), 1)" cx="1104" cy="348" r="2"/>
+                                <circle class="video-circ video-circ-l opacity:0" style="animation-delay: 1000ms" fill="rgba(var(--ink-3), 1)" cx="1104" cy="252" r="2"/>
+                                <circle class="video-circ video-circ-r opacity:0" style="animation-delay: 0ms" fill="rgba(var(--ink-3), 1)" cx="1104" cy="156" r="2"/>
+                                <circle class="video-circ video-circ-l opacity:0" style="animation-delay: 8000ms" fill="rgba(var(--ink-3), 1)" cx="1104" cy="60" r="2"/>
+                                <!-- Y Circs -->
+                                <circle class="video-circ video-circ-t" style="animation-delay: 1000ms" fill="rgba(var(--ink-3), 1)" cx="1056" cy="648" r="2"/>
+                                <circle class="video-circ video-circ-b" style="animation-delay: 2000ms" fill="rgba(var(--ink-3), 1)" cx="960"  cy="648" r="2"/>
+                                <circle class="video-circ video-circ-t" style="animation-delay: 1500ms" fill="rgba(var(--ink-3), 1)" cx="864"  cy="648" r="2"/>
+                                <circle class="video-circ video-circ-b" style="animation-delay: 4100ms" fill="rgba(var(--ink-3), 1)" cx="768"  cy="648" r="2"/>
+                                <circle class="video-circ video-circ-t" style="animation-delay: 500ms" fill="rgba(var(--ink-3), 1)" cx="672"  cy="648" r="2"/>
+                                <circle class="video-circ video-circ-b" style="animation-delay: 0ms" fill="rgba(var(--ink-3), 1)" cx="576"  cy="648" r="2"/>
+                                <circle class="video-circ video-circ-t" style="animation-delay: 3000ms" fill="rgba(var(--ink-3), 1)" cx="480"  cy="648" r="2"/>
+                                <circle class="video-circ video-circ-b" style="animation-delay: 100ms" fill="rgba(var(--ink-3), 1)" cx="384"  cy="648" r="2"/>
+                                <circle class="video-circ video-circ-t" style="animation-delay: 2500ms" fill="rgba(var(--ink-3), 1)" cx="288"  cy="648" r="2"/>
+                                <circle class="video-circ video-circ-b" style="animation-delay: 700ms" fill="rgba(var(--ink-3), 1)" cx="192"  cy="648" r="2"/>
+                                <circle class="video-circ video-circ-t" style="animation-delay: 1750ms" fill="rgba(var(--ink-3), 1)" cx="96"   cy="648" r="2"/>
+                                <circle class="video-circ video-circ-b" style="animation-delay: 4000ms" fill="rgba(var(--ink-3), 1)" cx="1008" r="2"/>
+                                <circle class="video-circ video-circ-t" style="animation-delay: 1000ms" fill="rgba(var(--ink-3), 1)" cx="912"  r="2"/>
+                                <circle class="video-circ video-circ-b" style="animation-delay: 3000ms" fill="rgba(var(--ink-3), 1)" cx="816"  r="2"/>
+                                <circle class="video-circ video-circ-t" style="animation-delay: 5000ms" fill="rgba(var(--ink-3), 1)" cx="720"  r="2"/>
+                                <circle class="video-circ video-circ-b" style="animation-delay: 100ms" fill="rgba(var(--ink-3), 1)" cx="624"  r="2"/>
+                                <circle class="video-circ video-circ-t" style="animation-delay: 3500ms" fill="rgba(var(--ink-3), 1)" cx="528"  r="2"/>
+                                <circle class="video-circ video-circ-b" style="animation-delay: 3000ms" fill="rgba(var(--ink-3), 1)" cx="432"  r="2"/>
+                                <circle class="video-circ video-circ-t" style="animation-delay: 1200ms" fill="rgba(var(--ink-3), 1)" cx="336"  r="2"/>
+                                <circle class="video-circ video-circ-b" style="animation-delay: 2400ms" fill="rgba(var(--ink-3), 1)" cx="240"  r="2"/>
+                                <circle class="video-circ video-circ-t" style="animation-delay: 4500ms" fill="rgba(var(--ink-3), 1)" cx="144"  r="2"/>
+                                <circle class="video-circ video-circ-b" style="animation-delay: 3700ms" fill="rgba(var(--ink-3), 1)" cx="48"   r="2"/>
+                                <path fill="rgba(var(--sheet-2), 1)" d="M672.5 11.5v191h47v-191h-47ZM479.5 108.5h-191v47h191v-47ZM623.5 540.5h-191v47h191v-47ZM335.5 300.5v191h-47v-191h47ZM384.5 204.5h95v95h-95v-95ZM1007.5 108.5h-95v95h95v-95ZM720.5 396.5h95v95h-95v-95ZM143.5 300.5h-95v95h95v-95Z"/>
+                                <g opacity=".5" fill="#464E49">
+                                    <path d="M699.928 23.258c1.358-.686 2.226-2.352 2.226-4.088 0-1.988-1.19-3.654-3.066-3.654-2.052 0-2.451 1.706-2.828 3.322l-.042.178c-.336 1.414-.56 2.352-1.624 2.352-.966 0-1.638-.882-1.638-2.1 0-1.302.658-2.1 1.624-2.618l-.812-1.022c-1.134.602-1.974 1.862-1.974 3.612 0 1.904 1.148 3.43 2.912 3.43 1.89 0 2.324-1.568 2.702-3.15l.02-.085.034-.143c.334-1.412.581-2.46 1.738-2.46 1.148 0 1.792 1.008 1.792 2.31s-.7 2.436-1.904 3.066l.84 1.05ZM702 30.185h-10.052V23.62h1.176v5.236h3.094v-4.438h1.176v4.438h3.43V23.62H702v6.566Z"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M697.786 35.694v1.946H702v1.344h-10.052v-3.836c0-2.128.994-3.486 2.912-3.486 1.61 0 2.59.98 2.856 2.576L702 31.452v1.54l-4.214 2.702Zm-4.676 1.946h3.514v-2.422c0-1.428-.63-2.226-1.764-2.226s-1.75.798-1.75 2.226v2.422Z"/>
+                                    <path d="M698.024 40.737c2.772 0 4.116 1.68 4.116 3.962 0 2.268-1.344 3.948-4.116 3.948h-6.076v-1.344h6.034c2.058 0 2.954-1.092 2.954-2.604 0-1.526-.896-2.618-2.954-2.618h-6.034v-1.344h6.076ZM691.948 49.532h1.176v3.402H702v1.344h-8.876v3.402h-1.176v-8.148ZM692.984 61.69c0 1.862 1.61 3.178 3.99 3.178s3.99-1.316 3.99-3.178c0-1.302-.756-2.24-2.03-2.604l.42-1.274c1.736.588 2.8 1.96 2.8 3.878 0 2.604-2.114 4.522-5.18 4.522s-5.18-1.918-5.18-4.522c0-1.918 1.064-3.29 2.8-3.878l.42 1.274c-1.274.364-2.03 1.302-2.03 2.604ZM691.948 68.899v-1.344H702v1.344h-10.052Z"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M697.786 73.492v2.492H702v1.344h-10.052v-3.836c0-2.128.994-3.486 2.912-3.486 1.89 0 2.926 1.358 2.926 3.486Zm-4.676 2.492h3.514v-2.422c0-1.428-.63-2.226-1.764-2.226s-1.75.798-1.75 2.226v2.422Z"/>
+                                    <path d="M702 81.761v1.232h-1.498c.924.406 1.652 1.484 1.652 2.926 0 2.562-2.1 4.466-5.152 4.466-3.066 0-5.208-1.918-5.208-4.55 0-1.932 1.05-3.304 2.786-3.906l.42 1.288c-1.274.364-2.016 1.288-2.016 2.604 0 1.904 1.624 3.22 4.004 3.22 2.366 0 4.004-1.316 4.004-3.234 0-1.624-1.246-2.716-3.038-2.744v2.884h-1.176v-4.186H702Z"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M702.154 95.74c0 2.632-2.114 4.564-5.18 4.564s-5.18-1.932-5.18-4.564 2.114-4.55 5.18-4.55 5.18 1.918 5.18 4.55Zm-1.19 0c0-1.89-1.61-3.22-3.99-3.22s-3.99 1.33-3.99 3.22c0 1.89 1.61 3.22 3.99 3.22s3.99-1.33 3.99-3.22ZM702 106.102v3.192h-10.052v-3.192c0-3.052 1.96-4.984 5.026-4.984S702 103.05 702 106.102Zm-8.89 1.876h7.728v-1.876c0-2.282-1.526-3.668-3.864-3.668-2.352 0-3.864 1.386-3.864 3.682v1.862Z"/>
+                                    <path d="M691.948 120.013v-6.566h1.176v5.236h3.094v-4.438h1.176v4.438h3.43v-5.236H702v6.566h-10.052ZM691.948 121.08h1.176v3.402H702v1.344h-8.876v3.402h-1.176v-8.148ZM698.024 130.114c2.772 0 4.116 1.68 4.116 3.962 0 2.268-1.344 3.948-4.116 3.948h-6.076v-1.344h6.034c2.058 0 2.954-1.092 2.954-2.604 0-1.526-.896-2.618-2.954-2.618h-6.034v-1.344h6.076ZM692.984 142.856c0 1.862 1.61 3.178 3.99 3.178s3.99-1.316 3.99-3.178c0-1.302-.756-2.24-2.03-2.604l.42-1.274c1.736.588 2.8 1.96 2.8 3.878 0 2.604-2.114 4.522-5.18 4.522s-5.18-1.918-5.18-4.522c0-1.918 1.064-3.29 2.8-3.878l.42 1.274c-1.274.364-2.03 1.302-2.03 2.604ZM691.948 157.527l4.606-2.87-4.606-2.87v-1.428l5.824 3.64H702v1.344h-4.228l-5.824 3.64v-1.456ZM691.948 161.175v-1.302H702v1.162l-8.092 5.488H702v1.288h-10.052v-1.414l7.77-5.222h-7.77Z"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M691.948 174.229v-1.484L702 168.867v1.358l-2.646 1.022v4.508l2.646 1.008v1.344l-10.052-3.878Zm6.23-2.534-4.718 1.82 4.718 1.792v-3.612Z"/>
+                                    <path d="m702 183.49-8.274-3.08H702v-1.246h-10.052v1.778l8.26 3.066-8.26 3.052v1.834H702v-1.26h-8.274l8.274-3.066v-1.078Z"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M369.339 138.154c-2.632 0-4.564-2.114-4.564-5.18s1.932-5.18 4.564-5.18 4.55 2.114 4.55 5.18-1.918 5.18-4.55 5.18Zm0-1.19c1.89 0 3.22-1.61 3.22-3.99s-1.33-3.99-3.22-3.99c-1.89 0-3.22 1.61-3.22 3.99s1.33 3.99 3.22 3.99Z"/>
+                                    <path d="M335.106 127.948h1.344V138h-1.344v-10.052ZM346.319 127.948h-1.302v7.77l-5.222-7.77h-1.414V138h1.288v-8.092l5.488 8.092h1.162v-10.052ZM355.525 129.124v-1.176h-8.148v1.176h3.402V138h1.344v-8.876h3.402Z"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M357.936 133.786h1.946l2.702 4.214h1.54l-2.786-4.284c1.596-.266 2.576-1.246 2.576-2.856 0-1.918-1.358-2.912-3.486-2.912h-3.836V138h1.344v-4.214Zm0-1.162v-3.514h2.422c1.428 0 2.226.616 2.226 1.75s-.798 1.764-2.226 1.764h-2.422ZM378.433 138h-3.192v-10.052h3.192c3.052 0 4.984 1.96 4.984 5.026S381.485 138 378.433 138Zm-1.876-8.89v7.728h1.876c2.282 0 3.668-1.526 3.668-3.864 0-2.352-1.386-3.864-3.682-3.864h-1.862Z"/>
+                                    <path d="M392.505 134.024c0 2.772-1.679 4.116-3.962 4.116-2.268 0-3.948-1.344-3.948-4.116v-6.076h1.344v6.034c0 2.058 1.092 2.954 2.604 2.954 1.526 0 2.618-.896 2.618-2.954v-6.034h1.344v6.076ZM398.193 128.984c-1.862 0-3.178 1.61-3.178 3.99s1.316 3.99 3.178 3.99c1.302 0 2.24-.756 2.604-2.03l1.274.42c-.588 1.736-1.96 2.8-3.878 2.8-2.604 0-4.522-2.114-4.522-5.18s1.918-5.18 4.522-5.18c1.918 0 3.29 1.064 3.878 2.8l-1.274.42c-.364-1.274-1.302-2.03-2.604-2.03ZM410.351 127.948v1.176h-3.402V138h-1.344v-8.876h-3.402v-1.176h8.148ZM411.418 127.948h1.344V138h-1.344v-10.052Z"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M418.669 138.154c-2.632 0-4.564-2.114-4.564-5.18s1.932-5.18 4.564-5.18 4.55 2.114 4.55 5.18-1.918 5.18-4.55 5.18Zm0-1.19c1.89 0 3.22-1.61 3.22-3.99s-1.33-3.99-3.22-3.99c-1.89 0-3.22 1.61-3.22 3.99s1.33 3.99 3.22 3.99Z"/>
+                                    <path d="M431.207 127.948h1.302V138h-1.162l-5.488-8.092V138h-1.288v-10.052h1.414l5.222 7.77v-7.77ZM474.142 570h-1.232v-1.498c-.406.924-1.484 1.652-2.926 1.652-2.562 0-4.466-2.1-4.466-5.152 0-3.066 1.918-5.208 4.55-5.208 1.932 0 3.304 1.05 3.906 2.786l-1.288.42c-.364-1.274-1.288-2.016-2.604-2.016-1.904 0-3.22 1.624-3.22 4.004 0 2.366 1.316 4.004 3.234 4.004 1.624 0 2.716-1.246 2.744-3.038h-2.884v-1.176h4.186V570ZM475.902 559.948V570h6.566v-1.176h-5.236v-3.43h4.438v-1.176h-4.438v-3.094h5.236v-1.176h-6.566ZM491.228 561.124v-1.176h-8.148v1.176h3.402V570h1.344v-8.876h3.402ZM502.248 561.124v-1.176H494.1v1.176h3.402V570h1.344v-8.876h3.402Z"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M502.003 564.974c0 3.066 1.932 5.18 4.564 5.18s4.55-2.114 4.55-5.18-1.918-5.18-4.55-5.18c-2.632 0-4.564 2.114-4.564 5.18Zm7.784 0c0 2.38-1.33 3.99-3.22 3.99-1.89 0-3.22-1.61-3.22-3.99s1.33-3.99 3.22-3.99c1.89 0 3.22 1.61 3.22 3.99Z"/>
+                                    <path d="M516.486 559.948h-1.344V570h1.344v-3.29l1.316-1.414 3.584 4.704h1.582l-4.27-5.67 4.074-4.382h-1.61l-4.676 5.082v-5.082ZM531.796 559.948h-1.302v7.77l-5.222-7.77h-1.414V570h1.288v-8.092l5.488 8.092h1.162v-10.052Z"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M533.135 564.974c0 3.066 1.932 5.18 4.564 5.18s4.55-2.114 4.55-5.18-1.918-5.18-4.55-5.18c-2.632 0-4.564 2.114-4.564 5.18Zm7.784 0c0 2.38-1.33 3.99-3.22 3.99-1.89 0-3.22-1.61-3.22-3.99s1.33-3.99 3.22-3.99c1.89 0 3.22 1.61 3.22 3.99Z"/>
+                                    <path d="m548.06 559.948-2.114 8.05-2.142-8.05h-1.386L545.19 570h1.316l2.128-7.826 2.142 7.826h1.316l2.758-10.052h-1.33l-2.142 8.05-2.128-8.05h-1.19ZM563.99 570l3.08-8.274V570h1.246v-10.052h-1.778l-3.066 8.26-3.052-8.26h-1.834V570h1.26v-8.274l3.066 8.274h1.078ZM571.599 559.948h-1.344V570h1.344v-10.052ZM574.874 559.948h-1.344V570h1.344v-3.29l1.316-1.414 3.584 4.704h1.582l-4.27-5.67 4.074-4.382h-1.61l-4.676 5.082v-5.082ZM582.246 570h6.566v-1.176h-5.236v-3.43h4.438v-1.176h-4.438v-3.094h5.236v-1.176h-6.566V570ZM314.876 322.386h1.176v-8.148h-1.176v3.402H306v1.344h8.876v3.402Z"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="m306 321.505 10.052 3.878v1.484L306 330.745v-1.358l2.646-1.022v-4.508L306 322.849v-1.344Zm3.822 6.412 4.718-1.82-4.718-1.792v3.612Z"/>
+                                    <path d="M306 338.156V331.8h10.052v1.344h-8.876v5.012H306ZM306 339.217h10.052v6.566h-1.176v-5.236h-3.094v4.438h-1.176v-4.438h-3.43v5.236H306v-6.566ZM305.846 350.233c0-1.736.868-3.402 2.226-4.088l.84 1.05c-1.204.63-1.904 1.764-1.904 3.066 0 1.302.644 2.31 1.792 2.31 1.157 0 1.404-1.048 1.738-2.46a39.7 39.7 0 0 0 .054-.228c.378-1.582.812-3.15 2.702-3.15 1.764 0 2.912 1.526 2.912 3.43 0 1.75-.84 3.01-1.974 3.612l-.812-1.022c.966-.518 1.624-1.316 1.624-2.618 0-1.218-.672-2.1-1.638-2.1-1.064 0-1.288.938-1.624 2.352l-.042.178c-.377 1.616-.776 3.322-2.828 3.322-1.876 0-3.066-1.666-3.066-3.654Z"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M305.846 361.781c0-2.632 2.114-4.564 5.18-4.564s5.18 1.932 5.18 4.564-2.114 4.55-5.18 4.55-5.18-1.918-5.18-4.55Zm1.19 0c0 1.89 1.61 3.22 3.99 3.22s3.99-1.33 3.99-3.22c0-1.89-1.61-3.22-3.99-3.22s-3.99 1.33-3.99 3.22Z"/>
+                                    <path d="M310.466 369.013H306v-1.33h10.052v6.496h-1.176v-5.166h-3.234v4.368h-1.176v-4.368ZM310.466 379.541H306v-1.33h10.052v6.496h-1.176v-5.166h-3.234v4.368h-1.176v-4.368Z"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M306 385.243v-1.344l10.052 3.878v1.484L306 393.139v-1.358l2.646-1.022v-4.508L306 385.243Zm3.822 5.068 4.718-1.82-4.718-1.792v3.612Z"/>
+                                    <path d="M316.052 394.194v1.344H306v-1.344h10.052ZM306 403.825v-6.356h10.052v1.344h-8.876v5.012H306ZM306 411.452v-6.566h10.052v6.566h-1.176v-5.236h-3.094v4.438h-1.176v-4.438h-3.43v5.236H306Z"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M306 416.124v-3.192h10.052v3.192c0 3.052-1.96 4.984-5.026 4.984S306 419.176 306 416.124Zm1.162-1.876v1.876c0 2.282 1.526 3.668 3.864 3.668 2.352 0 3.864-1.386 3.864-3.682v-1.862h-7.728Z"/>
+                                    <path d="M310.466 426.472H306v-1.33h10.052v6.496h-1.176v-5.166h-3.234v4.368h-1.176v-4.368ZM316.052 432.996v1.344H306v-1.344h10.052ZM305.846 439.309c0-1.736.868-3.402 2.226-4.088l.84 1.05c-1.204.63-1.904 1.764-1.904 3.066 0 1.302.644 2.31 1.792 2.31 1.157 0 1.404-1.048 1.738-2.46l.031-.131.023-.097c.378-1.582.812-3.15 2.702-3.15 1.764 0 2.912 1.526 2.912 3.43 0 1.75-.84 3.01-1.974 3.612l-.812-1.022c.966-.518 1.624-1.316 1.624-2.618 0-1.218-.672-2.1-1.638-2.1-1.064 0-1.288.938-1.624 2.352l-.042.178c-.377 1.616-.776 3.322-2.828 3.322-1.876 0-3.066-1.666-3.066-3.654ZM311.782 450.942h4.27v1.344H306v-1.344h4.606v-5.39H306v-1.344h10.052v1.344h-4.27v5.39ZM316.052 454.223v1.344H306v-1.344h10.052ZM316.052 464.133v1.302H306v-1.162l8.092-5.488H306v-1.288h10.052v1.414l-7.77 5.222h7.77ZM306 475.398v-1.232h1.498c-.924-.406-1.652-1.484-1.652-2.926 0-2.562 2.1-4.466 5.152-4.466 3.066 0 5.208 1.918 5.208 4.55 0 1.932-1.05 3.304-2.786 3.906l-.42-1.288c1.274-.364 2.016-1.288 2.016-2.604 0-1.904-1.624-3.22-4.004-3.22-2.366 0-4.004 1.316-4.004 3.234 0 1.624 1.246 2.716 3.038 2.744v-2.884h1.176v4.186H306Z"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M507 76v5h5l-3 3 3 3h-5v5l-3-3-3 3v-5h-5l3-3-3-3h5v-5l3 3 3-3Zm-5 10v-4h4v4h-4ZM171 220v5h5l-3 3 3 3h-5v5l-3-3-3 3v-5h-5l3-3-3-3h5v-5l3 3 3-3Zm-5 10v-4h4v4h-4ZM843 273v-5l-3 3-3-3v5h-5l3 3-3 3h5v5l3-3 3 3v-5h5l-3-3 3-3h-5Zm-5 1v4h4v-4h-4ZM267 556v5h5l-3 3 3 3h-5v5l-3-3-3 3v-5h-5l3-3-3-3h5v-5l3 3 3-3Zm-5 10v-4h4v4h-4ZM1035 417v-5l-3 3-3-3v5h-5l3 3-3 3h5v5l3-3 3 3v-5h5l-3-3 3-3h-5Zm-5 1v4h4v-4h-4ZM957.552 160.176h-10.008v21.672h-6.912v-51.696h19.728c10.944 0 17.928 5.112 17.928 14.976 0 8.28-5.04 13.32-13.248 14.688l14.328 22.032h-7.92l-13.896-21.672Zm-10.008-24.048V154.2H960c7.344 0 11.448-3.24 11.448-9.072 0-5.832-4.104-9-11.448-9h-12.456Z"/>
+                                    <path d="m450.612 235.296-15.84 42.552h-5.544l-15.768-42.552v42.552h-6.48v-51.696h9.432l15.696 42.48 15.768-42.48h9.144v51.696h-6.408v-42.552ZM769.116 470.64c-8.928 0-17.496-4.464-21.024-11.448l5.4-4.32c3.24 6.192 9.072 9.792 15.768 9.792 6.696 0 11.88-3.312 11.88-9.216 0-5.949-5.389-7.222-12.654-8.939l-.51-.12-.66-.157c-8.136-1.944-16.2-4.176-16.2-13.896 0-9.072 7.848-14.976 17.64-14.976 9 0 15.48 4.32 18.576 10.152l-5.256 4.176c-2.664-4.968-6.768-8.352-13.464-8.352-6.264 0-10.8 3.456-10.8 8.424 0 5.472 4.824 6.624 12.096 8.352l.899.21.017.004c8.31 1.941 17.084 3.991 17.084 14.546 0 9.648-8.568 15.768-18.792 15.768ZM118.176 373.848h-6.336v-7.704c-2.088 4.752-7.632 8.496-15.048 8.496-13.176 0-22.968-10.8-22.968-26.496 0-15.768 9.864-26.784 23.4-26.784 9.936 0 16.992 5.4 20.088 14.328l-6.624 2.16c-1.872-6.552-6.624-10.368-13.392-10.368-9.792 0-16.56 8.352-16.56 20.592 0 12.168 6.768 20.592 16.632 20.592 8.352 0 13.968-6.408 14.112-15.624H96.648v-6.048h21.528v26.856Z"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Play Button -->
+                    <div class="absolute flex align-items:center justify-content:center px:48 py:48 pointer-events:none">
+                        <div data-video-btn-shadow class="absolute top:0 left:0 w:100p h:100p radius:full bg:sheet-2 filter filter-blur:xl blur-fix"></div>
+                        <button data-video-btn class="relative z:3 btn btn:md btn:hover pointer-events:auto">
+                            {{ icons.play('transform translate-y:1 w:18 sm:w:16')}}
+                            <p>
+                                Play video
+                            </p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Content -->
+    <section data-toc-contents class="section section:pb md:pt:160">
+        <div class="container cs:wrapper">
+
+            {{ elements.csTOC() }}
+
+            <div data-toc-linked id="overview" class="cs:chunk">
+                {{ elements.csTitle('h2', 'Overview') }}
+                <div class="cs:content">
+                    <p>
+                        FireHydrant is an incident management platform. More or less, it helps engineering teams automate, respond to, learn from, and improve upon the incidents that their products experience. Currently, FireHydrant is a Series B startup with a team of around 60 folks.
+                    </p>
+                </div>
+            </div>
+
+            <figure class="cs:figure">
+                <img src="/assets/images/photos/baunfire/mike-stilling-baunfire-character.webp" width="672" height="448" class="max-w:672" alt="A 3d rendering of Mike as a simplified, lego-like character wearing a black hat, flannel, and black pants, with the Baunfire A logo behind him on a reddish-orange background.">
+                <figcaption>
+                    A 3d character Mike created of himself <span class="space:nowrap">when joining Baunfire</span>
+                </figcaption>
+            </figure>
+
+            <div data-toc-linked id="duties" class="cs:chunk">
+                {{ elements.csTitle('h3', 'Duties') }}
+                <div class="cs:content">
+                    <p>
+                        Mike was hired as the first web developer focused on marketing alongside a brand designer. Due to Mike's experience with brand design and familiarity working within fast-paced startups, he quickly took the lead role in shaping how FireHydrant approaches visual design. 
+                    </p>
+                    <p>
+                        The existing brand and marketing site were in rough shape and had loads of quirky design debt that wasn't aligned with the company's audience or goals. Mike was responsible for stripping the brand and website down to its bones. In turn, providing the marketing team a strong, simple foundation to efficiently and impactfully build upon going forward that was better aligned with FireHydrant's audience.
+                    </p>
+                    <p>
+                        Within the first three weeks, Mike had rebuilt and redesigned the entire marketing website and gotten approval to ship it. This exercise uncovered larger pain points within FireHydrant's approach and expectations, in regards to design, that spanned into the product itself. The craft and quality displayed on the marketing site turned out to be far ahead of where the <span class="space:nowrap">product was at.</span>
+                    </p>
+                    <p>
+                        The design teams were missing a standard for visual design. Partially, they were lead astray by poor leadership in the past. This resulting in design, that frankly, is missing the mark in terms of what users expect from an engineering tool.
+                    </p>
+                    <p>
+                        Now, Mike is working on solidifying and progressing this standard. Leading by example and sharing techniques to achieve high levels of quality, craft, and impact – fast and repeatedly with the greater team. All the while, Mike continues to help strategize, plan, and execute marketing initiatives.
+                    </p>
+                </div>
+            </div>
+
+            <figure class="cs:figure">
+                <img src="/assets/images/photos/baunfire/mike-stilling-cerebras-concept.webp" width="1104" height="687" class="border:1 border:edge-1" alt="A website landing page for Cerebras that Mike designed. The design takes a tradition web design approach with the focal element being a Cerebras CS-1 super computer with an aluminum, die-cut housing. The background of the design is light gray.">
+                <figcaption>
+                    An outtake from Mike’s work <span class="space:nowrap">for Cerebras</span>
+                </figcaption>
+            </figure>
+
+            <div data-toc-linked id="outputs" class="cs:chunk">
+                {{ elements.csTitle('h3', 'Outputs') }}
+                <div class="cs:content">
+                    <p>
+                        So far, while at FireHydrant Mike has rebuilt/redesigned the entire marketing site, built/designed an industry-first data story around incident management, redesigned/rebuilt the homepage <span class="color:ink-1">(V1.1)</span>, re-redesigned/rebuilt the customer page <span class="color:ink-1">(V1.1)</span>, provided a platform and design support to an all new - self-hosted docs site, and lead the visual direction of the brand.
+                    </p>
+                    <ul class="relative flex flex:col gap:32 md:gap:48 w:100p">
+                        <li class="flex flex:col gap:8 w:100p pl:20 sm:pl:32 border-l:1 border:primary-rg">
+                            <h4 class="font:md sm:font:lg color:ink-3 mt:n8">
+                                Website rebuild/redesign
+                            </h4>
+                            <p class="font:sm sm:font:md color:ink-1 mb:4">
+                                FireHydrant's previous marketing site was built on Gatsby, using React and roughly 80 other dependencies 😬. The entire thing was a cluster and extremely difficult to work on - especially at the pace, level of craft, and flexibility needed from the marketing team.
+                            </p>
+                            <p class="font:sm sm:font:md color:ink-1 mb:4">
+                                Mike's <a href="/experience/rewatch/#outputs" class="link:highlight">approach at Rewatch</a> went well, so rather than overthink it, he repurposed it. Again, opting for 11ty and UniformCSS as the main tools to build the site. CMS-wise, the content was already being held in Contentful, so he continued using it for the time being. This brought the site down to less than 20 dependencies and made the code legible by just about anyone familiar with HTML/CSS. So much so, that the base of this site has been repurposed to build out a brand new documentation website by a lead solutions engineer (all the above in under four weeks per project 😎).
+                            </p>
+                            <p class="font:sm sm:font:md color:ink-1 mb:4">
+                                On the design-side of things, the site was rough. It had been using a handful of random colors, elementary illustration styles, random element styles, way too many scroll-in animations, bad typography, and no grid whatsoever. All-in-all, it didn't look like a tool <span class="space:nowrap">for engineers.</span>
+                            </p>
+                            <p class="font:sm sm:font:md color:ink-1 mb:4">
+                                To start, Mike refined the color palette down to a primary color, gradient, and grayscale. He removed every single illustration, replacing them with snippets of product UI <span class="italic color:ink-1">(that still need a bunch of work).</span> He implemented a consistent, standard 12 column grid along with standardized typography and spacing.
+                            <p class="font:sm sm:font:md color:ink-1">
+                                Rather than try to create a time consuming, risk-prone, novel new brand, Mike referenced the current leaders within the engineering space. He took bits and pieces of what they were doing well and tried to remix them to fit FireHydrant's needs. In practice, Mike believes it to be more impactful focusing on better vs. perfect. At any given time, there is great design that can be easily referenced, the standard. When a brand is in rough shape, getting to the current standard can be extremely easy whereas trying to set the standard is infinitely more difficult. While the latter may be a rewarding pursuit, it's not going to provide as an immediate business impact and there's nothing preventing a team from working toward that after getting to the current standard.
+                            </p>
+                            <p class="font:sm sm:font:md color:ink-1 mb:n4">
+                                Going forward, Mike will continue to refine and add polish to the site. Specifically, he'd like to work on things such as button styling and product UI. The current gradient buttons are a carry-over from the past design and feel a bit too obnoxious. The product UI feels mismatched and a bit outdated.
+                            </p>
+                        </li>
+                        <li class="flex flex:col gap:8 w:100p pl:20 sm:pl:32 border-l:1 border:primary-rg">
+                            <h4 class="font:md sm:font:lg color:ink-3 mt:n8">
+                                Visual direction
+                            </h4>
+                            <p class="font:sm sm:font:md color:ink-1">
+                                As mentioned earlier, Mike has been pushing the entire company to level-up their visual design across sales, marketing, and product. He has been doing this by setting a higher standard for himself, visually sharing ways to improve, constructivly critiquing current shortcomings, and removing the existing silos between teams. 
+                            </p>
+                            <p class="font:sm sm:font:md color:ink-1">
+                                Often, being critical can come off as a pompous, harsh, and/or mean. Mike believes that by simply asking questions, understanding, and being hands-on in the work, diving right into Figma and code, folks can more clearly see that the intention is to learn and level-up vs. just be a self-righteous dick.
+                            </p>
+                            <p class="font:sm sm:font:md color:ink-1">
+                                Mike's favorite managers have always been able to constructivly explain and justify their thoughts and opinions. It seems that this skill comes from their first-hand experience of actually doing the work. Now that Mike is in a position to be providing this level of direction, he trys to mirror that practice.
+                            </p>
+                            <p class="font:sm sm:font:md color:ink-1 mb:n4">
+                                While Mike has made a dent in improving visual design at FireHydrant, there is still loads of room for both FireHydrant and Mike to improve.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <figure class="cs:figure">
+                <video loop="loop" muted="true" playsinline="playsinline" autoplay="true" poster="/assets/images/photos/baunfire/mike-stilling-nvp-loop.webp" preload="metadata" class="max-w:672">
+                    <source src="/assets/images/photos/baunfire/mike-stilling-nvp-loop.mp4" type="video/mp4">
+                </video>
+                <figcaption>
+                    An small recording of the <span class="space:nowrap">NVP 2020 Year in Review landing page</span>
+                </figcaption>
+            </figure>
+
+            <div data-toc-linked id="takeaways" class="cs:chunk">
+                {{ elements.csTitle('h3', 'Takeaways') }}
+                <div class="cs:content">
+                    <p>
+                        So far, at FireHydrant, Mike's biggest learnings have come from being pushed into roles that he was previously unfamiliar with.
+                    </p>
+                    <p>
+                        Mike had never had to act as creative director with other designers. Sure, he'd been on critques and design reviews before, but to have a say directionally, across departments, that effects more than the work he alone is doing is new. Like any new experience, this has been somewhat awkward, but also extremely insightful.
+                    </p>
+                    <p>
+                        This role is also the first time Mike has had a "developer" title, though it's not much different from his past two roles. He still designs and codes, titles are just weird.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    {{ elements.slideTitle('left', 'Next')}}
+
+    <!-- Prev / Next -->
+    <section class="section section:pb">
+        <div class="container flex flex:col gap:24 sm:grid:normal grid-cols:12">
+            <div class="relative col-start:1 col-end:7 md:col-end:8 flex flex:col gap:24 md:gap:48">
+                {{ elements.csNextCard(
+                    link='/experience/rewatch/',
+                    label='View previous',
+                    title='Rewatch',
+                    description='Working as the first and only marketing designer at an early stage startup thats product <span class="space:nowrap">spans use cases.</span>',
+                    img='/assets/images/photos/rewatch/thumbnail-cta.webp',
+                    imgAlt='screenshot of the Rewatch marketing website homepage with a large headline and woman typing on a laptop at a makeshift desk'
+                )}}
+                {{ elements.csNextCard(
+                    link='/experience/abstract/',
+                    label='View past',
+                    title='Abstract',
+                    description='Designing a website that impresses designers while accounting for <span class="space:nowrap">a rapidly</span> changing product, <span class="space:nowrap"> brand, and team.</span>',
+                    img='/assets/images/photos/abstract/thumbnail-cta.webp',
+                    imgAlt='screenshot of the Abstract marketing website homepage with a large typographic headline and simple vector illustrations'
+                )}}
+            </div>
+            <!-- Form -->
+            {{ elements.csForm(
+                eyebrow='Hire Mike',
+                headline='Grow your <span class="hidden lg:inline">sales</span> funnel',
+                description='Your website could be creating more <span class="space:nowrap">leads, conversions,</span> <span class="space:nowrap">and dollars.</span>'
+            )}}
+        </div>
+    </section>
     
 </main>
