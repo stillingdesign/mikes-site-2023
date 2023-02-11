@@ -20,4 +20,4 @@
 .cs\:figure  { @include apply('relative z:3 w:100p flex flex:col align-items:center gap:12 mb:n16 md:mt:n48 md:mb:n48 pointer-events:none'); }
 .cs\:figure figcaption { @include apply('text:center font:serif italic font:xs sm:font:md color:ink-1 leading:130'); }
 .cs\:figure img,
-.cs\:figure video { @include apply('relative z:1 overflow:hidden w:100p h:auto radius:xl'); }
+.cs\:figure video { @include apply('relative block z:1 overflow:hidden w:100p h:auto radius:xl'); }

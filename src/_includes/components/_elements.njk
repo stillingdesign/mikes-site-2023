@@ -138,3 +138,17 @@
         </form>
     </div>
 {% endmacro %}
+
+{% macro csBrowserNav (siteUrl) %}
+    <div class="relative flex align-items:center justify-content:between bg:sheet-2 w:100p h:24 border-b:1 border:edge-1 px:8">
+        <div class="relative flex align-items:center gap:4 h:100p pt:1">
+            <div class="block w:6 h:6 bg:aux-pink border:aux-pink bg-opacity:50 border:1 radius:full"></div>
+            <div class="block w:6 h:6 bg:aux-yellow border:aux-yellow bg-opacity:50 border:1 radius:full"></div>
+            <div class="block w:6 h:6 bg:link-rg border:link-rg bg-opacity:50 border:1 radius:full"></div>
+        </div>
+        <div class="font:xs color:ink-1 mt:1 tracking:loose">
+            {{ siteUrl }}
+        </div>
+        <div class="block w:24"></div>
+    </div>
+{% endmacro %}
