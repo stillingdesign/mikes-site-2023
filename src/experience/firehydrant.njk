@@ -208,9 +208,9 @@ eleventyComputed:
             </div>
 
             <figure class="cs:figure">
-                <img src="/assets/images/photos/baunfire/mike-stilling-baunfire-character.webp" width="672" height="448" class="max-w:672" alt="A 3d rendering of Mike as a simplified, lego-like character wearing a black hat, flannel, and black pants, with the Baunfire A logo behind him on a reddish-orange background.">
+                <img src="/assets/images/photos/firehydrant/mike-stilling-firehydrant-graphic-issues.webp" width="1152" height="480" class="max-w:672 border:1 border:edge-1" alt="an abstract app icon with binary code in the background and gradients">
                 <figcaption>
-                    A 3d character Mike created of himself <span class="space:nowrap">when joining Baunfire</span>
+                    A graphic Mike illustrated for Firehydrant
                 </figcaption>
             </figure>
 
@@ -235,12 +235,49 @@ eleventyComputed:
                 </div>
             </div>
 
-            <figure class="cs:figure">
-                <img src="/assets/images/photos/baunfire/mike-stilling-cerebras-concept.webp" width="1104" height="687" class="border:1 border:edge-1" alt="A website landing page for Cerebras that Mike designed. The design takes a tradition web design approach with the focal element being a Cerebras CS-1 super computer with an aluminum, die-cut housing. The background of the design is light gray.">
-                <figcaption>
-                    An outtake from Mike’s work <span class="space:nowrap">for Cerebras</span>
-                </figcaption>
-            </figure>
+            <div class="relative flex flex:col md:flex:row align-items:center gap:24 md:gap:12 md:pb:32 md:pt:64">
+                <figure class="cs:figure pb:8 md:pb:0 max-w:672">
+                    <div class="relative w:100p flex flex:col radius:md overflow:hidden border:1 border:edge-1">
+                        {{ elements.csBrowserNav('FireHydrant Home (current)')}}
+                        <img src="/assets/images/photos/firehydrant/mike-stilling-firehydrant-ui-home-design.webp" width="1424" height="810" class="mb:n1 max-w:100p flex-shrink:0" style="border-radius:0;" alt="Existing FireHydrant home screen interface">
+                    </div>
+                    <figcaption>
+                        The existing web-app home screen
+                    </figcaption>
+                </figure>
+                {{ icons.arrowRight('w:24 flex-shrink:0 transform rotate:90 md:rotate:0') }}
+                <figure class="cs:figure max-w:672">
+                    <div class="relative w:100p flex flex:col radius:md overflow:hidden border:1 border:edge-1">
+                        {{ elements.csBrowserNav('FireHydrant Home (redesign)')}}
+                        <img src="/assets/images/photos/firehydrant/mike-stilling-firehydrant-ui-home-redesign.svg" width="1424" height="810" class="mb:n1 max-w:100p flex-shrink:0" style="border-radius:0;" alt="A concept design for the FireHydrant home screen app interface">
+                    </div>
+                    <figcaption>
+                        A simple styling update exploration by Mike
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="relative flex flex:col md:flex:row align-items:center gap:24 md:gap:12 md:pb:56 md:pt:32">
+                <figure class="cs:figure pb:8 md:pb:0 max-w:672">
+                    <div class="relative w:100p flex flex:col radius:md overflow:hidden border:1 border:edge-1">
+                        {{ elements.csBrowserNav('FireHydrant Incidents (current)')}}
+                        <img src="/assets/images/photos/firehydrant/mike-stilling-firehydrant-ui-incidents-design.webp" width="1424" height="712" class="mb:n1 max-w:100p flex-shrink:0" style="border-radius:0;" alt="Existing FireHydrant home screen interface">
+                    </div>
+                    <figcaption>
+                        The existing web-app incidents page
+                    </figcaption>
+                </figure>
+                {{ icons.arrowRight('w:24 flex-shrink:0 transform rotate:90 md:rotate:0') }}
+                <figure class="cs:figure max-w:672">
+                    <div class="relative w:100p flex flex:col radius:md overflow:hidden border:1 border:edge-1">
+                        {{ elements.csBrowserNav('FireHydrant Incidents (redesign)')}}
+                        <img src="/assets/images/photos/firehydrant/mike-stilling-firehydrant-ui-incidents-redesign.svg" width="1424" height="712" class="mb:n1 max-w:100p flex-shrink:0" style="border-radius:0;" alt="A concept design for the FireHydrant home screen app interface">
+                    </div>
+                    <figcaption>
+                        Some explored styling and IA updates by Mike
+                    </figcaption>
+                </figure>
+            </div>
 
             <div data-toc-linked id="outputs" class="cs:chunk">
                 {{ elements.csTitle('h3', 'Outputs') }}
