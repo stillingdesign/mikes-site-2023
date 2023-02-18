@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 function fadeInHeaderBg() {
+    const header = document.querySelector(`[data-header]`);
     const headerBg = document.querySelector(`[data-header-bg]`);
     const firstSection = document.querySelector(`[data-first-section]`);
     const desktopThreshold = window.matchMedia("(min-width: 768px)");
@@ -21,6 +22,7 @@ function fadeInHeaderBg() {
         return val
     }
 
+    gsap.set(header, { height:72 });
     gsap.set(headerBg, { autoAlpha:0 });
     
     const tl = gsap.timeline({
@@ -28,9 +30,10 @@ function fadeInHeaderBg() {
             trigger: firstSection,
             start: startVal(),
             end: endVal(),
-            scrub: true,
+            scrub: 0.5,
         },
     });
-    tl.to(headerBg, { autoAlpha: 1, duration: 1 })
+    tl.to(header, { height:40, duration:1, ease: "power2.inOut"})
+    .to(headerBg, { autoAlpha: 1, duration: 1 })
 }
 fadeInHeaderBg();
