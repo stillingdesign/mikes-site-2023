@@ -207,12 +207,27 @@ eleventyComputed:
                 </div>
             </div>
 
-            <figure class="cs:figure">
-                <img src="/assets/images/photos/firehydrant/mike-stilling-firehydrant-graphic-issues.webp" width="1152" height="480" class="max-w:672 border:1 border:edge-1" alt="an abstract app icon with binary code in the background and gradients">
-                <figcaption>
-                    A graphic Mike illustrated for Firehydrant
-                </figcaption>
-            </figure>
+            <div class="relative flex flex:col md:flex:row align-items:center gap:24 md:gap:12 ">
+                <figure class="cs:figure pb:8 md:pb:0 max-w:672">
+                    <div class="relative w:100p flex flex:col radius:md overflow:hidden border:1 border:edge-1">
+                        {{ elements.csBrowserNav('FireHydrant.com (previous)')}}
+                        <img src="/assets/images/photos/firehydrant/mike-stilling-firehydrant-home-old.webp" width="1152" height="749" class="mb:n1 max-w:100p flex-shrink:0" style="border-radius:0;" alt="Existing FireHydrant Marketing Site Homepage">
+                    </div>
+                    <figcaption>
+                        FireHydrant Marketing Site, <span class="space:nowrap">prior to Mike's redesign</span>
+                    </figcaption>
+                </figure>
+                {{ icons.arrowRight('w:24 flex-shrink:0 transform rotate:90 md:rotate:0') }}
+                <figure class="cs:figure max-w:672">
+                    <div class="relative w:100p flex flex:col radius:md overflow:hidden border:1 border:edge-1">
+                        {{ elements.csBrowserNav('FireHydrant.com (redesign)')}}
+                        <img src="/assets/images/photos/firehydrant/mike-stilling-firehydrant-home-current.webp" width="1152" height="748" class="mb:n1 max-w:100p flex-shrink:0" style="border-radius:0;" alt="Redesigned FireHydrant Marketing Site Homepage">
+                    </div>
+                    <figcaption>
+                        Mike's first iteration <span class="space:nowrap">on the Marketing Site redesign</span>
+                    </figcaption>
+                </figure>
+            </div>
 
             <div data-toc-linked id="duties" class="cs:chunk">
                 {{ elements.csTitle('h3', 'Duties') }}
@@ -308,6 +323,12 @@ eleventyComputed:
                                 Going forward, Mike will continue to refine and add polish to the site. Specifically, he'd like to work on things such as button styling and product UI. The current gradient buttons are a carry-over from the past design and feel a bit too obnoxious. The product UI feels mismatched and a bit outdated.
                             </p>
                         </li>
+                        <figure class="cs:figure pt:40 pb:48 sm:pb:56 sm:pt:64">
+                            <img src="/assets/images/photos/firehydrant/mike-stilling-firehydrant-graphic-issues.webp" width="1152" height="480" class="max-w:672 border:1 border:edge-1" alt="an abstract app icon with binary code in the background and gradients">
+                            <figcaption>
+                                A 404 graphic Mike illustrated for Firehydrant
+                            </figcaption>
+                        </figure>
                         <li class="flex flex:col gap:8 w:100p pl:20 sm:pl:32 border-l:1 border:primary-rg">
                             <h4 class="font:md sm:font:lg color:ink-3 mt:n8">
                                 Visual direction
@@ -329,12 +350,13 @@ eleventyComputed:
                 </div>
             </div>
 
-            <figure class="cs:figure">
-                <video loop="loop" muted="true" playsinline="playsinline" autoplay="true" poster="/assets/images/photos/baunfire/mike-stilling-nvp-loop.webp" preload="metadata" class="max-w:672">
-                    <source src="/assets/images/photos/baunfire/mike-stilling-nvp-loop.mp4" type="video/mp4">
-                </video>
+            <figure class="cs:figure max-w:672">
+                <div class="relative w:100p flex flex:col radius:md overflow:hidden border:1 border:edge-1">
+                    {{ elements.csBrowserNav('www.firehydrant.com/customer-stories')}}
+                    <img src="/assets/images/photos/firehydrant/mike-stilling-firehydrant-customers-current.webp" width="1152" height="748" class="mb:n1 max-w:100p flex-shrink:0" style="border-radius:0;" alt="A screenshot of FireHydrant's Customer Stories Page">
+                </div>
                 <figcaption>
-                    An small recording of the <span class="space:nowrap">NVP 2020 Year in Review landing page</span>
+                    A screenshot of FireHydrant's <span class="space:nowrap">Customer Stories Page</span>
                 </figcaption>
             </figure>
 
